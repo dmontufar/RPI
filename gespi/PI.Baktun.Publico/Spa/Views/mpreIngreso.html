@@ -1,0 +1,58 @@
+﻿<div class="panel panel-info" ng-controller="mpreIngresoCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">Marcas - Pre-Ingreso de Expedientes</h3>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="form-group">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <label for="search">Busqueda:</label>
+                    <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+                </div>
+                <div class="col-xs-4">
+                    <label for="search">Items por pagina:</label>
+                    <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                </div>
+            </div>
+            <br>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Signo Distintivo</th>
+                                <th>Tipo de Registro</th>
+                                <th>Entidad Solicitante</th>
+                                <th>Fecha Ultima Actualizacion</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr dir-paginate="expediente in misExpedientes | filter:textSearch | itemsPerPage: pageSize" total-items="totalItems">
+                                <td><a href="#/mpreIngreso/{{expediente.Id}}" style="display:block;">{{ expediente.SignoDistintivo }}</a></td>
+                                <td>{{ expediente.TipoDeRegistro }}</td>
+                                <td>{{ expediente.EntidadSolicitante }}</td>
+                                <td>{{ expediente.FechaUltimaActualizacion }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <a href="#mpreIngreso/0" class=" btn btn-default">Agregar</a>
+
+            <div class="row">
+                <style>
+                    .pagination {
+                        display: block !important;
+                    }
+                </style>
+                <dir-pagination-controls on-page-change="pageChanged(newPageNumber)" template-url="Spa/Framework/pgntn/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+
+        </div>
+    </div>
+</div>
+

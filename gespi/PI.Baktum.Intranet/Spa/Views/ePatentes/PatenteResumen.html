@@ -1,0 +1,96 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                Descripcion<textarea rows="4" cols="10" name="Resumen" ng-model="model.Patente.Resumen" class="form-control" placeholder="Resumen..." />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12">
+                <style>
+                    #ptntClassificacion:after {
+                        content: "C L A S I F I C A C I O N";
+                    }
+                </style>
+                <div class="boxy" id="ptntClassificacion">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" name="Ipc1" ng-model="model.Ipc1" class="form-control" ui-mask="A99A/?9?9?9?9/?9?9?9?9" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="Ipc2" ng-model="model.Ipc2" class="form-control" ui-mask="A99A/?9?9?9?9/?9?9?9?9" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="Ipc3" ng-model="model.Ipc3" class="form-control" ui-mask="A99A/?9?9?9?9/?9?9?9?9" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="Ipc4" ng-model="model.Ipc4" class="form-control" ui-mask="A99A/?9?9?9?9/?9?9?9?9" />
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info btn-xs" style="float:right" ng-click="saveResumenClasificacion()"><span class="glyphicon glyphicon-share-alt"></span>Grabar Resumen/Clasificacion</button>
+                <br />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Pais</label>
+                <select class="form-control" name="refPais" ng-model="ref.PaisId" ng-options="_pais.Id as _pais.Nombre for _pais in paises"></select>
+
+                <label>Numero</label>
+                <input type="text" name="Numero" ng-model="ref.SolicitudP" class="form-control" placeholder="Numero" />
+
+                <label>Fecha</label>
+                <p class="input-group">
+                    <input type="text" name="Fecha" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="ref.Fecha" is-open="fref.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'fref')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <label>Tipo de Referencia</label>
+                <input type="text" name="TipoRef" ng-model="ref.Tipo_referencia" class="form-control" placeholder="Numero" />
+
+                <button type="button" class="btn btn-info btn-xs" style="float:right" ng-click="saveReferencia(ref)"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdReferencia:after {
+                    content: "Referencia";
+                }
+            </style>
+            <div class="col-md-9">
+                <div class="boxy" id="grdReferencia">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Pais</th>
+                                <th>Fecha</th>
+                                <th>Tipo</th>
+                                <th>Solicitud</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="prioridad in model.Prioridades">
+                                <td>{{prioridad.PaisCodigo}}</td>
+                                <td>{{prioridad.Prioridad.Fecha | date:'dd/MM/yyyy'}}</td>
+                                <td>{{prioridad.Prioridad.Tipo_referencia}}</td>
+                                <td>{{prioridad.Prioridad.SolicitudP}}</td>
+                                <td><a confirmed-click="deleteReferencia(prioridad)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

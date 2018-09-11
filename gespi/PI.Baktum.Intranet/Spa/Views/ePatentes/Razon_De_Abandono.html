@@ -1,0 +1,116 @@
+﻿<!--Razón de Abandono-->
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Resolucion</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Listado de Requerimientos</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.NoCumplePlazo" style="width:15px;">
+                Si el solicitante no cumple con lo requerido de lo que se estableció en el examen de forma, dentro de un plazo de 2 meses contados a partir de la fecha de la notifcación, se tendrá por abandonada la solicitud.  (Art. 113). </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha de Notificacion</label>
+            <p class="input-group">
+                <input type="text" name="FechaNotificacion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaNotificacion" is-open="fmem.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fmem')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="checkbox-inline">
+                <label>
+                    <input type="checkbox" ng-model="_resolucion.NoPublicacionDelEdicto" style="width:15px;">
+                    Si la publicación del edicto no se efectúa, o bien, si el solicitante no presenta al Registro el ejemplar del diario oficial
+                </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha de Notificacion</label>
+            <p class="input-group">
+                <input type="text" name="FechaNotificacion2" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaNotificacion2" is-open="fnoti.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fnoti')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="checkbox-inline">
+                <label>
+                    <input type="checkbox" ng-model="_resolucion.ElRegistroFijaTasa" style="width:15px;">
+                    El Registro procederá a fijar la tasa correspondientes para cubrir el examen de fondo, la cual deberá hacerse efectiva dentro del mes siguiente a la fecha de la notificacion al solicitante de la orden de pago respectiva, pues de lo contrario la solicitud se tendrá por abandonada.  (Art. 117).
+                </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha de Notificacion</label>
+            <p class="input-group">
+                <input type="text" name="FechaNotificacion3" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaNotificacion3" is-open="fecha2.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fecha2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="checkbox-inline">
+                <label>
+                    <input type="checkbox" ng-model="_resolucion.SolicitudesDeConformidad" style="width:15px;">
+                    Salvo aquellos casos en los que se establezca un plazo específico, las solicitudes que se presenten de conformidad
+                </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha de Notificacion</label>
+            <p class="input-group">
+                <input type="text" name="FechaNotificacion4" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaNotificacion4" is-open="fecha3.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fecha3')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="Razon_De_Abandono(_resolucion)">Grabar e Imprimir Resolucion</button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_AdminCanvas.cshtml";
+}
+
+<style>
+    .ln-space {
+        height:4px;
+    }
+</style>
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Nombre", new { @for="Usuario" })
+        @Html.TextBox("Usuario",string.Empty, new { @class="form-control", @placeholder="Usuario"})
+    </div>
+</div></div>
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Correo electronico", new { @for="Usuario" })
+        @Html.TextBox("Usuario",string.Empty, new { @class="form-control", @placeholder="email@mail.com"})
+    </div>
+</div></div>
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Red Social:", new { @for="RedSocial" })
+        @Html.TextBox("RedSocial",string.Empty, new { @class="form-control", ReadOnly="ReadOnly"})
+    </div>
+</div></div>
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Telefono:", new { @for="Telefono" })
+        @Html.TextBox("Telefono",string.Empty, new { @class="form-control", @placeholder="Telefono"})
+    </div>
+</div></div>
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Empresa o Institución:", new { @for="Empresa" })
+        @Html.TextBox("Empresa",string.Empty, new { @class="form-control", @placeholder="Empresa o Institución"})
+    </div>
+</div></div>
+
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Pais:", new { @for="Pais" })
+        @Html.TextBox("Pais",string.Empty, new { @class="form-control", @placeholder="Pais"})
+    </div>
+</div></div>
+
+<div class="form-group"><div class="row">
+	<div class="col-md-10">
+        @Html.Label("Direccion:", new { @for="Direccion" })
+        @Html.TextBox("Direccion",string.Empty, new { @class="form-control", @placeholder="Direccion"})
+    </div>
+</div></div>
+
+@* Reset password/Block Account *@
+
+
+<div class="form-group"><div class="row">
+	<div class="col-md-1">
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+    </div>
+	<div class="col-md-1"> @*Desbloquear*@
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span>Bloquear</button>
+    </div>
+	<div class="col-md-1"> @*Desbloquear*@
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span>Resetear clave</button>
+    </div>
+</div></div>

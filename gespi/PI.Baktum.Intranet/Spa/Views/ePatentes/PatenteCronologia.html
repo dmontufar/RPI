@@ -1,0 +1,36 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-10">
+                <style>
+                    #grdCronologia:after {
+                        content: "Cronologia";
+                    }
+                </style>
+                <div class="boxy" id="grdCronologia">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Actividad/Evento</th>
+                                <th>Referencia</th>
+                                <th>Usuario</th>
+                                <th>[...]</th><!--Link to the changes made to the file, including user who autorized the changes and observaciones-->
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="crono in model.Cronologia">
+                                <td>{{crono.Fecha | date:'dd/MM/yyyy'}}</td>
+                                <td><a href="#/cronologia/{{crono.Id}}" style="display:block;">{{ crono.EstatusDescripcion }}</a></td>
+                                <td>{{crono.Referencia}}</td>
+                                <td data-toggle="tooltip" data-placement="bottom" title="{{crono.Observaciones}}">{{crono.UsuarioIniciales}}</td>
+                                <td><a href="#">...</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

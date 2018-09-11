@@ -1,0 +1,74 @@
+﻿<!--Notificacion-->
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="col-md-2">
+            <label>Hora</label>
+            <input type="text" name="Hora" ng-model="_resolucion.Hora" class="form-control" ui-mask="99:99" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-8">
+            <label>Direccion:</label>
+            <input type="text" name="Direccion" ng-model="_resolucion.Direccion" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-8">
+            <div class="checkbox-inline">
+                <label>
+                    <input type="checkbox" ng-model="_resolucion.AutoRPIDireccion" style="width:15px;">SEDE DEL REGISTRO DE LA PROPIEDAD INTELECTUAL
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Entregada a:</label>
+            <input type="text" name="EntregadaA" ng-model="_resolucion.EntregadaA" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha Resolucion</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucionEmitida" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucionEmitida" is-open="fnoti.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fnoti')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="Notificacion(_resolucion)">Grabar e Imprimir Notificacion</button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+

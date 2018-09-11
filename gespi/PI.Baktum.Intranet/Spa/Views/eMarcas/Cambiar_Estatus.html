@@ -1,0 +1,48 @@
+﻿<form name='frmResol' novalidate="">
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Fecha de Cambio</label>
+                <p class="input-group">
+                    <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    <span class="label label-danger" ng-show="frmResol.FechaResolucion.$error.required">Este campo es requerido.<br /></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Cambio de estatus a:</label>
+                <select class="form-control" name="EstatusId" ng-model="_resolucion.EstatusId" ng-options="e.Descripcion for e in Estatuses"></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <label>Responsable:</label>
+                <p>Yo, {{user.userName}} me hago responsable del cambio de estatus de este expediente.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-info btn-lg" ng-click="Cambiar_Estatus(_resolucion)">Cambiar Estatus</button>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-info btn-lg" js-click="showOffCanvas()" confirmed-click="Resolucion('')" ng-confirm-click="Esta segur@ de Proceder?">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</form>

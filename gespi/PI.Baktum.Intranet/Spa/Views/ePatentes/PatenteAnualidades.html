@@ -1,0 +1,127 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <style>
+                    #grdAnualidades:after {
+                        content: "Anualidades";
+                    }
+                </style>
+                <div class="boxy" id="grdAnualidades">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>No</th>
+                                <th>Fecha Vencimiento</th>
+                                <th>Recibo</th>
+                                <th>Fecha Recibo</th>
+                                <th>Observaciones</th>
+                                <th>Usuario</th>
+                                <th>Valor</th>
+                                <th>Renova</th>
+                                <th>F. Anualidad</th>
+                                <th>Imprime</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="anual in model.Anualidades">
+                                <td>{{anual.NumeroAnualidad }}</td>
+                                <td>{{anual.FechaVencimiento | date:'dd/MM/yyyy'}}</td>
+                                <td>{{anual.Recibo}}</td>
+                                <td>{{anual.FechaRecibo | date:'dd/MM/yyyy'}}</td>
+                                <td>{{anual.Observaciones}}</td>
+                                <td>{{anual.UsuarioId}}</td>
+                                <td>{{anual.Valor}}</td>
+                                <td>{{anual.EsRenovacion ? "SI" : "NO" }}</td>
+                                <td>{{anual.FechaAnualidad | date:'dd/MM/yyyy'}}</td>
+                                <td></td>
+                                <td><a confirmed-click="deleteAnualidad(anual)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <form name='frmAnual'>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-3">
+                    No. Anualidad<input type="text" name="NumeroAnualidad" ng-model="anual.NumeroAnualidad" class="form-control" placeholder="# Anualidad" required />
+                    <span class="label label-danger" ng-show="frmAnual.NumeroAnualidad.$error.required">Ingrese No. Anualidad<br /></span>
+                </div>
+                <div class="col-md-3">
+                    Fecha Anualidad
+                    <p class="input-group">
+                        <input type="text" name="FechaAnualidad" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="anual.FechaAnualidad" is-open="fa.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event, 'fa')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <span class="label label-danger" ng-show="frmAnual.FechaAnualidad.$error.required">Ingrese Fecha Anualidad<br /></span>
+                </div>
+                <div class="col-md-3">
+                    <div class="checkbox-inline">
+                        <label>
+                            <input type="checkbox" ng-model="anual.EsRenovacion" style="width:15px;">Es Renovación
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    Fecha Vencimiento
+                    <p class="input-group">
+                        <input type="text" name="FechaVencimiento" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="anual.FechaVencimiento" is-open="fv.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event, 'fv')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <span class="label label-danger" ng-show="frmAnual.FechaVencimiento.$error.required">Ingrese Fecha Vencimiento<br /></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-3">
+                    Valor<input type="text" name="Valor" ng-model="anual.Valor" class="form-control" ui-mask="9?9?9?999.9?9?" required />
+                    <span class="label label-danger" ng-show="frmAnual.Valor.$error.required">Ingrese Valor<br /></span>
+                </div>
+                <div class="col-md-3">
+                    Recibo<input type="text" name="Recibo" ng-model="anual.Recibo" class="form-control" placeholder="recibo" required />
+                    <span class="label label-danger" ng-show="frmAnual.Recibo.$error.required">Ingrese Recibo<br /></span>
+                </div>
+                <div class="col-md-3">
+                    Fecha Recibo
+                    <p class="input-group">
+                        <input type="text" name="FechaRecibo" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="anual.FechaRecibo" is-open="fr.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event, 'fr')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <span class="label label-danger" ng-show="frmAnual.FechaRecibo.$error.required">Ingrese Fecha Recibo<br /></span>
+                </div>
+                <div class="col-md-3">
+                    Observaciones<input type="text" name="Observaciones" ng-model="anual.Observaciones" class="form-control" placeholder="observaciones" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-toolbar" role="toolbar">
+                        <button type="button" class="btn btn-info" ng-click="saveAnualidad(anual)" ng-disabled="frmAnual.$invalid"><span class="glyphicon glyphicon-floppy-save"></span> Grabar</button>
+                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-print"></span> Imp Anualidad</button>
+                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-print"></span> Certificado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

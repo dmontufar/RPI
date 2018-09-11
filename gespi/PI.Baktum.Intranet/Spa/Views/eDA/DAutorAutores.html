@@ -1,0 +1,132 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Nombre</label>
+                <input type="text" name="i_Autor_Nombre" ng-model="autor.NombreAutor" class="form-control" placeholder="Nombre" />
+            </div>
+            <div class="col-md-3">
+                <label>Edad</label>
+                <input type="text" name="i_Autor_Edad" ng-model="autor.Edad" class="form-control" placeholder="Edad" />
+            </div>
+            <div class="col-md-3">
+                <label>Estado Civil</label>
+                <select class="form-control" name="i_Autor_EstadoCivil" ng-model="autor.EstadoCivil" ng-options="t.Id as t.Nombre for t in estadoCivilLst"></select><br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Profesion u Officio</label>
+                <input type="text" name="i_Autor_Profesion" ng-model="autor.Profesion" class="form-control" placeholder="Profesion..." />
+            </div>
+            <div class="col-md-8">
+                <label>Domicilio</label>
+                <input type="text" name="i_Autor_Domicilio" ng-model="autor.Domicilio" class="form-control" placeholder="Domicilio..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <label>Nacionalidad</label>
+                <input type="text" name="i_Autor_Nacionalidad" ng-model="autor.Nacionalidad" class="form-control" placeholder="Nacionalidad..." />
+            </div>
+            <div class="col-md-2">
+                <label>Identificacion</label>
+                <input type="text" name="i_Autor_Identificacion" ng-model="autor.Identificacion" class="form-control" placeholder="Identificacion..." />
+            </div>
+            <div class="col-md-8">
+                <label>Lugar para recibir notificaciones</label>
+                <input type="text" name="i_Autor_LugarNotificaciones" ng-model="autor.LugarNotificacion" class="form-control" placeholder="Lugar para recibir notificaciones..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Tel</label>
+                <input type="text" name="i_Autor_Tel" ng-model="autor.Telefono" class="form-control" placeholder="Tel..." />
+            </div>
+            <div class="col-md-4">
+                <label>Fax</label>
+                <input type="text" name="i_Autor_Fax" ng-model="autor.Fax" class="form-control" placeholder="Fax..." />
+            </div>
+            <div class="col-md-4">
+                <label>Email</label>
+                <input type="text" name="i_Autor_Email" ng-model="autor.Email" class="form-control" placeholder="Email..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Fecha de Nacimiento</label>
+                <p class="input-group">
+                    <input type="text" name="i_Autor_FechaNacimiento" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="autor.FechaNacimiento" is-open="afn.open" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'afn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <label>Fecha de Defuncion</label>
+                <p class="input-group">
+                    <input type="text" name="i_Autor_FechaDef" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="autor.FechaDef" is-open="afd.open" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'afd')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <label>Datos Bibliograficos</label>
+                <input type="text" name="i_Autor_DatosBibliograficos" ng-model="autor.DatosBibliograficos" class="form-control" placeholder="Datos Bibliograficos..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-info btn-block" style="float:right" ng-click="saveAutor(autor)">Agregar Autor</button>
+            <br />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <style>
+                #grdAutores:after {
+                    content: "Datos del(os) Autor(es)";
+                }
+            </style>
+            <div class="col-md-7">
+                <div class="boxy" id="grdAutores">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Nombre del Autor</th>
+                                <th>Autor</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="a in model.Autores">
+                                <td>{{a.NombreAutor}}</td>
+                                <td>{{a.Profesion}}</td>
+                                <td><a confirmed-click="deleteAutor(a)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

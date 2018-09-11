@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;    
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<center>
+<h4><strong>
+EXP: @res.kind @solicitud.Expediente.Numero.Insert(4, "-")<br>
+CAMBIO DE NOMBRE DE TITULAR<br>
+El Registro de la Propiedad Intelectual, Certifica:
+</strong></h4></center><br>
+<p>Que en la presente fecha, [dbreport.CFECHA]</p>
+<p>número @solicitud.Patente.Registro  @Common.Web.Util.getNumeroEnLetras((int)solicitud.Patente.Registro)</p>
+<p>Folio @solicitud.Patente.Folio  @Common.Web.Util.getNumeroEnLetras((int)solicitud.Patente.Folio)</p>
+<p>Tomo @solicitud.Patente.Tomo @Common.Web.Util.getNumeroEnLetras((int)solicitud.Patente.Tomo)</p><br>
+<p>quedo registrada a favor de [dbreport.A_FAVOR_DE]</p>
+<p>de nacionalidad [dbreport.NACIONALIDAD]</p>
+<p>con domicilio en [dbreport.DOMICILIO]</p>
+<p>en virtud de el CAMBIO DE NOMBRE DE TITULAR que sufriera la entidad [dbreport.TITULAR_ANT]</p>
+<p>de nacionalidad [dbreport.NACIONALIDAD_ANT]</p>
+<p>con domicilio en [dbreport.DOMICILIO_ANT]</p>
+<p>Dicha(o) [DBREPORT.TIPO]</p>
+<p>se incribió el [DBREPORT.INSCRITA_EL]</p><br>
+<p>actualmente tiene una vigencia [DBREPORT.VIGENCIA]</p>
+<p>al [DBREPORT.AL]</p><br>
+<p>Para los efectos de Ley, se extiende el presente certificado en la Ciudad de Guatemala a</p>
+<p>DBREPORT.SE_EXTIENDE</p>
+

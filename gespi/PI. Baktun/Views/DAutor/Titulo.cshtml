@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DERECHOS DE AUTOR Y DERECHOS CONEXOS";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+    //var solicitud = @ViewData.Eval("Solicitud") as PI.Models.ExpedienteDAutor;
+    //var tramite = @ViewData.Eval("Tramite") as PI.Models.DAResolucion;
+    //var solicitud = Model.Solicitud as PI.Models.ExpedienteDAutor;
+    //var tramite = Model.Tramite as PI.Models.DAResolucion;
+}
+<style>
+    .membrete {
+        display:block;
+        height:90px;
+        width:100%;
+    }
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    section {
+        width: 100%;
+        margin-bottom: 20px;
+        display: table;
+    }
+
+        section p, section h3,section h4 {
+            text-align: center;
+        }
+
+    .col-left {
+        text-align: right;
+        margin-left: 20px;
+        width: 25%;
+        float: left;
+    }
+
+    .col-right {
+        text-align: justify;
+        width: 70%;
+        margin-left: 2px;
+        margin-right: 10px;
+        display: block;
+        float: right;
+    }
+    .init-page {
+        page-break-before: always;
+    }
+</style>
+
+
+<div class="membrete"></div>
+@Html.Partial("TituloHeader")
+<section>
+    <p><h3>I N S C R I P C I O N</h3></p>
+</section>
+@if (tramite.IsRepo)
+{
+    <section>
+        <h4>R E P O S I C I O N</h4>
+    </section>
+}
+@Html.Partial("TituloBody")
+
+@* CERTIFICADO - DOS COPIAS *@
+<div class="membrete"></div>
+<div class="init-page"></div>
+@Html.Partial("TituloHeader")
+<section>
+    <p><h3>C E R T I F I C A D O</h3></p>
+</section>
+@Html.Partial("TituloBody")
+
+<div class="membrete"></div>
+<div class="init-page"></div>
+@Html.Partial("TituloHeader")
+<section>
+    <p><h3>C E R T I F I C A D O</h3></p>
+</section>
+@Html.Partial("TituloBody")
+
+

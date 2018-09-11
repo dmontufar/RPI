@@ -1,0 +1,76 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Titulo de Obra</label>
+                <input type="text" name="i_Fono_TituloDeObra" ng-model="fonoObra.TituloObra" class="form-control" placeholder="Titulo de Obra" />
+                <label>Autor</label>
+                <input type="text" name="i_Fono_Autor" ng-model="fonoObra.NombreAutor" class="form-control" placeholder="Autor..." />
+                <button type="button" class="btn btn-info btn-xs" ng-click="saveFonogramaTituloDeObra(fonoObra)"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdTituloObrasFon:after {
+                    content: "Titulo de Obras en Fonograma";
+                }
+            </style>
+            <div class="col-md-7">
+                <div class="boxy" id="grdTituloObrasFon">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Titulo de Obra</th>
+                                <th>Autor</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="fono in model.FonogramaTituloDeObras">
+                                <td>{{fono.TituloObra}}</td>
+                                <td>{{fono.NombreAutor}}</td>
+                                <td><a confirmed-click="deleteFonogramaTituloDeObra(fono)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Nombre de Artistas, Interpretes o Ejecutantes</label>
+                <input type="text" name="i_fonoa_NombreArtista" ng-model="fonoArtista.NombreArtista" class="form-control" placeholder="Nombre del Artista, Interprete o Ejecutante (s)" />
+                <button type="button" class="btn btn-info btn-xs" ng-click="saveFonogramaArtista(fonoArtista)"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdArtistasFon:after {
+                    content: "Artistas";
+                }
+            </style>
+            <div class="col-md-7">
+                <div class="boxy" id="grdArtistasFon">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Artistas/Interpretes/Ejecutantes</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="fonoArt in model.FonogramaArtistas">
+                                <td>{{fonoArt.NombreArtista}}</td>
+                                <td><a confirmed-click="deleteFonogramaArtista(fonoArt)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

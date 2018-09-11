@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca4d83fb6ccc40c4a5e91ced66a2fa31" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="GPIModel.Titulare" Width="1.5" PointX="12.75" PointY="11.375" />
+        <EntityTypeShape EntityType="GPIModel.Bitacora" Width="1.5" PointX="3" PointY="5.875" />
+        <EntityTypeShape EntityType="GPIModel.ClasificacionDeViena" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.ClassificacionDeNiza" Width="1.5" PointX="3.75" PointY="9.125" />
+        <EntityTypeShape EntityType="GPIModel.Correlativos" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Cronologia" Width="1.5" PointX="3" PointY="20" />
+        <EntityTypeShape EntityType="GPIModel.Estatus" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.gaceta" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Leyes" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="GPIModel.LogosMarcas" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="GPIModel.LoteExpedientes" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Lote" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GPIModel.Mandatarios" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="GPIModel.Marca" Width="1.5" PointX="6" PointY="6.375" />
+        <EntityTypeShape EntityType="GPIModel.Modulo" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="GPIModel.Pais" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="GPIModel.PrioridadMarca" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Productividad" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="GPIModel.ProductosMarca" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GPIModel.TiposDeMarca" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="GPIModel.TiposDeRegistro" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="GPIModel.Ubicaciones" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="GPIModel.VienaMarcas" Width="1.5" PointX="4.75" PointY="14.75" />
+        <AssociationConnector Association="GPIModel.FK_Marcas_ClassificacionDeNiza" />
+        <EntityTypeShape EntityType="GPIModel.AudiovisualAutor" Width="1.5" PointX="15.375" PointY="11.75" />
+        <EntityTypeShape EntityType="GPIModel.ComposicionAutor" Width="1.5" PointX="13.375" PointY="15.75" />
+        <EntityTypeShape EntityType="GPIModel.DAResolucion" Width="1.5" PointX="15.375" PointY="14.75" />
+        <EntityTypeShape EntityType="GPIModel.FonogramaArtista" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Formularios" Width="1.5" PointX="17.375" PointY="3.75" />
+        <EntityTypeShape EntityType="GPIModel.GuionAutor" Width="1.5" PointX="17.375" PointY="6.75" />
+        <EntityTypeShape EntityType="GPIModel.Templates" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Abandonos" Width="1.5" PointX="19.375" PointY="3.75" />
+        <EntityTypeShape EntityType="GPIModel.Agente" Width="1.5" PointX="5.375" PointY="19.75" />
+        <EntityTypeShape EntityType="GPIModel.Clasificacion" Width="1.5" PointX="7.375" PointY="19.75" />
+        <EntityTypeShape EntityType="GPIModel.Inventor" Width="1.5" PointX="19.375" PointY="11.75" />
+        <EntityTypeShape EntityType="GPIModel.IPC" Width="1.5" PointX="19.375" PointY="15.75" />
+        <EntityTypeShape EntityType="GPIModel.Prioridad" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Resolucion" Width="1.5" PointX="11.375" PointY="20.75" />
+        <EntityTypeShape EntityType="GPIModel.Titulos" Width="1.5" PointX="21.375" PointY="3.75" />
+        <EntityTypeShape EntityType="GPIModel.OpcionesPorEvento" Width="1.5" PointX="13.375" PointY="21.75" />
+        <EntityTypeShape EntityType="GPIModel.Areas" Width="1.5" PointX="19.375" PointY="22.875" />
+        <EntityTypeShape EntityType="GPIModel.Anualidad" Width="1.5" PointX="7.375" PointY="23.75" />
+        <EntityTypeShape EntityType="GPIModel.Opciones" Width="1.5" PointX="19.75" PointY="8.25" />
+        <EntityTypeShape EntityType="GPIModel.Eventos" Width="1.5" PointX="21.5" PointY="10.375" />
+        <EntityTypeShape EntityType="GPIModel.Rol" Width="1.5" PointX="15.375" PointY="23.75" />
+        <EntityTypeShape EntityType="GPIModel.Usuario" Width="1.5" PointX="23.375" PointY="17.75" />
+        <EntityTypeShape EntityType="GPIModel.UsuarioPublico" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GPIModel.Publicacion" Width="1.5" PointX="9.125" PointY="23.625" />
+        <EntityTypeShape EntityType="GPIModel.Favorito" Width="1.5" PointX="26.5" PointY="1" />
+        <EntityTypeShape EntityType="GPIModel.GrupoExpediente" Width="1.5" PointX="28.5" PointY="1" />
+        <EntityTypeShape EntityType="GPIModel.GrupoMiembro" Width="1.5" PointX="30.375" PointY="1" />
+        <EntityTypeShape EntityType="GPIModel.Grupo" Width="1.5" PointX="26.5" PointY="3" />
+        <EntityTypeShape EntityType="GPIModel.Session" Width="1.5" PointX="15.125" PointY="3.875" />
+        <EntityTypeShape EntityType="GPIModel.Sequence" Width="1.5" PointX="24.375" PointY="10.75" />
+        <EntityTypeShape EntityType="GPIModel.Auditoria" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="GPIModel.Expediente" Width="1.5" PointX="0.5" PointY="10.75" />
+        <AssociationConnector Association="GPIModel.FK_Bitacora_Expedientes" />
+        <AssociationConnector Association="GPIModel.FK_Cronologia_Expedientes" />
+        <AssociationConnector Association="GPIModel.FK_Marcas_Expedientes" />
+        <EntityTypeShape EntityType="GPIModel.AporteAudiovisual" Width="1.5" PointX="7" PointY="27.75" />
+        <EntityTypeShape EntityType="GPIModel.DerechoDeAutor" Width="1.5" PointX="2.875" PointY="27.75" />
+        <EntityTypeShape EntityType="GPIModel.LiterariasyArtisticas" Width="1.5" PointX="8.875" PointY="28.25" />
+        <EntityTypeShape EntityType="GPIModel.ObrasMusicalesyEscenicas" Width="1.5" PointX="4.875" PointY="27.75" />
+        <EntityTypeShape EntityType="GPIModel.Productor" Width="1.5" PointX="0.5" PointY="29.625" />
+        <EntityTypeShape EntityType="GPIModel.Solicitante" Width="1.5" PointX="10.75" PointY="28.125" />
+        <EntityTypeShape EntityType="GPIModel.Autor" Width="1.5" PointX="12.875" PointY="28.25" />
+        <EntityTypeShape EntityType="GPIModel.FonogramaTituloDeObra" Width="1.5" PointX="15" PointY="28.25" />
+        <EntityTypeShape EntityType="GPIModel.Permiso" Width="1.5" PointX="7.375" PointY="16.75" />
+        <EntityTypeShape EntityType="GPIModel.TitularesDeLaMarca" Width="1.5" PointX="6" PointY="3.75" />
+        <EntityTypeShape EntityType="GPIModel.Patente" Width="1.5" PointX="15.375" PointY="17.75" />
+        <EntityTypeShape EntityType="GPIModel.CronologiaDocto" Width="1.5" PointX="3" PointY="23.375" />
+        <AssociationConnector Association="GPIModel.FK_LogosMarcas_Marcas" />
+        <AssociationConnector Association="GPIModel.FK_ProductosMarcas_Marcas" />
+        <AssociationConnector Association="GPIModel.FK_VienaMarcas_Marcas" />
+        <EntityTypeShape EntityType="GPIModel.MandatarioDeLaMarca" Width="1.5" PointX="17.375" PointY="18.75" />
+        <EntityTypeShape EntityType="GPIModel.Renovacion" Width="1.5" PointX="2.75" PointY="39.625" />
+        <AssociationConnector Association="GPIModel.FK_Renovaciones_Expedientes" />
+        <EntityTypeShape EntityType="GPIModel.Anotacion" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="GPIModel.TitularDeLaPatente" Width="1.5" PointX="9.375" PointY="16.75" />
+        <EntityTypeShape EntityType="GPIModel.TitularEnPatentes" Width="1.5" PointX="19.375" PointY="18.75" />
+        <EntityTypeShape EntityType="GPIModel.AnotacionEnExpedientes" Width="1.5" PointX="5.5" PointY="34.875" />
+        <AssociationConnector Association="GPIModel.FK_Anotaciones_Expedientes" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿<div ng-include="'./Spa/Views/eMarcas/MAR000.html'"></div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Gestor</label>
+            <textarea rows="2" cols="10" name="Gestor" ng-model="_resolucion.Gestor" class="form-control" placeholder="Gestor" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Entidad</label>
+            <textarea rows="2" cols="10" name="Entidad" ng-model="_resolucion.Entidad" class="form-control" placeholder="Entidad" />
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="Traspaso(_resolucion)">Grabar e Imprimir Resolucion</button>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+

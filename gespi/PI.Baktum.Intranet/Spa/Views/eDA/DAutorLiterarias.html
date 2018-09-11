@@ -1,0 +1,54 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Nombre del Editor</label>
+                <input type="text" name="Expediente__LiterariasyArtisticas__NombreDelEditor" ng-model="model.LiterariasyArtisticas.NombreDelEditor" class="form-control" placeholder="Editor..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Direccion</label>
+                <input type="text" name="Expediente__LiterariasyArtisticas__DireccionEditor" ng-model="model.LiterariasyArtisticas.DireccionEditor" class="form-control" placeholder="Direccion..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Nombre Imprenta</label>
+                <input type="text" name="Expediente__LiterariasyArtisticas__NombreImprenta" ng-model="model.LiterariasyArtisticas.NombreImprenta" class="form-control" placeholder="Nombre Imprenta..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Direccion Imprenta</label>
+                <input type="text" name="Expediente__LiterariasyArtisticas__DireccionImprenta" ng-model="model.LiterariasyArtisticas.DireccionImprenta" class="form-control" placeholder="Direccion Imprenta..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Lugar de Edicion</label>
+                <input type="text" name="Expediente__LiterariasyArtisticas__Edicion" ng-model="model.LiterariasyArtisticas.Edicion" class="form-control" placeholder="Lugar de Edicion..." />
+            </div>
+            <div class="col-md-4">
+                <label>Tamano</label>
+                <input type="text" name="Expediente__LiterariasyArtisticas__Tamano" ng-model="model.LiterariasyArtisticas.Tamano" class="form-control" placeholder="Tamano..." />
+            </div>
+            <div class="col-md-4">
+                <label>Clasificacion</label>
+                <select class="form-control" name="Expediente__LiterariasyArtisticas__Clasificacion" ng-model="model.LiterariasyArtisticas.Clasificacion" ng-options="t.Id as t.Nombre for t in classObra"></select><br />
+            </div>
+        </div>
+    </div>
+</div>

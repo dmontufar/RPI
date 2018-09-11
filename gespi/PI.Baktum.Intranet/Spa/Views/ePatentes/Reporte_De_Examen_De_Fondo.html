@@ -1,0 +1,200 @@
+﻿<!--Reporte de exámen de fondo-->
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Resolucion</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <label>Fecha Reporte:</label>
+            <p class="input-group">
+                <input type="text" name="FechaReporte" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaReporte" is-open="fmem.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fmem')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <label>Fecha Requerimiento</label>
+            <p class="input-group">
+                <input type="text" name="FechaRequerimiento" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaRequerimiento" is-open="fnoti.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fnoti')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-5">
+            <label>Clasificacion usada para la busqueda:</label>
+            <textarea rows="2" cols="10" name="Clasificacion" ng-model="_resolucion.Clasificacion" class="form-control" placeholder="Clasificacion" />
+        </div>
+        <div class="col-md-5">
+            <label>Documentos estudiados:</label>
+            <textarea rows="2" cols="10" name="Documentos" ng-model="_resolucion.Documentos" class="form-control" placeholder="Documentos estudiados..." />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-5">
+            <label>Bases de datos consultadas:</label>
+            <textarea rows="2" cols="10" name="BasesDeDatos" ng-model="_resolucion.BasesDeDatos" class="form-control" placeholder="Bases de datos... " />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Novedad ( Artículo 94 ):</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="NovedadSI" ng-model="_resolucion.NovedadSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="NovedadNO" ng-model="_resolucion.NovedadNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Nivel inventivo ( Articulo 95)</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="NivelInventivoSI" ng-model="_resolucion.NivelInventivoSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="NivelInventivoNO" ng-model="_resolucion.NivelInventivoNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Aplicabilidad industrial ( Articulo 96)</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="AplicabilidadIndustrialSI" ng-model="_resolucion.AplicabilidadIndustrialSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="AplicabilidadIndustrialNO" ng-model="_resolucion.AplicabilidadIndustrialNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Reivindicaciones sustentadas por la descripción</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="ReivindicacionesSI" ng-model="_resolucion.ReivindicacionesSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="ReivindicacionesNO" ng-model="_resolucion.ReivindicacionesNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Presentan Claridad:</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="ClaridadSI" ng-model="_resolucion.ClaridadSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="ClaridadNO" ng-model="_resolucion.ClaridadNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Presentan multiple dependencia:</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="MultipleDependenciaSI" ng-model="_resolucion.MultipleDependenciaSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="MultipleDependenciaNO" ng-model="_resolucion.MultipleDependenciaNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+            <label>Materia excluida de patentabilidad:</label>
+        </div>
+        <div class="col-md-5">
+            <label>SI:</label>
+            <textarea rows="1" cols="10" name="ExcluidaDePatentabilidadSI" ng-model="_resolucion.ExcluidaDePatentabilidadSI" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-5">
+            <label>NO:</label>
+            <textarea rows="1" cols="10" name="ExcluidaDePatentabilidadNO" ng-model="_resolucion.ExcluidaDePatentabilidadNO" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Determinacion Del Estado De La Técnica:</label>
+            <textarea rows="2" cols="10" name="DeterminacionDeLaTecnica" ng-model="_resolucion.DeterminacionDeLaTecnica" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Evaluación Del Estado De La Técnica:</label>
+            <textarea rows="2" cols="10" name="EvaluacionDeLaTecnica" ng-model="_resolucion.EvaluacionDeLaTecnica" class="form-control" placeholder="" />
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="Reporte_De_Examen_De_Fondo(_resolucion)">Grabar e Imprimir Resolucion</button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{439BE037-E899-48F9-9F63-C522B3B31C6E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PI.Baktum.Intranet</RootNamespace>
+    <AssemblyName>PI.Baktum.Intranet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\eRPIController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bootstrap\css\bootstrap.css" />
+    <Content Include="Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Bootstrap\css\LogIn.css" />
+    <Content Include="Bootstrap\custom - Copy.css" />
+    <Content Include="Bootstrap\custom.css" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Bootstrap\js\bootstrap.js" />
+    <Content Include="Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\textAngular.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\CopyRights.png" />
+    <Content Include="Images\DCHATRS.jpg" />
+    <Content Include="Images\GCTA.png" />
+    <Content Include="Images\JRPDCIA.jpg" />
+    <Content Include="Images\MRKS.jpg" />
+    <Content Include="Images\Patents.png" />
+    <Content Include="Images\PTNS.jpg" />
+    <Content Include="Images\RPILogo.jpg" />
+    <Content Include="Images\Trademarks.png" />
+    <Content Include="Logos\fishes.png" />
+    <Content Include="Logos\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Logos\RPILogo.jpg" />
+    <Content Include="Logos\TM.png" />
+    <Content Include="Logos\view_edicto.png" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Logos\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Logos\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Logos\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Logos\XXXX-XXXX.pdf" />
+    <Content Include="Scripts\appUtils.js" />
+    <Content Include="Scripts\Chart.Core.min.js" />
+    <Content Include="Scripts\chart.min.js" />
+    <Content Include="Scripts\Chart.Scatter.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jrzStorage.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\textAngular-rangy.min.js" />
+    <Content Include="Scripts\textAngular-sanitize.min.js" />
+    <Content Include="Scripts\textAngular.min.js" />
+    <Content Include="Scripts\textAngularSetup.js" />
+    <Content Include="Scripts\tinymce.js" />
+    <Content Include="Scripts\ui-utils.js" />
+    <Content Include="Scripts\ui-utils.min.js" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Spa\App\appAdmin.js" />
+    <Content Include="Spa\App\appBase.js" />
+    <Content Include="Spa\App\appeRPI.js" />
+    <Content Include="Spa\App\Temp.js" />
+    <Content Include="Spa\Controllers\AgentesCtrlr.js" />
+    <Content Include="Spa\Controllers\AllControllers.js" />
+    <Content Include="Spa\Controllers\AnotacionesCtrlr.js" />
+    <Content Include="Spa\Controllers\appCtrlr.js" />
+    <Content Include="Spa\Controllers\authController.js" />
+    <Content Include="Spa\Controllers\CronCtrlr.js" />
+    <Content Include="Spa\Controllers\DACtrl.js" />
+    <Content Include="Spa\Controllers\eRPICtrl.js" />
+    <Content Include="Spa\Controllers\EstatusCtrlr.js" />
+    <Content Include="Spa\Controllers\EventosCtrlr.js" />
+    <Content Include="Spa\Controllers\HomeCtrl.js" />
+    <Content Include="Spa\Controllers\LeyesCtrlr.js" />
+    <Content Include="Spa\Controllers\marcas-busquedas-ctrlr.js" />
+    <Content Include="Spa\Controllers\MarcasCtrl.js" />
+    <Content Include="Spa\Controllers\MenueRPICtrl.js" />
+    <Content Include="Spa\Controllers\NizaCtrlr.js" />
+    <Content Include="Spa\Controllers\OpsXEventoCtrlr.js" />
+    <Content Include="Spa\Controllers\PaisesCtrlr.js" />
+    <Content Include="Spa\Controllers\PatenteCtrl.js" />
+    <Content Include="Spa\Controllers\RenovacionesCtrlr.js" />
+    <Content Include="Spa\Controllers\RolesCtrlr.js" />
+    <Content Include="Spa\Controllers\UsuariosCtrlr.js" />
+    <Content Include="Spa\Controllers\UsuariosExternosCtrlr.js" />
+    <Content Include="Spa\Controllers\ViennaCtrlr.js" />
+    <Content Include="Spa\Directives\GrlDirectives.js" />
+    <Content Include="Spa\Directives\MenuBarDirective.js" />
+    <Content Include="Spa\Directives\ngAutocomplete.js" />
+    <Content Include="Spa\Directives\ui-date.js" />
+    <Content Include="Spa\Directives\UserDirective.js" />
+    <Content Include="Spa\Factories\authFactory.js" />
+    <Content Include="Spa\Factories\formUtils.js" />
+    <Content Include="Spa\Factories\pageFactory.js" />
+    <Content Include="Spa\Factories\UsersFactory.js" />
+    <Content Include="Spa\Framework\angular-animate.js" />
+    <Content Include="Spa\Framework\angular-animate.min.js" />
+    <Content Include="Spa\Framework\angular-cookies.js" />
+    <Content Include="Spa\Framework\angular-cookies.min.js" />
+    <Content Include="Spa\Framework\angular-csp.css" />
+    <Content Include="Spa\Framework\angular-loader.js" />
+    <Content Include="Spa\Framework\angular-loader.min.js" />
+    <Content Include="Spa\Framework\angular-mocks.js" />
+    <Content Include="Spa\Framework\angular-resource.js" />
+    <Content Include="Spa\Framework\angular-resource.min.js" />
+    <Content Include="Spa\Framework\angular-route.js" />
+    <Content Include="Spa\Framework\angular-route.min.js" />
+    <Content Include="Spa\Framework\angular-sanitize.js" />
+    <Content Include="Spa\Framework\angular-sanitize.min.js" />
+    <Content Include="Spa\Framework\angular-scenario.js" />
+    <Content Include="Spa\Framework\angular-touch.js" />
+    <Content Include="Spa\Framework\angular-touch.min.js" />
+    <Content Include="Spa\Framework\angular.js" />
+    <Content Include="Spa\Framework\angular.min.js" />
+    <Content Include="Spa\Framework\bar\loading-bar.min.css" />
+    <Content Include="Spa\Framework\bar\loading-bar.min.js" />
+    <Content Include="Spa\Framework\pgntn\dirPagination.js" />
+    <Content Include="Spa\Framework\pgntn\dirPagination.tpl.html" />
+    <Content Include="Spa\Framework\ui-bootstrap-custom-0.10.0.min.js" />
+    <Content Include="Spa\Framework\ui-bootstrap-custom-tpls-0.10.0.min.js" />
+    <Content Include="Spa\mnuderechodeautor.js" />
+    <Content Include="Spa\mnumarcas.js" />
+    <Content Include="Spa\Views\Admin\Agentes.html" />
+    <Content Include="Spa\Views\Admin\AgentesAbc.html" />
+    <Content Include="Spa\Views\Admin\Estatus.html" />
+    <Content Include="Spa\Views\Admin\EstatusAbc.html" />
+    <Content Include="Spa\Views\Admin\Eventos.html" />
+    <Content Include="Spa\Views\Admin\EventosAbc.html" />
+    <Content Include="Spa\Views\Admin\Leyes.html" />
+    <Content Include="Spa\Views\Admin\Niza.html" />
+    <Content Include="Spa\Views\Admin\NizaAbc.html" />
+    <Content Include="Spa\Views\Admin\OpsXEvento.html" />
+    <Content Include="Spa\Views\Admin\Paises.html" />
+    <Content Include="Spa\Views\Admin\PaisesAbc.html" />
+    <Content Include="Spa\Views\Admin\Roles.html" />
+    <Content Include="Spa\Views\Admin\Usuarios.html" />
+    <Content Include="Spa\Views\Admin\UsuariosAbc.html" />
+    <Content Include="Spa\Views\Admin\UsuariosPerm.html" />
+    <Content Include="Spa\Views\Admin\UsuariosPublicos.html" />
+    <Content Include="Spa\Views\Admin\UsuariosPublicosAbc.html" />
+    <Content Include="Spa\Views\Admin\UsuariosPublicosResetPW.html" />
+    <Content Include="Spa\Views\Admin\UsuariosResetPW.html" />
+    <Content Include="Spa\Views\Admin\Vienna.html" />
+    <Content Include="Spa\Views\Admin\ViennaAbc.html" />
+    <Content Include="Spa\Views\Base\Home.html" />
+    <Content Include="Spa\Views\Base\Login.html" />
+    <Content Include="Spa\Views\eAnota\Anota.html" />
+    <Content Include="Spa\Views\eAnota\AnotaExpediente.html" />
+    <Content Include="Spa\Views\eAnota\AnotaSolicitud.html" />
+    <Content Include="Spa\Views\eAnota\ExpedienteConAnotacion.html" />
+    <Content Include="Spa\Views\eDA\00CambiarEstatus.html" />
+    <Content Include="Spa\Views\eDA\130conlugar.html" />
+    <Content Include="Spa\Views\eDA\130DARechazo.html" />
+    <Content Include="Spa\Views\eDA\130DAsuspenso.html" />
+    <Content Include="Spa\Views\eDA\131OperarMemorial.html" />
+    <Content Include="Spa\Views\eDA\133LevantarSuspenso.html" />
+    <Content Include="Spa\Views\eDA\135RecursoRevocatoria.html" />
+    <Content Include="Spa\Views\eDA\135ReposiciondeTitulo.html" />
+    <Content Include="Spa\Views\eDA\136ElevandoRecurso.html" />
+    <Content Include="Spa\Views\eDA\137PorRecibidoMINECOA.html" />
+    <Content Include="Spa\Views\eDA\137PorRecibidoMINECOR.html" />
+    <Content Include="Spa\Views\eDA\140EmitirTitulo.html" />
+    <Content Include="Spa\Views\eDA\140Notificar.html" />
+    <Content Include="Spa\Views\eDA\DA.html" />
+    <Content Include="Spa\Views\eDA\DAExpediente.html" />
+    <Content Include="Spa\Views\eDA\DAutorAudiovisual.html" />
+    <Content Include="Spa\Views\eDA\DAutorAutores.html" />
+    <Content Include="Spa\Views\eDA\DAutorCronologia.html" />
+    <Content Include="Spa\Views\eDA\DAutorEResolucion.html" />
+    <Content Include="Spa\Views\eDA\DAutorFonogramas.html" />
+    <Content Include="Spa\Views\eDA\DAutorLiterarias.html" />
+    <Content Include="Spa\Views\eDA\DAutorLogotipo.html" />
+    <Content Include="Spa\Views\eDA\DAutorMusicales.html" />
+    <Content Include="Spa\Views\eDA\DAutorOtrosDatos.html" />
+    <Content Include="Spa\Views\eDA\DAutorProductor.html" />
+    <Content Include="Spa\Views\eDA\DAutorSolicitante.html" />
+    <Content Include="Spa\Views\eDA\DAutorSolicitud.html" />
+    <Content Include="Spa\Views\eDA\DAutorTitulo.html" />
+    <Content Include="Spa\Views\eDA\DAutorUbicacion.html" />
+    <Content Include="Spa\Views\eDA\empty.html" />
+    <Content Include="Spa\Views\eMarcas\Abandono.html" />
+    <Content Include="Spa\Views\eMarcas\busquedas-ext.html" />
+    <Content Include="Spa\Views\eMarcas\Cambiar_Estatus.html" />
+    <Content Include="Spa\Views\eMarcas\Cancelacion.html" />
+    <Content Include="Spa\Views\eMarcas\Desistimiento.html" />
+    <Content Include="Spa\Views\eMarcas\Division_Registro.html" />
+    <Content Include="Spa\Views\eMarcas\Edictos.html" />
+    <Content Include="Spa\Views\eMarcas\Enmienda.html" />
+    <Content Include="Spa\Views\eMarcas\Errores_Materiales.html" />
+    <Content Include="Spa\Views\eMarcas\Gestor_Oficioso.html" />
+    <Content Include="Spa\Views\eMarcas\Home.html" />
+    <Content Include="Spa\Views\eMarcas\MAR000.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaCronologia.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaDigital.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaeDoctos.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaProductos.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaRegistro.html" />
+    <Content Include="Spa\Views\eMarcas\Marcas.html" />
+    <Content Include="Spa\Views\eMarcas\MarcasExpediente.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaSolicitud.html" />
+    <Content Include="Spa\Views\eMarcas\MarcaTitulares.html" />
+    <Content Include="Spa\Views\eMarcas\Notificaciones.html" />
+    <Content Include="Spa\Views\eMarcas\Objeciones_Fondo.html" />
+    <Content Include="Spa\Views\eMarcas\Objeciones_Forma.html" />
+    <Content Include="Spa\Views\eMarcas\old\mappings.txt" />
+    <Content Include="Spa\Views\eMarcas\old\MAR101.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR102.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR103.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR201.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR400.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR500.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR700.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR810.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR900.html" />
+    <Content Include="Spa\Views\eMarcas\old\MAR901.html" />
+    <Content Include="Spa\Views\eMarcas\Orden_de_Pago.html" />
+    <Content Include="Spa\Views\eMarcas\Rechazo_por_objecion.html" />
+    <Content Include="Spa\Views\eMarcas\Reposicion_de_edicto.html" />
+    <Content Include="Spa\Views\eMarcas\Requerimientos.html" />
+    <Content Include="Spa\Views\eMarcas\Resolucion_Customizada.html" />
+    <Content Include="Spa\Views\eMarcas\Revocatoria_de_Oficio.html" />
+    <Content Include="Spa\Views\eMarcas\Titulo.html" />
+    <Content Include="Spa\Views\eMarcas\Traspaso.html" />
+    <Content Include="Spa\Views\empty.html" />
+    <Content Include="Spa\Views\ePatentes\Admision_Tramite.html" />
+    <Content Include="Spa\Views\ePatentes\Admite_Observaciones.html" />
+    <Content Include="Spa\Views\ePatentes\Cambio_De_Nombre.html" />
+    <Content Include="Spa\Views\ePatentes\Certificaciones.html" />
+    <Content Include="Spa\Views\ePatentes\Desistimiento_Solicitud.html" />
+    <Content Include="Spa\Views\ePatentes\Edicto.html" />
+    <Content Include="Spa\Views\ePatentes\Gestor_Oficioso.html" />
+    <Content Include="Spa\Views\ePatentes\Informe_de_Busqueda.html" />
+    <Content Include="Spa\Views\ePatentes\Notificacion.html" />
+    <Content Include="Spa\Views\ePatentes\Orden_De_Pago.html" />
+    <Content Include="Spa\Views\ePatentes\Pago_Examen.html" />
+    <Content Include="Spa\Views\ePatentes\PAT022.html" />
+    <Content Include="Spa\Views\ePatentes\PAT023.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteAdminTramite.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteAnualidades.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteCronologia.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteDibujo.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteReqExamenDeForma.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteResumen.html" />
+    <Content Include="Spa\Views\ePatentes\Patentes.html" />
+    <Content Include="Spa\Views\ePatentes\PatentesExpediente.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteSolicitud.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteTitulares.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteTituloLeyAnterior.html" />
+    <Content Include="Spa\Views\ePatentes\PatenteUbicacion.html" />
+    <Content Include="Spa\Views\ePatentes\Publicaciones.html" />
+    <Content Include="Spa\Views\ePatentes\Razon_De_Abandono.html" />
+    <Content Include="Spa\Views\ePatentes\Reporte_De_Examen_De_Fondo.html" />
+    <Content Include="Spa\Views\ePatentes\Reposicion_Titulo_Patente.html" />
+    <Content Include="Spa\Views\ePatentes\Requerimiento_De_Examen_De_Forma.html" />
+    <Content Include="Spa\Views\ePatentes\Requerimiento_Examen_De_Fondo_A.html" />
+    <Content Include="Spa\Views\ePatentes\Requerimiento_Examen_de_Fondo_B.html" />
+    <Content Include="Spa\Views\ePatentes\Titulo.html" />
+    <Content Include="Spa\Views\ePatentes\Titulo_Renovacion.html" />
+    <Content Include="Spa\Views\ePatentes\Traspaso.html" />
+    <Content Include="Spa\Views\eRenovaciones\RenovacionExpediente.html" />
+    <Content Include="Spa\Views\eRenovaciones\RenovacionSolicitud.html" />
+    <Content Include="Spa\Views\shared\app-spinner.html" />
+    <Content Include="Spa\Views\shared\appPopupBoxMsg.html" />
+    <Content Include="Spa\Views\shared\cronologia.html" />
+    <Content Include="Spa\Views\shared\SolicitudTpl.html" />
+    <Content Include="Spa\Views\Templates\typeahead-match.html" />
+    <Content Include="Spa\Views\Templates\typeahead-popup.html" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Spa\Framework\angular-animate.min.js.map" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Base\Index.cshtml" />
+    <Content Include="Views\eRPI\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\HeaderAdmin.cshtml" />
+    <Content Include="Views\Shared\HeaderRecepcion.cshtml" />
+    <Content Include="Views\Shared\_AdminCanvas.cshtml" />
+    <Content Include="Views\Shared\_EdictoLayout.cshtml" />
+    <Content Include="Views\Shared\_Empty.cshtml" />
+    <Content Include="Views\Shared\_LayoutBase - Copy.cshtml" />
+    <Content Include="Views\Shared\_LayoutBase.cshtml" />
+    <Content Include="Views\Shared\_LayoutManager.cshtml" />
+    <Content Include="Views\Shared\_OffCanvasLayout.cshtml" />
+    <Content Include="Views\Shared\_RecepcionCanvas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61869</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64170/IntranetRPI</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

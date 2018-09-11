@@ -1,0 +1,30 @@
+﻿<br>
+<style>
+    #lstEventos:after {
+        content: "Evento";
+    }
+</style>
+<div class="boxy" id="lstEventos">
+    <div ng-controller="EventosCtrlr">
+
+        <form class="simple-form" name='form' novalidate>
+
+            <div class="alert alert-info" ng-show="showAlertInfo">{{alertInfo}}</div>
+            <input ng-hide="evento.Id" ng-model="evento.Id" />
+
+            Descripcion:<input type="text" name="Descripcion" ng-model="evento.Descripcion" class="form-control" required />
+            <span class="label label-danger" ng-show="form.Descripcion.$error.required">Descripcion de evento es requerido<br /></span><br />
+
+            Modulo:
+            <select class="form-control" name="ModuloId" ng-model="evento.ModuloId" ng-options="mod.Id as mod.name for mod in Modulos"></select>
+            <span class="label label-danger" ng-show="form.ModuloId.$error.required">Modulo es requerido<br /></span><br />
+
+            <a href="Admin#/Eventos/" class=" btn btn-default">Cancelar</a>
+
+            <button type="button" class="btn btn-primary" ng-click="update(evento)" ng-disabled="form.$invalid || isUnchanged(evento)">Grabar</button>
+
+        </form>
+
+    </div>
+</div>
+

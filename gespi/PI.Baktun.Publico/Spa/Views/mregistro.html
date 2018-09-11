@@ -1,0 +1,86 @@
+﻿
+<div class="panel panel-info" ng-controller="mexpedienteCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">Marcas - Consulta por Registro</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Tipo</label>
+                    <select class="form-control" name="TipoDeRegistroId" ng-model="model.Expediente.TipoDeRegistroId" ng-options="t.Nombre for t in tipoDeRegistroDeMarcas"></select>
+                </div>
+                <div class="col-md-3">
+                    <label>Registro</label>
+                    <input type="text" name="Registro" ng-model="model.Marca.Registro" class="form-control" placeholder="999999999" />
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="getExpedienteByRegistro(model.Expediente.TipoDeRegistroId, model.Marca.Registro)"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-default btn-block btn-xs" href="#" role="button">Expediente Digital</a>
+                    <a class="btn btn-default btn-block btn-xs" href="#" role="button">Edicto</a>
+                </div>
+                <div class="col-md-1">
+                    <div ng-include="'./Spa/Views/selectFavorito.html'"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Numero</label>
+                    <div class="form-control">{{model.Expediente.Numero}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label>Marca solicitada</label>
+                    <div class="form-control">{{model.Marca.Denominacion}}</div>
+                </div>
+                <div class="col-md-3">
+                    <label>Tipo de Marca</label>
+                    <div class="form-control">{{model.TipoDeMarca}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Pais de origen del distintivo</label>
+                    <input type="text" name="Numero" ng-model="model.Expediente.Numero" class="form-control" placeholder="Expediente 9999-99999" />
+                </div>
+                <div class="col-md-3">
+                    <label>Fecha</label>
+                    <div class="form-control">{{model.Expediente.FechaDeSolicitud}}</div>
+                </div>
+                <div class="col-md-4">
+                    <label>Situacion Administrativa</label>
+                    <div class="form-control">{{model.SituacionAdmin}}</div>
+                </div>
+                <div class="col-md-2">
+                    <label>En Fecha</label>
+                    <div class="form-control">{{model.Expediente.FechaDeEstatus | date:'MM/dd/yyyy'}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Tomo</label>
+                    <div class="form-control">{{model.Marca.Tomo}}</div>
+                </div>
+                <div class="col-md-3">
+                    <label>Folio</label>
+                    <div class="form-control">{{model.Marca.Folio}}</div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'./Spa/Views/mbody.html'"></div>
+
+    </div>
+</div>
+

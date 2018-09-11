@@ -1,0 +1,134 @@
+﻿<div ng-include="'./Spa/Views/eMarcas/MAR000.html'"></div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Que Ampara Expediente:</label>
+            <div class="checkbox">
+                <label>
+                    Productos <input type="checkbox" ng-model="_resolucion.Productos" style="width:15px;">
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    Servicios<input type="checkbox" ng-model="_resolucion.Servicios" style="width:15px;">
+                </label>
+            </div>
+
+            <br />
+            <label>Tipo de Marca</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="_resolucion.TipoDeMarca" value="Colectiva" style="width:15px;">Colectiva
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="_resolucion.TipoDeMarca" value="Certificada" style="width:15px;">Certificada
+                </label>
+            </div>
+
+            <br />
+            <div class="checkbox">
+                <label>
+                    Marca a Color<input type="checkbox" ng-model="_resolucion.MarcaAColor" style="width:15px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="col-md-8 panel panel-default">
+            <div class="panel-heading">Representaciones</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            Administrador Unico<input type="checkbox" ng-model="_resolucion.AdminUnico" style="width:15px;">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            Representante Legal<input type="checkbox" ng-model="_resolucion.RepresentanteLegal" style="width:15px;">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            Mandatario Especial<input type="checkbox" ng-model="_resolucion.MandatarioEspecial" style="width:15px;">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            Apoderado<input type="checkbox" ng-model="_resolucion.Apoderado" style="width:15px;">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            Gerente<input type="checkbox" ng-model="_resolucion.Gerente" style="width:15px;">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            Otro<input type="checkbox" ng-model="_resolucion.Otro" style="width:15px;">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <textarea rows="2" cols="10" name="Representacion" ng-model="_resolucion.Representacion" class="form-control" placeholder="Representacion" />
+            <br />
+            <textarea rows="2" cols="10" name="Representante" ng-model="_resolucion.Mandatario" class="form-control" placeholder="Representante" />
+            <br />
+            <textarea rows="2" cols="10" name="País" ng-model="_resolucion.Lugar" class="form-control" placeholder="País" />
+            <br />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Direccion de la Entidad</label>
+            <input type="text" name="DireccionEntidad" ng-model="_resolucion.DireccionEntidad" class="form-control" placeholder="Direccion de la Entidad" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Direccion de la Entidad</label>
+            <input type="text" name="DireccionEntidad" ng-model="_resolucion.DireccionEntidad" class="form-control" placeholder="Direccion de la Entidad" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Observaciones</label>
+            <textarea rows="2" cols="10" name="Observaciones" ng-model="_resolucion.Observaciones" class="form-control" placeholder="Observaciones" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="_mar001SaveNPrint(_resolucion)">Grabar e Imprimir Resolucion</button>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+

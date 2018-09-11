@@ -1,0 +1,166 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Resolucion {{model.Expediente.Id}}</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Observaciones</label>
+            <textarea rows="2" cols="10" name="Observaciones" ng-model="_resolucion.Observaciones" class="form-control" placeholder="Observaciones" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Listado de Requerimientos</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req1" style="width:15px;">No se expresa con claridad que se solicita: una patente, modelo de utilidad o un diseño industrial. (Arts. 106,142 y 156)</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req2" style="width:15px;">Falta el nombre(título) de la invencion. (Art. 103 (c)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req3" style="width:15px;">Falta el nombre del inventor y su direccion.  (Art. 106 (b)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req4" style="width:15px;">Falta el nombre del solicitante.  (Art. 106 (b)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req5" style="width:15px;">Siendo el solicitante persona jurídica, falta el lugar de constitución y direccion de éste.  (Art. 103 (b)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req6" style="width:15px;">Siendo el solicitante persona jurídica, falta el lugar de constitución y direccion de éste.  (Art. 103 (b)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req7" style="width:15px;">Falta acreditar la personería del representante legal.  (Art. 103(a)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req8" style="width:15px;">Falta la direccion para recibir notificaciones en el pais. (Art. 106(b)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req9" style="width:15px;">Falta la descripcion de la invencion(original/copia).  (Art. 106(c)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req10" style="width:15px;">Falta una o más reivindicaciones(original/copia).  (Art. 105(c)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req11" style="width:15px;">Faltan dibujos(cuando corresponden)(original/copia).  (Art. 105(d)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req12" style="width:15px;">Falta el resumen(original/copia).  (Art. 105(e)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req13" style="width:15px;">Falta el comprobante de pago. (Art. 106 (c)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req14" style="width:15px;">Si el solicitante no es el inventor, falta el título en virtud del cual se adquirio el derecho al invento. (Art. 105 (f)).</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11">
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="_resolucion.req15" style="width:15px;">Otros</label>
+            </div>
+            <textarea rows="2" cols="10" name="Otros" ng-model="_resolucion.req15Otros" class="form-control" placeholder="Otros" />
+        </div>
+    </div>
+
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="Requerimiento_De_Examen_De_Forma(_resolucion)">Grabar e Imprimir Resolucion</button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+

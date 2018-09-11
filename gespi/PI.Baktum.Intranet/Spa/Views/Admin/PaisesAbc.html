@@ -1,0 +1,31 @@
+﻿<br>
+<style>
+    #lstPaises:after {
+        content: "Paises";
+    }
+</style>
+<div class="boxy" id="lstPaises">
+    <div ng-controller="PaisesCtrlr">
+
+        <form class="simple-form" name='form' novalidate>
+
+            <div class="alert alert-info" ng-show="showAlertInfo">{{alertInfo}}</div>
+            <input ng-hide="pais.Id" ng-model="pais.Id" />
+            Name:<input type="text" name="pais" ng-model="pais.Nombre" class="form-control" required />
+            <span class="label label-danger" ng-show="form.pais.$error.required">Nombre de pais es requerido<br /></span><br />
+
+            Codigo:<input type="text" name="Codigo" ng-model="pais.Codigo" class="form-control" required />
+            <span class="label label-danger" ng-show="form.Codigo.$error.required">Codigo de pais es requerido<br /></span><br />
+
+            Nacionalidad:<input type="text" name="Nacionalidad" ng-model="pais.Nacionalidad" class="form-control" required />
+            <span class="label label-danger" ng-show="form.Nacionalidad.$error.required">Nacionalidad de pais es requerido<br /></span><br />
+
+            <a href="Admin#/Paises/" class=" btn btn-default">Cancelar</a>
+
+            <button type="button" class="btn btn-primary" ng-click="update(pais)" ng-disabled="form.$invalid || isUnchanged(pais)">Grabar</button>
+
+        </form>
+
+    </div>
+</div>
+

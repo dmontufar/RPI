@@ -1,0 +1,36 @@
+﻿<div class="bigContainer">
+    <div class="panel-primary">
+        <div class="panel-heading">
+            <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">E-Registro</a>
+                </div>
+                <div class="navbar-collapse collapse" style="height: 1px;">
+                <ul class="nav navbar-nav">
+@*                    <li class="active"><a href="#">Home</a></li>*@
+                    <li><a href="@Url.Action("Expediente", PI.Baktun.Controllers.MarcaController.NAME)">Marcas</a></li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Oposiciones</a></li>
+                        <li><a href="#">Renovaciones</a></li>
+                        <li><a href="#">Anotaciones</a></li>
+                        <li><a href="#">Traspasos</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="@Url.Action("Expediente", PI.Baktun.Controllers.PatenteController.NAME)">Patentes</a></li>
+                    <li><a href="@Url.Action("Expediente", PI.Baktun.Controllers.DAutorController.NAME)">Derecho de Autor</a></li>
+                </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

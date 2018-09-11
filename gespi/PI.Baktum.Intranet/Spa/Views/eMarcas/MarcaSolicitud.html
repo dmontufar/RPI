@@ -1,0 +1,206 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3">
+                        Numero<input type="text" name="Codigo" ng-model="model.Expediente.Numero" class="form-control" ui-mask="9999-99999" />
+                    </div>
+
+                    <div class="col-md-3">
+                        <h3>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-primary btn-lg" ng-click="getExpediente(model.Expediente.Numero)"><span class="glyphicon glyphicon-folder-open"></span></button>
+                                <button type="button" class="btn btn-primary btn-lg" ng-click="getNew()"><span class="glyphicon glyphicon-file"></span></button>
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Fecha De Solicitud</label>
+                        <p class="input-group">
+                            <input type="text" name="FechaDeSolicitud" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="model.Expediente.FechaDeSolicitud" is-open="fds.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event, 'fds')"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                        <span class="label label-danger" ng-show="frmSol.FechaDeSolicitud.$error.required">Ingrese Fecha de Solicitud.<br /></span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="model.Expediente.LeyId" value="1" style="width:15px;">
+                                Ley 26-73
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="model.Expediente.LeyId" value="2" style="width:15px;">
+                                Ley 57-2000
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <style>
+                            #situacion:after {
+                                content: "Situacion Administrativa";
+                            }
+                        </style>
+                        <div class="boxy" id="situacion">
+                            <div class="row">
+                                <div class="col-md-8"><div class="form-control">{{model.SituacionAdmin}}</div></div>
+                                <div class="col-md-4"><div class="form-control">{{model.Expediente.FechaDeEstatus | date:'MM/dd/yyyy'}}</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img data-src="holder.js/100%x200" alt="100%x180" style="height: 200px; width: 200px; display: block;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAAC0CAYAAADraNxXAAAFeUlEQVR4Xu3YvUscURiF8buFgtoq2oqtNoIo/vtWKoidWIudrJ0gfiTcCXczTHZmN+menMcqupnsed/z82Z2ZvP5/Efxyw0ANjATK6AlI3YbEKsQMBsQK6Yqg4pVA5gNiBVTlUHFqgHMBsSKqcqgYtUAZgNixVRlULFqALMBsWKqMqhYNYDZgFgxVRlUrBrAbECsmKoMKlYNYDYgVkxVBhWrBjAbECumKoOKVQOYDYgVU5VBxaoBzAbEiqnKoGLVAGYDYsVUZVCxagCzAbFiqjKoWDWA2YBYMVUZVKwawGxArJiqDCpWDWA2IFZMVQYVqwYwGxArpiqDilUDmA2IFVOVQcWqAcwGxIqpyqBi1QBmA2LFVGVQsWoAswGxYqoyqFg1gNmAWDFVGVSsGsBsQKyYqgwqVg1gNiBWTFUGFasGMBsQK6Yqg4pVA5gNiBVTlUHFqgHMBsSKqcqgYtUAZgNixVRlULFqALMBsWKqMqhYNYDZgFgxVRlUrBrAbECsmKoMKlYNYDYgVkxVBhWrBjAbECumKoOKVQOYDYgVU5VBxaoBzAbEiqnKoGLVAGYDYsVUZVCxagCzAbFiqjKoWDWA2YBYMVUZVKwawGxArJiqDCpWDWA2IFZMVQYVqwYwGxArpiqDilUDmA1EY/3+/i7X19fl7e2tXF5elq2trfLw8FCen5//KHB/f7+cnJx0P1923TqNj1339PRUHh8fF//E8fFxOTg46L6fz+fl/v6+e8/61X9tnff8n/5OLNbPz89ydXVVvr6+ymw2W2Dtl7sM1zrXLQMydl37+fb2djk/Py93d3fl9fW1y7OxsdFl7L9Wf7Hq36uvpX1FYu3DqYWPYW2n7OHhYTk6OipT17UTcGdnp8PUrq0n4e7u7uIXY/h+7bq9vb3u5O5f9/Hx0Z247f3bCZx6usZivb29Laenp91J1r8NaKdVg1lPsHaS1Z9NXddOxYuLi3Jzc7M4EaeumzpZX15elmJteD1ZgzYwde85PFVX3R7U11fdIoy939h1wwztZBVrENI26hieVR+gpl6vp2v9r73/gWzq/f7lNkCsYu2eBvRPyPbBZriaMawNXr11eH9//+OT+9TTh+F9af1+c3PTe9be8iPvWVedrMPTbh2sDWJ9unB2dtbdC9c/9z+5L8M6dbK2D2Y+DfjVgFgHz1nrUlbdG/7NCbnO89nhc9b+f/M+Z/19VERjDbzzQY8sVnR9WeHFmtU3elqxouvLCi/WrL7R04oVXV9WeLFm9Y2eVqzo+rLCizWrb/S0YkXXlxVerFl9o6cVK7q+rPBizeobPa1Y0fVlhRdrVt/oacWKri8rvFiz+kZPK1Z0fVnhxZrVN3pasaLrywov1qy+0dOKFV1fVnixZvWNnlas6Pqywos1q2/0tGJF15cVXqxZfaOnFSu6vqzwYs3qGz2tWNH1ZYUXa1bf6GnFiq4vK7xYs/pGTytWdH1Z4cWa1Td6WrGi68sKL9asvtHTihVdX1Z4sWb1jZ5WrOj6ssKLNatv9LRiRdeXFV6sWX2jpxUrur6s8GLN6hs9rVjR9WWFF2tW3+hpxYquLyu8WLP6Rk8rVnR9WeHFmtU3elqxouvLCi/WrL7R04oVXV9WeLFm9Y2eVqzo+rLCizWrb/S0YkXXlxVerFl9o6cVK7q+rPBizeobPa1Y0fVlhRdrVt/oacWKri8rvFiz+kZPK1Z0fVnhxZrVN3pasaLrywov1qy+0dOKFV1fVnixZvWNnlas6Pqywos1q2/0tGJF15cVXqxZfaOnFSu6vqzwYs3qGz2tWNH1ZYUXa1bf6GnFiq4vK7xYs/pGTytWdH1Z4cWa1Td6WrGi68sKL9asvtHTihVdX1b4n4Ds4UXrUfTOAAAAAElFTkSuQmCC">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                Denominacion<input type="text" name="Denominacion" ng-model="model.Marca.Denominacion" class="form-control" required placeholder="Denominacion" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                Traduccion<input type="text" name="Traduccion" ng-model="model.Marca.Traduccion" class="form-control" required placeholder="Denominacion" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"><label>Actividades</label></div>
+        <div class="col-md-4"><label>Tipo de Marca</label></div>
+        <div class="col-md-4"><label>Tipo de Registro</label></div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.Industrial" style="width:15px;"> Industrial 
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DeServicios" style="width:15px;">De Servicios
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.Certificacion" style="width:15px;">Certificacion
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.Comercial" style="width:15px;">Comercial
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.Colectiva" style="width:15px;">Colectiva
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Marca.TipoDeMarca" value="2" style="width:15px;">Denominacion
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Marca.TipoDeMarca" value="3" style="width:15px;">Emblematica
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Marca.TipoDeMarca" value="4" style="width:15px;">Mixta
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Marca.TipoDeMarca" value="5" style="width:15px;">Sonora
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Expediente.TipoDeRegistroId" value="2" style="width:15px;">Nombre Comercial
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Expediente.TipoDeRegistroId" value="3" style="width:15px;">Senal de Publicidad
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Expediente.TipoDeRegistroId" value="4" style="width:15px;">Marca
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="model.Expediente.TipoDeRegistroId" value="5" style="width:15px;">Emblema
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div> <!--End #clasificacion -->
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                Pais<input type="text" name="Prioridad_Pais" ng-model="Prioridad_Pais" class="form-control" placeholder="Pais" />
+                Fecha<input type="date" name="Prioridad_Fecha" ng-model="Prioridad_Fecha" class="form-control" placeholder="Fecha" />
+                Numero<input type="date" name="Prioridad_Numero" ng-model="Prioridad_Numero" class="form-control" placeholder="Numero" />
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <div class="col-md-1">
+                        <label></label>
+                        <button type="button" class="btn btn-info btn-xs" ng-disabled="model.Expediente.Id==-1"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="boxy">
+                    <label>Prioridad</label>
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Pais</th>
+                                <th>Fecha</th>
+                                <th>Numero</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="p in model.Prioridades">
+                                <td>{{p.Fecha}}</td>
+                                <td>{{p.Numero}}</td>
+                                <td>{{getPaisCode(p.PaisId)}}</td>
+                                <td><a confirmed-click="deletePrioridad(p)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

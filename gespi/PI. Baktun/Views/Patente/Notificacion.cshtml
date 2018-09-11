@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Notificación";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<h4 align="center"><strong>
+MINISTERIO DE ECONOMIA<br>
+<center><img width="100px" height="100px"></center>
+REGISTRO DE LA PROPIEDAD INTELECTUAL</h4><br>
+<p>@solicitud.Patente.Descripcion</p></strong>
+<div align="right">Referencia [_USUARIO]</div>
+<p>Expediente Nro. @res.kind @solicitud.Expediente.Numero.Insert(4, "-")   </p><br><br>
+<h4 align="center">CEDULA DE NOTIFICACION<br>
+REGISTRO DE LA PROPIEDAD INTELECTUAL<br>
+7 a Avenida 7-61 Zona 4, Primer Nivel, Guatemala, C.A.</h4><br><br>
+
+<p>En la ciudad de Guatemala, el [FECHAENLETRAS(DBREPORT.FECHA)]</p>
+<p>siendo las horas_________________con_____________ minutos, en la</p>
+<p>[DIRECCION]</p>
+<p>Notifique a: [DBREPORT.SOLICITANTE]</p>
+<p>la(s) resolución(es) de fecha(s): [FECHAENLETRAS(DBREPORT.FECHA_RES)]</p>
+<p>por Cedula entregada a: [DBREPORT.entregada_a]</p>
+<p>quien de enterado(a)____ firmó. Conste.</p>
+<p>RAZON:__________________________________________________________________<br>
+___________________________________________________________________________</p>

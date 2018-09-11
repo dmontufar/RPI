@@ -1,0 +1,48 @@
+﻿<link href="Bootstrap/custom.css" rel="stylesheet" />
+
+<div ng-controller="HomeCtrl">
+    <a ng-click="logout()" class="btn btn-link">Logout - {{userIdentity.userName}}</a>
+
+    <br /><br /><br /><br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <a class="panel-option tile-module1" style="height:150px;" href="{{eRpiMod}}">
+                    <span class="glyphicon glyphicon-road"></span>
+                    <h4>e-RPI</h4>
+                    <p>Gestion de Propiedad Intelectual</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="panel-option tile-module2" style="height:150px;" href="{{eRpiAdminMod}}">
+                    <span class="glyphicon glyphicon-folder-open"></span>
+                    <h4>e-RPI Admin</h4>
+                    <p>RPI Admin suite administrativa para crear usuarios, roles, estatus, eventos, etc.</p>
+                </a>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <a class="panel-option tile-module3" style="height:150px;" href="{{eRPIConsulta}}">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <h4>eRPI Consulta</h4>
+                    <p>RPI Consulta, es la consulta al publico de Marcas, Patentes, Derecho de Autor y la Gaceta Electronica</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="panel-option tile-module4" style="height:150px;" href="{{eRPIRecepcionMod}}">
+                    <span class="glyphicon glyphicon-barcode"></span>
+                    <h4>eRPI Recepcion</h4>
+                    <p>RPI Recepcion es el modulo de recepcion y entrega de expedientes</p>
+                </a>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>

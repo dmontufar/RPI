@@ -1,0 +1,11 @@
+﻿<div class="bs-box bs-box-blue row">
+    <label>Clase de niza</label><br />
+    <div ng-repeat="ni in niza">
+        <div class="col-sm-1">
+            <div class="checkbox">
+                <label>{{ni.code}}<input type="checkbox" ng-model="nizaSel.niza[ni.code]" style="width:15px;"></label>
+            </div>
+        </div>
+    </div>
+    <!--{{nizaSel}}-->
+</div>

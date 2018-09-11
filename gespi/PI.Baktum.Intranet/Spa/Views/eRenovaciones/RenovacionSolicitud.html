@@ -1,0 +1,149 @@
+﻿<div class="left-canvas">
+    <form name='frmSol' novalidate="">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Numero</label>
+                    <input type="text" name="Numero" ng-model="model.Expediente.Numero" class="form-control" ui-mask="9999-99999" required />
+                    <span class="label label-danger" ng-show="frmSol.Numero.$error.required">Ingrese Numero de Expediente.<br /></span>
+                </div>
+
+                <div class="col-md-2">
+                    <h3>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-primary btn-lg" ng-click="getExpediente2(model.Expediente.TipoDeRegistroId, model.Expediente.Numero)"><span class="glyphicon glyphicon-folder-open"></span></button>
+                            <button type="button" class="btn btn-primary btn-lg" ng-click="getNew()"><span class="glyphicon glyphicon-file"></span></button>
+                        </div>
+                    </h3>
+                </div>
+
+                <div class="col-md-3">
+                    <label>Fecha De Solicitud</label>
+                    <p class="input-group">
+                        <input type="text" name="FechaDeSolicitud" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="model.Expediente.FechaDeSolicitud" is-open="fds.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event, 'fds')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <span class="label label-danger" ng-show="frmSol.FechaDeSolicitud.$error.required">Ingrese Fecha de Solicitud.<br /></span>
+                </div>
+                <div class="col-md-5">
+                    <label>Ley que aplica</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="LeyId" ng-model="model.Expediente.LeyId" value="1" style="width:15px;" required>
+                            Ley 26-73
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="LeyId" ng-model="model.Expediente.LeyId" value="2" style="width:15px;" required>
+                            Ley 57-2000
+                        </label>
+                    </div>
+                    <span class="label label-danger" ng-show="frmSol.LeyId.$error.required">Seleccione ley...<br /></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Tipo de Solicitud</label>
+                    <select class="form-control" name="TipoDeRegistroId" ng-model="enExpediente.TipoDeRegistroId" ng-options="t.Id as t.Nombre for t in tipoDeRegistroDeMarcas" required></select><br />
+                </div>
+                <div class="col-md-2">
+                    <label>Nro. de Registro</label>
+                    <input type="text" name="Direccion" ng-model="enExpediente.Registro" class="form-control" placeholder="Registro ######" required ng-change="getExpedienteDeMarcas()" />
+                    <span class="label label-danger" ng-show="eForm.Direccion.$error.required">Ingrese Registro ....<br /></span>
+                </div>
+                <div class="col-md-2">
+                    <label>Raya</label>
+                    <input type="text" name="Raya" ng-model="enExpediente.Raya" class="form-control" placeholder="Raya" required />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row highlight">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Denominacion:</label>
+                    </div>
+                    <div class="col-md-7">
+                        <span>{{enExpediente.Denominacion}}</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Titular:</label>
+                    </div>
+                    <div class="col-md-7">
+                        {{enExpediente.NombreTitular}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Fecha de Registro:</label>
+                    </div>
+                    <div class="col-md-2">
+                        {{enExpediente.FechaDeRegistro | date:'dd/MM/yyyy'}}
+                    </div>
+                    <div class="col-md-3">
+                        <label>Clase Internacional Protegida:</label>
+                    </div>
+                    <div class="col-md-3">
+                        {{enExpediente.ClassificacionDeNiza}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Representante o Apoderado</label>
+                    <input type="text" name="apoderado" ng-model="apoderado" class="form-control" required placeholder="Ingrese nombre del representate o apoderado..." />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Domicilio Constitucional</label>
+                    <input type="text" name="apoderado" ng-model="apoderado" class="form-control" required placeholder="Ingrese nombre del representate o apoderado..." />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <style>
+                    #situacion:after {
+                        content: "Situacion Administrativa";
+                    }
+                </style>
+                <div class="boxy" id="situacion">
+                    <div class="row">
+                        <div class="col-md-8"><div class="form-control">{{model.SituacionAdmin}}</div></div>
+                        <div class="col-md-4"><div class="form-control">{{model.Expediente.FechaDeEstatus | date:'MM/dd/yyyy'}}</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-info btn-block" ng-click="saveSolicitud(frmSol)" ng-disabled="frmSol.$invalid"><span class=" glyphicon glyphicon-floppy-save"> Grabar</span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

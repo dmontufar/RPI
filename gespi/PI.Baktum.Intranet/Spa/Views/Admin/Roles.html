@@ -1,0 +1,50 @@
+﻿<style>
+    #lstRoles:after {
+        content: "Roles";
+    }
+</style>
+<div class="boxy" id="lstRoles">
+    <div ng-controller="RolesCtrlr">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Items por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Rol</th>
+                            <th>Internal</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="rol in Roles">
+                            <td><a href="Admin#/Roles/{{rol.Id}}" style="display:block;">{{ rol.Nombre }}</a></td>
+                            <td>{{ rol.Enum }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--<a href="#Roles/0" class=" btn btn-default">Agregar</a>-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+                            class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"
+                            max-size="maxSize"
+                            first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

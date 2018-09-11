@@ -1,0 +1,3165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AporteAudiovisual">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Director" Type="nvarchar" MaxLength="60" />
+          <Property Name="Genero" Type="nvarchar" MaxLength="25" />
+          <Property Name="Clase" Type="nvarchar" MaxLength="25" />
+          <Property Name="Metraje" Type="nvarchar" MaxLength="25" />
+          <Property Name="Duracion" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="AudiovisualAutores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Autores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Edad" Type="int" />
+          <Property Name="EstadoCivil" Type="nvarchar" MaxLength="1" />
+          <Property Name="Profesion" Type="nvarchar" MaxLength="25" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="60" />
+          <Property Name="Nacionalidad" Type="nvarchar" MaxLength="25" />
+          <Property Name="Identificacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="LugarNotificacion" Type="nvarchar" MaxLength="60" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="80" />
+          <Property Name="FechaNacimiento" Type="date" />
+          <Property Name="FechaDef" Type="date" />
+          <Property Name="DatosBibliograficos" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ComposicionAutores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DAResoluciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Articulos" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Omitio" Type="nvarchar" MaxLength="250" />
+          <Property Name="Referente" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DerechoDeAutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Traduccion" Type="nvarchar(max)" />
+          <Property Name="Paginas" Type="int" />
+          <Property Name="Formato" Type="nvarchar" MaxLength="25" />
+          <Property Name="LugarEdicion" Type="nvarchar" MaxLength="60" />
+          <Property Name="FechaEdicion" Type="date" />
+          <Property Name="LugarEraPublicacion" Type="nvarchar" MaxLength="60" />
+          <Property Name="FechaPublicacion" Type="date" />
+          <Property Name="Editor" Type="nvarchar" MaxLength="60" />
+          <Property Name="AnioCreacion" Type="nvarchar" MaxLength="4" />
+          <Property Name="PaisOrigenId" Type="int" />
+          <Property Name="EsInedita" Type="bit" />
+          <Property Name="EsPublicada" Type="bit" />
+          <Property Name="EsOriginaria" Type="bit" />
+          <Property Name="EsDerivada" Type="bit" />
+          <Property Name="EsIndividual" Type="bit" />
+          <Property Name="EsColectiva" Type="bit" />
+          <Property Name="EsEnColaboracion" Type="bit" />
+          <Property Name="OtraClasificacionAplicable" Type="nvarchar(max)" />
+          <Property Name="VersionesAutorizadas" Type="nvarchar" MaxLength="40" />
+          <Property Name="OtraInfoQueIdentifique" Type="nvarchar(max)" />
+          <Property Name="SoporteMaterial" Type="nvarchar" MaxLength="250" />
+          <Property Name="Registro" Type="int" />
+          <Property Name="Libro" Type="nvarchar" MaxLength="25" />
+          <Property Name="Tomo" Type="int" Nullable="false" />
+          <Property Name="Folio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FonogramaArtistas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NombreArtista" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FonogramaTituloDeObras">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TituloObra" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Formularios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+          <Property Name="Considerando" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GuionAutores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LiterariasyArtisticas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NombreDelEditor" Type="nvarchar" MaxLength="60" />
+          <Property Name="DireccionEditor" Type="nvarchar" MaxLength="60" />
+          <Property Name="NombreImprenta" Type="nvarchar" MaxLength="60" />
+          <Property Name="DireccionImprenta" Type="nvarchar" MaxLength="60" />
+          <Property Name="Edicion" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tamano" Type="nvarchar" MaxLength="25" />
+          <Property Name="Clasificacion" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="ObrasMusicalesyEscenicas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Partitura" Type="nchar" MaxLength="1" />
+          <Property Name="Letra" Type="nchar" MaxLength="1" />
+          <Property Name="Genero" Type="nvarchar" MaxLength="25" />
+          <Property Name="EsAutor" Type="bit" />
+          <Property Name="EsMusica" Type="bit" />
+          <Property Name="EsComercial" Type="bit" />
+          <Property Name="ClaseGenero" Type="nvarchar" MaxLength="25" />
+          <Property Name="Duracion" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Productores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="80" />
+          <Property Name="Edad" Type="int" />
+          <Property Name="EstadoCivil" Type="nchar" MaxLength="1" />
+          <Property Name="Profesion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nacionalidad" Type="nvarchar" MaxLength="25" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="80" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="10" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Solicitantes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="200" />
+          <Property Name="Edad" Type="int" />
+          <Property Name="EstadoCivil" Type="nchar" MaxLength="1" />
+          <Property Name="Profesion" Type="nvarchar" MaxLength="25" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="60" />
+          <Property Name="Nacionalidad" Type="nvarchar" MaxLength="25" />
+          <Property Name="LugarNotificacion" Type="nvarchar" MaxLength="60" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="80" />
+          <Property Name="Calidad" Type="nvarchar" MaxLength="150" />
+          <Property Name="EntidadSolicitante" Type="nvarchar" MaxLength="200" />
+          <Property Name="LugarConstitucion" Type="nvarchar" MaxLength="50" />
+          <Property Name="ObjetoSolicitud" Type="nvarchar" MaxLength="60" />
+          <Property Name="EnCalidad" Type="nchar" MaxLength="1" />
+          <Property Name="AdquirioDerecho" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Templates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="Contenido" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AnotacionEnExpedientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TipoDeAnotacionId" Type="int" />
+          <Property Name="EnExpedienteId" Type="int" Nullable="false" />
+          <Property Name="EnRegistro" Type="int" Nullable="false" />
+          <Property Name="Raya" Type="nchar" MaxLength="1" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="ActualizadoPorUsuarioId" Type="int" />
+          <Property Name="FechaActualizacion" Type="datetime" />
+          <Property Name="AgenteId" Type="int" />
+        </EntityType>
+        <EntityType Name="Anotaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TitularId" Type="int" />
+          <Property Name="NuevoTitular" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="200" />
+          <Property Name="PaisId" Type="int" />
+        </EntityType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="METADATA" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaDeCambio" Type="datetime" Nullable="false" />
+          <Property Name="CambioPorUsuarioId" Type="int" Nullable="false" />
+          <Property Name="Razon" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClasificacionDeViena">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClassificacionDeNiza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductosQueAmpara" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Correlativos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cronologia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="EstatusId" Type="int" />
+          <Property Name="Referencia" Type="nvarchar" MaxLength="20" />
+          <Property Name="UsuarioId" Type="int" />
+          <Property Name="Observaciones" Type="nvarchar(max)" />
+          <Property Name="UsuarioIniciales" Type="nvarchar" MaxLength="50" />
+          <Property Name="JSONDOC" Type="nvarchar(max)" />
+          <Property Name="HTMLDOC" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CronologiaDoctos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CronologiaId" Type="int" Nullable="false" />
+          <Property Name="Llave" Type="uniqueidentifier" />
+          <Property Name="JSONDOC" Type="nvarchar(max)" />
+          <Property Name="HTMLDOC" Type="nvarchar(max)" />
+          <Property Name="FechaActualizacion" Type="datetime" Nullable="false" />
+          <Property Name="ActualizadoPorUsuarioId" Type="int" Nullable="false" />
+          <Property Name="EsTitulo" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Estatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expedientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+          <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FechaDeSolicitud" Type="date" Nullable="false" />
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="FechaDeEstatus" Type="datetime" Nullable="false" />
+          <Property Name="LeyId" Type="int" Nullable="false" />
+          <Property Name="UbicacionId" Type="int" />
+          <Property Name="UbicacionUsuarioId" Type="int" />
+          <Property Name="FechaTraslado" Type="date" />
+          <Property Name="ActualizadoPorUsuarioId" Type="int" />
+          <Property Name="FechaActualizacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="gaceta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Expediente" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FechaEdicto" Type="datetime" Nullable="false" />
+          <Property Name="FechaPublicacion" Type="datetime" Nullable="false" />
+          <Property Name="Productos" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="pdfEdicto" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Mandatario" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Leyes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ley" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogosMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Logo" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoteExpedientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoteId" Type="int" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Acceptado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lotes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Motivo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="EntregaUsuarioId" Type="int" Nullable="false" />
+          <Property Name="RecibeUsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MandatarioDeLaMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="MandatarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mandatarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Profesion" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaisId" Type="int" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="200" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Cargo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Marcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Recibo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TipoDeMarca" Type="int" Nullable="false" />
+          <Property Name="Denominacion" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Traduccion" Type="nvarchar" MaxLength="200" />
+          <Property Name="Industrial" Type="bit" Nullable="false" />
+          <Property Name="DeServicios" Type="bit" Nullable="false" />
+          <Property Name="Comercial" Type="bit" Nullable="false" />
+          <Property Name="Certificacion" Type="bit" Nullable="false" />
+          <Property Name="Colectiva" Type="bit" Nullable="false" />
+          <Property Name="Registro" Type="int" />
+          <Property Name="Raya" Type="nvarchar" MaxLength="1" />
+          <Property Name="Tomo" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Folio" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="ClassificacionDeNizaId" Type="int" />
+          <Property Name="Productos" Type="nvarchar(max)" />
+          <Property Name="Reservas" Type="nvarchar(max)" />
+          <Property Name="DescripcionGrafica" Type="nvarchar(max)" />
+          <Property Name="DoctosAdjuntos" Type="nvarchar" MaxLength="20" />
+          <Property Name="OtrosDoctosAdjuntos" Type="nvarchar" MaxLength="50" />
+          <Property Name="CaracteristicasCom" Type="nvarchar(max)" />
+          <Property Name="EstandaresDeCalidad" Type="nvarchar(max)" />
+          <Property Name="AutoridadApReglamento" Type="nvarchar" MaxLength="100" />
+          <Property Name="DireccionComercializacion" Type="nvarchar" MaxLength="150" />
+          <Property Name="UltimaRenovacion" Type="nvarchar" MaxLength="4" />
+          <Property Name="ExtensionDeLaMarca" Type="nchar" MaxLength="1" />
+          <Property Name="PaisConstituidaId" Type="int" />
+          <Property Name="UbicacionActual" Type="nvarchar" MaxLength="25" />
+          <Property Name="UbicacionAnterior" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaDeTraslado" Type="datetime" />
+          <Property Name="MotivoDeTraslado" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Modulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nacionalidad" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrioridadMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productividad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Tiempo" Type="int" Nullable="false" />
+          <Property Name="TrabajoRealizado" Type="nvarchar(max)" />
+          <Property Name="Updateevery30secs" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductosMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="ClasificacionDeNizaId" Type="int" Nullable="false" />
+          <Property Name="Productos" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Reservas" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Publicaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="expediente" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="fecha_edicto" Type="datetime" />
+          <Property Name="fecha_publicacion" Type="datetime" />
+          <Property Name="distintivo" Type="nvarchar" MaxLength="200" />
+          <Property Name="titular" Type="nvarchar" MaxLength="200" />
+          <Property Name="clase" Type="nvarchar" MaxLength="2" />
+          <Property Name="mandatario" Type="nvarchar" MaxLength="100" />
+          <Property Name="fecha_solicitud" Type="datetime" />
+          <Property Name="calidad" Type="nvarchar" MaxLength="100" />
+          <Property Name="pais" Type="nvarchar" MaxLength="50" />
+          <Property Name="productos" Type="nvarchar(max)" />
+          <Property Name="firmado_por" Type="nvarchar" MaxLength="150" />
+          <Property Name="logotipo" Type="nvarchar" MaxLength="100" />
+          <Property Name="archivo" Type="nvarchar" MaxLength="100" />
+          <Property Name="tipo_edicto" Type="int" />
+          <Property Name="dir_comercial" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Renovaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="RenovacionExpedienteId" Type="int" Nullable="false" />
+          <Property Name="RenovacionRegistro" Type="int" Nullable="false" />
+          <Property Name="Raya" Type="nchar" MaxLength="1" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="ActualizadoPorUsuarioId" Type="int" Nullable="false" />
+          <Property Name="FechaActualizacion" Type="datetime" Nullable="false" />
+          <Property Name="AgenteId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sequence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KeyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NextValue" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposDeMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Flag" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposDeRegistro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigo" Type="nchar" MaxLength="2" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Titulares">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+          <Property Name="OldId" Type="int" />
+        </EntityType>
+        <EntityType Name="TitularesDeLaMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TitularId" Type="int" Nullable="false" />
+          <Property Name="DireccionParaNotificacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DireccionParaUbicacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EnCalidadDe" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ubicaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ubicacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuariosPublicos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cuenta" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Pwd" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Empresa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EstadoProvincia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefonos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+          <Property Name="Suscripcion" Type="bit" />
+          <Property Name="Spk" Type="nvarchar" MaxLength="50" />
+          <Property Name="SpkExpiration" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VienaMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="ClassificacionDeVienaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Favoritos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Notas" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="GrupoExpedientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrupoId" Type="int" Nullable="false" />
+          <Property Name="FavoritoId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrupoMiembros">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrupoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OwnerId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Evento" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Historial" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Opcion" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="Acceso" Type="bit" Nullable="false" />
+          <Property Name="OtorgadoPorUsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Enum" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TokenExp" Type="datetime" Nullable="false" />
+          <Property Name="FootMark" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Salt" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Spk" Type="nvarchar" MaxLength="50" />
+          <Property Name="SpkExpiration" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Abandonos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TipoResolucion" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Opciones" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Fecha1" Type="date" Nullable="false" />
+          <Property Name="Fecha2" Type="date" Nullable="false" />
+          <Property Name="Fecha3" Type="date" Nullable="false" />
+          <Property Name="Fecha4" Type="date" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Agentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="tmpId" Type="int" />
+        </EntityType>
+        <EntityType Name="Anualidades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="NumeroAnualidad" Type="int" Nullable="false" />
+          <Property Name="EsRenovacion" Type="bit" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="date" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Recibo" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="FechaRecibo" Type="date" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="FechaAnualidad" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clasificaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tmpId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Inventores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IPC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Indice" Type="int" Nullable="false" />
+          <Property Name="Classificacion" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Registro" Type="int" />
+          <Property Name="AgenteId" Type="int" />
+          <Property Name="anualidades" Type="int" />
+          <Property Name="Folio" Type="int" />
+          <Property Name="Tomo" Type="int" />
+          <Property Name="Resumen" Type="nvarchar(max)" />
+          <Property Name="ClasificacionId" Type="int" />
+          <Property Name="RecibidoPorUsuarioId" Type="int" />
+          <Property Name="FechaRecepcion" Type="date" />
+          <Property Name="Pct" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fecha_Pct" Type="date" />
+          <Property Name="Citaciones" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Prioridades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Tipo_referencia" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="SolicitudP" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resoluciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TipoResolucion" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Opciones" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Otros" Type="nvarchar(max)" />
+          <Property Name="FechaNotificacion" Type="date" />
+          <Property Name="FechaPublicacion" Type="date" />
+          <Property Name="Hora" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="TitularesDeLaPatente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TitularId" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TitularesEnPatentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="PaisId" Type="int" Nullable="false" />
+          <Property Name="tmpId" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Titulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpedienteId" Type="int" Nullable="false" />
+          <Property Name="TipoResolucion" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaAnotaciones" Type="date" Nullable="false" />
+          <Property Name="FechaConsecion" Type="date" Nullable="false" />
+          <Property Name="Plazo" Type="int" Nullable="false" />
+          <Property Name="Clasificacion" Type="int" Nullable="false" />
+          <Property Name="Flag" Type="int" Nullable="false" />
+          <Property Name="TipoDeAcuerdoId" Type="int" />
+          <Property Name="Acuerdo" Type="nvarchar" MaxLength="10" />
+          <Property Name="FechaAcuerdo" Type="date" />
+        </EntityType>
+        <EntityType Name="Eventos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="150" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+          <Property Name="LeyId" Type="int" />
+        </EntityType>
+        <EntityType Name="Opciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Opcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="style" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OpcionesPorEventos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstatusActualId" Type="int" />
+          <Property Name="OpcionId" Type="int" />
+          <Property Name="EventoId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Anotaciones_Expedientes">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="AnotacionEnExpedientes" Type="Self.AnotacionEnExpedientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AnotacionEnExpedientes">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bitacora_Expedientes">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cronologia_Expedientes">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="Cronologia" Type="Self.Cronologia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cronologia">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogosMarcas_Marcas">
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+          <End Role="LogosMarcas" Type="Self.LogosMarcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LogosMarcas">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marcas_ClassificacionDeNiza">
+          <End Role="ClassificacionDeNiza" Type="Self.ClassificacionDeNiza" Multiplicity="0..1" />
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassificacionDeNiza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Marcas">
+              <PropertyRef Name="ClassificacionDeNizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marcas_Expedientes">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Marcas">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductosMarcas_Marcas">
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+          <End Role="ProductosMarcas" Type="Self.ProductosMarcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductosMarcas">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Renovaciones_Expedientes">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="Renovaciones" Type="Self.Renovaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Renovaciones">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VienaMarcas_Marcas">
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+          <End Role="VienaMarcas" Type="Self.VienaMarcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VienaMarcas">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GPIModelStoreContainer">
+          <EntitySet Name="AporteAudiovisual" EntityType="Self.AporteAudiovisual" Schema="da" store:Type="Tables" />
+          <EntitySet Name="AudiovisualAutores" EntityType="Self.AudiovisualAutores" Schema="da" store:Type="Tables" />
+          <EntitySet Name="Autores" EntityType="Self.Autores" Schema="da" store:Type="Tables" />
+          <EntitySet Name="ComposicionAutores" EntityType="Self.ComposicionAutores" Schema="da" store:Type="Tables" />
+          <EntitySet Name="DAResoluciones" EntityType="Self.DAResoluciones" Schema="da" store:Type="Tables" />
+          <EntitySet Name="DerechoDeAutor" EntityType="Self.DerechoDeAutor" Schema="da" store:Type="Tables" />
+          <EntitySet Name="FonogramaArtistas" EntityType="Self.FonogramaArtistas" Schema="da" store:Type="Tables" />
+          <EntitySet Name="FonogramaTituloDeObras" EntityType="Self.FonogramaTituloDeObras" Schema="da" store:Type="Tables" />
+          <EntitySet Name="Formularios" EntityType="Self.Formularios" Schema="da" store:Type="Tables" />
+          <EntitySet Name="GuionAutores" EntityType="Self.GuionAutores" Schema="da" store:Type="Tables" />
+          <EntitySet Name="LiterariasyArtisticas" EntityType="Self.LiterariasyArtisticas" Schema="da" store:Type="Tables" />
+          <EntitySet Name="ObrasMusicalesyEscenicas" EntityType="Self.ObrasMusicalesyEscenicas" Schema="da" store:Type="Tables" />
+          <EntitySet Name="Productores" EntityType="Self.Productores" Schema="da" store:Type="Tables" />
+          <EntitySet Name="Solicitantes" EntityType="Self.Solicitantes" Schema="da" store:Type="Tables" />
+          <EntitySet Name="Templates" EntityType="Self.Templates" Schema="da" store:Type="Tables" />
+          <EntitySet Name="AnotacionEnExpedientes" EntityType="Self.AnotacionEnExpedientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anotaciones" EntityType="Self.Anotaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClasificacionDeViena" EntityType="Self.ClasificacionDeViena" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClassificacionDeNiza" EntityType="Self.ClassificacionDeNiza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Correlativos" EntityType="Self.Correlativos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cronologia" EntityType="Self.Cronologia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CronologiaDoctos" EntityType="Self.CronologiaDoctos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expedientes" EntityType="Self.Expedientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gaceta" EntityType="Self.gaceta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leyes" EntityType="Self.Leyes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogosMarcas" EntityType="Self.LogosMarcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoteExpedientes" EntityType="Self.LoteExpedientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lotes" EntityType="Self.Lotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MandatarioDeLaMarca" EntityType="Self.MandatarioDeLaMarca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mandatarios" EntityType="Self.Mandatarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marcas" EntityType="Self.Marcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrioridadMarcas" EntityType="Self.PrioridadMarcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productividad" EntityType="Self.Productividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductosMarcas" EntityType="Self.ProductosMarcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publicaciones" EntityType="Self.Publicaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Renovaciones" EntityType="Self.Renovaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sequence" EntityType="Self.Sequence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposDeMarca" EntityType="Self.TiposDeMarca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposDeRegistro" EntityType="Self.TiposDeRegistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Titulares" EntityType="Self.Titulares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TitularesDeLaMarca" EntityType="Self.TitularesDeLaMarca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ubicaciones" EntityType="Self.Ubicaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuariosPublicos" EntityType="Self.UsuariosPublicos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VienaMarcas" EntityType="Self.VienaMarcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favoritos" EntityType="Self.Favoritos" Schema="ip_external" store:Type="Tables" />
+          <EntitySet Name="GrupoExpedientes" EntityType="Self.GrupoExpedientes" Schema="ip_external" store:Type="Tables" />
+          <EntitySet Name="GrupoMiembros" EntityType="Self.GrupoMiembros" Schema="ip_external" store:Type="Tables" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="ip_external" store:Type="Tables" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" Schema="ip_internal" store:Type="Tables" />
+          <EntitySet Name="Auditoria" EntityType="Self.Auditoria" Schema="ip_internal" store:Type="Tables" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="ip_internal" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="ip_internal" store:Type="Tables" />
+          <EntitySet Name="Session" EntityType="Self.Session" Schema="ip_internal" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="ip_internal" store:Type="Tables" />
+          <EntitySet Name="Abandonos" EntityType="Self.Abandonos" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Agentes" EntityType="Self.Agentes" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Anualidades" EntityType="Self.Anualidades" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Clasificaciones" EntityType="Self.Clasificaciones" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Inventores" EntityType="Self.Inventores" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="IPC" EntityType="Self.IPC" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Patentes" EntityType="Self.Patentes" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Prioridades" EntityType="Self.Prioridades" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Resoluciones" EntityType="Self.Resoluciones" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="TitularesDeLaPatente" EntityType="Self.TitularesDeLaPatente" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="TitularesEnPatentes" EntityType="Self.TitularesEnPatentes" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Titulos" EntityType="Self.Titulos" Schema="patentes" store:Type="Tables" />
+          <EntitySet Name="Eventos" EntityType="Self.Eventos" Schema="workflow" store:Type="Tables" />
+          <EntitySet Name="Opciones" EntityType="Self.Opciones" Schema="workflow" store:Type="Tables" />
+          <EntitySet Name="OpcionesPorEventos" EntityType="Self.OpcionesPorEventos" Schema="workflow" store:Type="Tables" />
+          <AssociationSet Name="FK_Anotaciones_Expedientes" Association="Self.FK_Anotaciones_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="AnotacionEnExpedientes" EntitySet="AnotacionEnExpedientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bitacora_Expedientes" Association="Self.FK_Bitacora_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cronologia_Expedientes" Association="Self.FK_Cronologia_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Cronologia" EntitySet="Cronologia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogosMarcas_Marcas" Association="Self.FK_LogosMarcas_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="LogosMarcas" EntitySet="LogosMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marcas_ClassificacionDeNiza" Association="Self.FK_Marcas_ClassificacionDeNiza">
+            <End Role="ClassificacionDeNiza" EntitySet="ClassificacionDeNiza" />
+            <End Role="Marcas" EntitySet="Marcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marcas_Expedientes" Association="Self.FK_Marcas_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Marcas" EntitySet="Marcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductosMarcas_Marcas" Association="Self.FK_ProductosMarcas_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="ProductosMarcas" EntitySet="ProductosMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Renovaciones_Expedientes" Association="Self.FK_Renovaciones_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Renovaciones" EntitySet="Renovaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VienaMarcas_Marcas" Association="Self.FK_VienaMarcas_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="VienaMarcas" EntitySet="VienaMarcas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Titulares" EntityType="GPIModel.Titular" />
+          <EntitySet Name="Bitacora" EntityType="GPIModel.Bitacora" />
+          <EntitySet Name="ClasificacionDeViena" EntityType="GPIModel.ClasificacionDeViena" />
+          <EntitySet Name="ClassificacionDeNiza" EntityType="GPIModel.ClassificacionDeNiza" />
+          <EntitySet Name="Correlativos" EntityType="GPIModel.Correlativos" />
+          <EntitySet Name="Cronologia" EntityType="GPIModel.Cronologia" />
+          <EntitySet Name="Estatus" EntityType="GPIModel.Estatus" />
+          <EntitySet Name="gaceta" EntityType="GPIModel.gaceta" />
+          <EntitySet Name="Leyes" EntityType="GPIModel.Leyes" />
+          <EntitySet Name="LogosMarcas" EntityType="GPIModel.LogosMarcas" />
+          <EntitySet Name="LoteExpedientes" EntityType="GPIModel.LoteExpedientes" />
+          <EntitySet Name="Lotes" EntityType="GPIModel.Lote" />
+          <EntitySet Name="Mandatarios" EntityType="GPIModel.Mandatarios" />
+          <EntitySet Name="Marcas" EntityType="GPIModel.Marca" />
+          <EntitySet Name="Modulos" EntityType="GPIModel.Modulo" />
+          <EntitySet Name="Paises" EntityType="GPIModel.Pais" />
+          <EntitySet Name="PrioridadMarcas" EntityType="GPIModel.PrioridadMarca" />
+          <EntitySet Name="Productividad" EntityType="GPIModel.Productividad" />
+          <EntitySet Name="ProductosMarcas" EntityType="GPIModel.ProductosMarca" />
+          <EntitySet Name="TiposDeMarca" EntityType="GPIModel.TiposDeMarca" />
+          <EntitySet Name="TiposDeRegistro" EntityType="GPIModel.TiposDeRegistro" />
+          <EntitySet Name="Ubicaciones" EntityType="GPIModel.Ubicaciones" />
+          <EntitySet Name="VienaMarcas" EntityType="GPIModel.VienaMarcas" />
+          <AssociationSet Name="FK_Marcas_ClassificacionDeNiza" Association="GPIModel.FK_Marcas_ClassificacionDeNiza">
+            <End Role="ClassificacionDeNiza" EntitySet="ClassificacionDeNiza" />
+            <End Role="Marcas" EntitySet="Marcas" />
+          </AssociationSet>
+          <EntitySet Name="AudiovisualAutores" EntityType="GPIModel.AudiovisualAutor" />
+          <EntitySet Name="ComposicionAutores" EntityType="GPIModel.ComposicionAutor" />
+          <EntitySet Name="DAResoluciones" EntityType="GPIModel.DAResolucion" />
+          <EntitySet Name="FonogramaArtistas" EntityType="GPIModel.FonogramaArtista" />
+          <EntitySet Name="Formularios" EntityType="GPIModel.Formularios" />
+          <EntitySet Name="GuionAutores" EntityType="GPIModel.GuionAutor" />
+          <EntitySet Name="Templates" EntityType="GPIModel.Templates" />
+          <EntitySet Name="Abandonos" EntityType="GPIModel.Abandonos" />
+          <EntitySet Name="Agentes" EntityType="GPIModel.Agente" />
+          <EntitySet Name="Clasificaciones" EntityType="GPIModel.Clasificacion" />
+          <EntitySet Name="Inventores" EntityType="GPIModel.Inventor" />
+          <EntitySet Name="IPC" EntityType="GPIModel.IPC" />
+          <EntitySet Name="Prioridades" EntityType="GPIModel.Prioridad" />
+          <EntitySet Name="Resoluciones" EntityType="GPIModel.Resolucion" />
+          <EntitySet Name="Titulos" EntityType="GPIModel.Titulos" />
+          <EntitySet Name="OpcionesPorEventos" EntityType="GPIModel.OpcionesPorEvento" />
+          <EntitySet Name="Areas" EntityType="GPIModel.Areas" />
+          <EntitySet Name="Anualidades" EntityType="GPIModel.Anualidad" />
+          <EntitySet Name="Opciones" EntityType="GPIModel.Opciones" />
+          <EntitySet Name="Eventos" EntityType="GPIModel.Eventos" />
+          <EntitySet Name="Roles" EntityType="GPIModel.Rol" />
+          <EntitySet Name="Usuarios" EntityType="GPIModel.Usuario" />
+          <EntitySet Name="UsuariosPublicos" EntityType="GPIModel.UsuarioPublico" />
+          <EntitySet Name="Publicaciones" EntityType="GPIModel.Publicacion" />
+          <EntitySet Name="Favoritos" EntityType="GPIModel.Favorito" />
+          <EntitySet Name="GrupoExpedientes" EntityType="GPIModel.GrupoExpediente" />
+          <EntitySet Name="GrupoMiembros" EntityType="GPIModel.GrupoMiembro" />
+          <EntitySet Name="Grupos" EntityType="GPIModel.Grupo" />
+          <EntitySet Name="Session" EntityType="GPIModel.Session" />
+          <EntitySet Name="Sequence" EntityType="GPIModel.Sequence" />
+          <EntitySet Name="Auditoria" EntityType="GPIModel.Auditoria" />
+          <EntitySet Name="Expedientes" EntityType="GPIModel.Expediente" />
+          <AssociationSet Name="FK_Bitacora_Expedientes" Association="GPIModel.FK_Bitacora_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cronologia_Expedientes" Association="GPIModel.FK_Cronologia_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Cronologia" EntitySet="Cronologia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marcas_Expedientes" Association="GPIModel.FK_Marcas_Expedientes">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Marca" EntitySet="Marcas" />
+          </AssociationSet>
+          <EntitySet Name="AporteAudiovisual" EntityType="GPIModel.AporteAudiovisual" />
+          <EntitySet Name="DerechoDeAutor" EntityType="GPIModel.DerechoDeAutor" />
+          <EntitySet Name="LiterariasyArtisticas" EntityType="GPIModel.LiterariasyArtisticas" />
+          <EntitySet Name="ObrasMusicalesyEscenicas" EntityType="GPIModel.ObrasMusicalesyEscenicas" />
+          <EntitySet Name="Productores" EntityType="GPIModel.Productor" />
+          <EntitySet Name="Solicitantes" EntityType="GPIModel.Solicitante" />
+          <EntitySet Name="Autores" EntityType="GPIModel.Autor" />
+          <EntitySet Name="FonogramaTituloDeObras" EntityType="GPIModel.FonogramaTituloDeObra" />
+          <EntitySet Name="Permisos" EntityType="GPIModel.Permiso" />
+          <EntitySet Name="TitularesDeLaMarca" EntityType="GPIModel.TitularesDeLaMarca" />
+          <EntitySet Name="Patentes" EntityType="GPIModel.Patente" />
+          <EntitySet Name="CronologiaDoctos" EntityType="GPIModel.CronologiaDocto" />
+          <AssociationSet Name="FK_LogosMarcas_Marcas" Association="GPIModel.FK_LogosMarcas_Marcas">
+            <End Role="Marca" EntitySet="Marcas" />
+            <End Role="LogosMarcas" EntitySet="LogosMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductosMarcas_Marcas" Association="GPIModel.FK_ProductosMarcas_Marcas">
+            <End Role="Marca" EntitySet="Marcas" />
+            <End Role="ProductosMarca" EntitySet="ProductosMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VienaMarcas_Marcas" Association="GPIModel.FK_VienaMarcas_Marcas">
+            <End Role="Marca" EntitySet="Marcas" />
+            <End Role="VienaMarcas" EntitySet="VienaMarcas" />
+          </AssociationSet>
+          <EntitySet Name="MandatarioDeLaMarcas" EntityType="GPIModel.MandatarioDeLaMarca" />
+          <EntitySet Name="Renovaciones" EntityType="GPIModel.Renovacion" />
+          <AssociationSet Name="FK_Renovaciones_Expedientes" Association="GPIModel.FK_Renovaciones_Expedientes">
+            <End Role="Expediente" EntitySet="Expedientes" />
+            <End Role="Renovaciones" EntitySet="Renovaciones" />
+          </AssociationSet>
+          <EntitySet Name="Anotaciones" EntityType="GPIModel.Anotacion" />
+          <EntitySet Name="TitularesDeLaPatente" EntityType="GPIModel.TitularDeLaPatente" />
+          <EntitySet Name="TitularesEnPatentes" EntityType="GPIModel.TitularEnPatentes" />
+          <EntitySet Name="AnotacionEnExpedientes" EntityType="GPIModel.AnotacionEnExpedientes" />
+          <AssociationSet Name="FK_Anotaciones_Expedientes" Association="GPIModel.FK_Anotaciones_Expedientes">
+            <End Role="Expediente" EntitySet="Expedientes" />
+            <End Role="AnotacionEnExpedientes" EntitySet="AnotacionEnExpedientes" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Titular">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="OldId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="METADATA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaDeCambio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CambioPorUsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Razon" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Expedientes" Relationship="GPIModel.FK_Bitacora_Expedientes" FromRole="Bitacora" ToRole="Expedientes" />
+        </EntityType>
+        <EntityType Name="ClasificacionDeViena">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClassificacionDeNiza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductosQueAmpara" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Marcas" Relationship="GPIModel.FK_Marcas_ClassificacionDeNiza" FromRole="ClassificacionDeNiza" ToRole="Marcas" />
+        </EntityType>
+        <EntityType Name="Correlativos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="TipoDeRegistroId" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cronologia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstatusId" Type="Int32" />
+          <Property Name="Referencia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UsuarioId" Type="Int32" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UsuarioIniciales" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JSONDOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HTMLDOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Expedientes" Relationship="GPIModel.FK_Cronologia_Expedientes" FromRole="Cronologia" ToRole="Expedientes" />
+        </EntityType>
+        <EntityType Name="Estatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gaceta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Expediente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaEdicto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Productos" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pdfEdicto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Mandatario" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Leyes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ley" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LogosMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Logo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Marca" Relationship="GPIModel.FK_LogosMarcas_Marcas" FromRole="LogosMarcas" ToRole="Marca" />
+        </EntityType>
+        <EntityType Name="LoteExpedientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoteId" Type="Int32" Nullable="false" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Acceptado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Motivo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EntregaUsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="RecibeUsuarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mandatarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Profesion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaisId" Type="Int32" />
+          <Property Name="Domicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Recibo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TipoDeMarca" Type="Int32" Nullable="false" />
+          <Property Name="Denominacion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Traduccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Industrial" Type="Boolean" Nullable="false" />
+          <Property Name="DeServicios" Type="Boolean" Nullable="false" />
+          <Property Name="Comercial" Type="Boolean" Nullable="false" />
+          <Property Name="Certificacion" Type="Boolean" Nullable="false" />
+          <Property Name="Colectiva" Type="Boolean" Nullable="false" />
+          <Property Name="Registro" Type="Int32" />
+          <Property Name="Raya" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Tomo" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Folio" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="ClassificacionDeNizaId" Type="Int32" />
+          <Property Name="Productos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Reservas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DescripcionGrafica" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DoctosAdjuntos" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OtrosDoctosAdjuntos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CaracteristicasCom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EstandaresDeCalidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AutoridadApReglamento" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionComercializacion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UltimaRenovacion" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="ExtensionDeLaMarca" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="PaisConstituidaId" Type="Int32" />
+          <Property Name="UbicacionActual" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="UbicacionAnterior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaDeTraslado" Type="DateTime" Precision="3" />
+          <Property Name="MotivoDeTraslado" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ClassificacionDeNiza" Relationship="GPIModel.FK_Marcas_ClassificacionDeNiza" FromRole="Marcas" ToRole="ClassificacionDeNiza" />
+          <NavigationProperty Name="Expedientes" Relationship="GPIModel.FK_Marcas_Expedientes" FromRole="Marca" ToRole="Expedientes" />
+          <NavigationProperty Name="LogosMarcas" Relationship="GPIModel.FK_LogosMarcas_Marcas" FromRole="Marca" ToRole="LogosMarcas" />
+          <NavigationProperty Name="ProductosMarcas" Relationship="GPIModel.FK_ProductosMarcas_Marcas" FromRole="Marca" ToRole="ProductosMarca" />
+          <NavigationProperty Name="VienaMarcas" Relationship="GPIModel.FK_VienaMarcas_Marcas" FromRole="Marca" ToRole="VienaMarcas" />
+        </EntityType>
+        <EntityType Name="Modulo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PrioridadMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Productividad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tiempo" Type="Int32" Nullable="false" />
+          <Property Name="TrabajoRealizado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Updateevery30secs" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductosMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="ClasificacionDeNizaId" Type="Int32" Nullable="false" />
+          <Property Name="Productos" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Reservas" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Marca" Relationship="GPIModel.FK_ProductosMarcas_Marcas" FromRole="ProductosMarca" ToRole="Marca" />
+        </EntityType>
+        <EntityType Name="TiposDeMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TiposDeRegistro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codigo" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ubicaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ubicacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VienaMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="ClassificacionDeVienaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Marca" Relationship="GPIModel.FK_VienaMarcas_Marcas" FromRole="VienaMarcas" ToRole="Marca" />
+        </EntityType>
+        <Association Name="FK_Marcas_ClassificacionDeNiza">
+          <End Type="GPIModel.ClassificacionDeNiza" Role="ClassificacionDeNiza" Multiplicity="0..1" />
+          <End Type="GPIModel.Marca" Role="Marcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassificacionDeNiza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Marcas">
+              <PropertyRef Name="ClassificacionDeNizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AudiovisualAutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NombreAutor" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ComposicionAutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NombreAutor" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DAResolucion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Articulos" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Omitio" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Referente" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FonogramaArtista">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NombreArtista" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Formularios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoDeRegistroId" Type="Int32" Nullable="false" />
+          <Property Name="Considerando" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GuionAutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NombreAutor" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Templates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="Contenido" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Abandonos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TipoResolucion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Opciones" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha1" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha2" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha3" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha4" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Agente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tmpId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Clasificacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tmpId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Inventor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IPC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Indice" Type="Int32" Nullable="false" />
+          <Property Name="Classificacion" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Prioridad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tipo_referencia" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="SolicitudP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Resolucion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TipoResolucion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Opciones" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Otros" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNotificacion" Type="DateTime" Precision="0" />
+          <Property Name="FechaPublicacion" Type="DateTime" Precision="0" />
+          <Property Name="Hora" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Titulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TipoResolucion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAnotaciones" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaConsecion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Plazo" Type="Int32" Nullable="false" />
+          <Property Name="Clasificacion" Type="Int32" Nullable="false" />
+          <Property Name="Flag" Type="Int32" Nullable="false" />
+          <Property Name="TipoDeAcuerdoId" Type="Int32" />
+          <Property Name="Acuerdo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAcuerdo" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="OpcionesPorEvento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstatusActualId" Type="Int32" />
+          <Property Name="OpcionId" Type="Int32" />
+          <Property Name="EventoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Anualidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NumeroAnualidad" Type="Int32" Nullable="false" />
+          <Property Name="EsRenovacion" Type="Boolean" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="Recibo" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FechaRecibo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAnualidad" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Opciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Opcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="style" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Eventos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+          <Property Name="LeyId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Enum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RolId" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Salt" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Spk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SpkExpiration" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UsuarioPublico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cuenta" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Pwd" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoProvincia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefonos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="Suscripcion" Type="Boolean" />
+          <Property Name="Spk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SpkExpiration" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Publicacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="expediente" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_edicto" Type="DateTime" Precision="3" />
+          <Property Name="fecha_publicacion" Type="DateTime" Precision="3" />
+          <Property Name="distintivo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="titular" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="clase" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="mandatario" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_solicitud" Type="DateTime" Precision="3" />
+          <Property Name="calidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="productos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="firmado_por" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="logotipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="archivo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tipo_edicto" Type="Int32" />
+          <Property Name="dir_comercial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Favorito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Notas" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GrupoExpediente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoId" Type="Int32" Nullable="false" />
+          <Property Name="FavoritoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrupoMiembro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Grupo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Token" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TokenExp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FootMark" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sequence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KeyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NextValue" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Evento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Historial" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Expediente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+          <Property Name="TipoDeRegistroId" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FechaDeSolicitud" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="FechaDeEstatus" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LeyId" Type="Int32" Nullable="false" />
+          <Property Name="UbicacionId" Type="Int32" />
+          <Property Name="UbicacionUsuarioId" Type="Int32" />
+          <Property Name="FechaTraslado" Type="DateTime" Precision="0" />
+          <Property Name="ActualizadoPorUsuarioId" Type="Int32" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Bitacora" Relationship="GPIModel.FK_Bitacora_Expedientes" FromRole="Expedientes" ToRole="Bitacora" />
+          <NavigationProperty Name="Cronologia" Relationship="GPIModel.FK_Cronologia_Expedientes" FromRole="Expedientes" ToRole="Cronologia" />
+          <NavigationProperty Name="Marcas" Relationship="GPIModel.FK_Marcas_Expedientes" FromRole="Expedientes" ToRole="Marca" />
+          <NavigationProperty Name="Renovaciones" Relationship="GPIModel.FK_Renovaciones_Expedientes" FromRole="Expediente" ToRole="Renovaciones" />
+          <NavigationProperty Name="AnotacionEnExpedientes" Relationship="GPIModel.FK_Anotaciones_Expedientes" FromRole="Expediente" ToRole="AnotacionEnExpedientes" />
+        </EntityType>
+        <Association Name="FK_Bitacora_Expedientes">
+          <End Type="GPIModel.Expediente" Role="Expedientes" Multiplicity="1" />
+          <End Type="GPIModel.Bitacora" Role="Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cronologia_Expedientes">
+          <End Type="GPIModel.Expediente" Role="Expedientes" Multiplicity="1" />
+          <End Type="GPIModel.Cronologia" Role="Cronologia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cronologia">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marcas_Expedientes">
+          <End Type="GPIModel.Expediente" Role="Expedientes" Multiplicity="1" />
+          <End Type="GPIModel.Marca" Role="Marca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Marca">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AporteAudiovisual">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Director" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Genero" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Clase" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Metraje" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Duracion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DerechoDeAutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Traduccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Paginas" Type="Int32" />
+          <Property Name="Formato" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LugarEdicion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FechaEdicion" Type="DateTime" Precision="0" />
+          <Property Name="LugarEraPublicacion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FechaPublicacion" Type="DateTime" Precision="0" />
+          <Property Name="Editor" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="AnioCreacion" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PaisOrigenId" Type="Int32" />
+          <Property Name="EsInedita" Type="Boolean" />
+          <Property Name="EsPublicada" Type="Boolean" />
+          <Property Name="EsOriginaria" Type="Boolean" />
+          <Property Name="EsDerivada" Type="Boolean" />
+          <Property Name="EsIndividual" Type="Boolean" />
+          <Property Name="EsColectiva" Type="Boolean" />
+          <Property Name="EsEnColaboracion" Type="Boolean" />
+          <Property Name="OtraClasificacionAplicable" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VersionesAutorizadas" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="OtraInfoQueIdentifique" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SoporteMaterial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Registro" Type="Int32" />
+          <Property Name="Libro" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Tomo" Type="Int32" Nullable="false" />
+          <Property Name="Folio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LiterariasyArtisticas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NombreDelEditor" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionEditor" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="NombreImprenta" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionImprenta" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Edicion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tamano" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Clasificacion" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ObrasMusicalesyEscenicas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Partitura" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Letra" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Genero" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EsAutor" Type="Boolean" />
+          <Property Name="EsMusica" Type="Boolean" />
+          <Property Name="EsComercial" Type="Boolean" />
+          <Property Name="ClaseGenero" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Duracion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Productor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="EstadoCivil" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Profesion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Domicilio" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Solicitante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="EstadoCivil" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Profesion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Domicilio" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LugarNotificacion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Calidad" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EntidadSolicitante" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LugarConstitucion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ObjetoSolicitud" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EnCalidad" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="AdquirioDerecho" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="NombreAutor" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="EstadoCivil" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Profesion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Domicilio" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LugarNotificacion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="FechaDef" Type="DateTime" Precision="0" />
+          <Property Name="DatosBibliograficos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FonogramaTituloDeObra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TituloObra" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="NombreAutor" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Opcion" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="Acceso" Type="Boolean" Nullable="false" />
+          <Property Name="OtorgadoPorUsuarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TitularesDeLaMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TitularId" Type="Int32" Nullable="false" />
+          <Property Name="DireccionParaNotificacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionParaUbicacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EnCalidadDe" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Patente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Registro" Type="Int32" />
+          <Property Name="AgenteId" Type="Int32" />
+          <Property Name="anualidades" Type="Int32" />
+          <Property Name="Folio" Type="Int32" />
+          <Property Name="Tomo" Type="Int32" />
+          <Property Name="Resumen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClasificacionId" Type="Int32" />
+          <Property Name="RecibidoPorUsuarioId" Type="Int32" />
+          <Property Name="FechaRecepcion" Type="DateTime" Precision="0" />
+          <Property Name="Pct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Pct" Type="DateTime" Precision="0" />
+          <Property Name="Citaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CronologiaDocto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CronologiaId" Type="Int32" Nullable="false" />
+          <Property Name="Llave" Type="Guid" />
+          <Property Name="JSONDOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HTMLDOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ActualizadoPorUsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="EsTitulo" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_LogosMarcas_Marcas">
+          <End Type="GPIModel.Marca" Role="Marca" Multiplicity="1" />
+          <End Type="GPIModel.LogosMarcas" Role="LogosMarcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LogosMarcas">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductosMarcas_Marcas">
+          <End Type="GPIModel.Marca" Role="Marca" Multiplicity="1" />
+          <End Type="GPIModel.ProductosMarca" Role="ProductosMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductosMarca">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VienaMarcas_Marcas">
+          <End Type="GPIModel.Marca" Role="Marca" Multiplicity="1" />
+          <End Type="GPIModel.VienaMarcas" Role="VienaMarcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VienaMarcas">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MandatarioDeLaMarca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="MandatarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Renovacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="RenovacionExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="RenovacionRegistro" Type="Int32" Nullable="false" />
+          <Property Name="Raya" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="ActualizadoPorUsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="FechaActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AgenteId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Expedientes" Relationship="GPIModel.FK_Renovaciones_Expedientes" FromRole="Renovaciones" ToRole="Expediente" />
+        </EntityType>
+        <Association Name="FK_Renovaciones_Expedientes">
+          <End Type="GPIModel.Expediente" Role="Expediente" Multiplicity="1" />
+          <End Type="GPIModel.Renovacion" Role="Renovaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expediente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Renovaciones">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Anotacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TitularId" Type="Int32" />
+          <Property Name="NuevoTitular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PaisId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TitularDeLaPatente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TitularId" Type="Int32" Nullable="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TitularEnPatentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <Property Name="tmpId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AnotacionEnExpedientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="TipoDeAnotacionId" Type="Int32" />
+          <Property Name="EnExpedienteId" Type="Int32" Nullable="false" />
+          <Property Name="EnRegistro" Type="Int32" Nullable="false" />
+          <Property Name="Raya" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="ActualizadoPorUsuarioId" Type="Int32" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="AgenteId" Type="Int32" />
+          <NavigationProperty Name="Expedientes" Relationship="GPIModel.FK_Anotaciones_Expedientes" FromRole="AnotacionEnExpedientes" ToRole="Expediente" />
+        </EntityType>
+        <Association Name="FK_Anotaciones_Expedientes">
+          <End Type="GPIModel.Expediente" Role="Expediente" Multiplicity="1" />
+          <End Type="GPIModel.AnotacionEnExpedientes" Role="AnotacionEnExpedientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expediente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AnotacionEnExpedientes">
+              <PropertyRef Name="ExpedienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GPIModelStoreContainer" CdmEntityContainer="GPIEntities">
+          <EntitySetMapping Name="Titulares">
+            <EntityTypeMapping TypeName="GPIModel.Titular">
+              <MappingFragment StoreEntitySet="Titulares">
+                <ScalarProperty Name="OldId" ColumnName="OldId" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bitacora">
+            <EntityTypeMapping TypeName="GPIModel.Bitacora">
+              <MappingFragment StoreEntitySet="Bitacora">
+                <ScalarProperty Name="Razon" ColumnName="Razon" />
+                <ScalarProperty Name="CambioPorUsuarioId" ColumnName="CambioPorUsuarioId" />
+                <ScalarProperty Name="FechaDeCambio" ColumnName="FechaDeCambio" />
+                <ScalarProperty Name="METADATA" ColumnName="METADATA" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClasificacionDeViena">
+            <EntityTypeMapping TypeName="GPIModel.ClasificacionDeViena">
+              <MappingFragment StoreEntitySet="ClasificacionDeViena">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassificacionDeNiza">
+            <EntityTypeMapping TypeName="GPIModel.ClassificacionDeNiza">
+              <MappingFragment StoreEntitySet="ClassificacionDeNiza">
+                <ScalarProperty Name="ProductosQueAmpara" ColumnName="ProductosQueAmpara" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Correlativos">
+            <EntityTypeMapping TypeName="GPIModel.Correlativos">
+              <MappingFragment StoreEntitySet="Correlativos">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cronologia">
+            <EntityTypeMapping TypeName="GPIModel.Cronologia">
+              <MappingFragment StoreEntitySet="Cronologia">
+                <ScalarProperty Name="HTMLDOC" ColumnName="HTMLDOC" />
+                <ScalarProperty Name="JSONDOC" ColumnName="JSONDOC" />
+                <ScalarProperty Name="UsuarioIniciales" ColumnName="UsuarioIniciales" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estatus">
+            <EntityTypeMapping TypeName="GPIModel.Estatus">
+              <MappingFragment StoreEntitySet="Estatus">
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gaceta">
+            <EntityTypeMapping TypeName="GPIModel.gaceta">
+              <MappingFragment StoreEntitySet="gaceta">
+                <ScalarProperty Name="Mandatario" ColumnName="Mandatario" />
+                <ScalarProperty Name="pdfEdicto" ColumnName="pdfEdicto" />
+                <ScalarProperty Name="Productos" ColumnName="Productos" />
+                <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+                <ScalarProperty Name="FechaEdicto" ColumnName="FechaEdicto" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Expediente" ColumnName="Expediente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leyes">
+            <EntityTypeMapping TypeName="GPIModel.Leyes">
+              <MappingFragment StoreEntitySet="Leyes">
+                <ScalarProperty Name="Ley" ColumnName="Ley" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogosMarcas">
+            <EntityTypeMapping TypeName="GPIModel.LogosMarcas">
+              <MappingFragment StoreEntitySet="LogosMarcas">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoteExpedientes">
+            <EntityTypeMapping TypeName="GPIModel.LoteExpedientes">
+              <MappingFragment StoreEntitySet="LoteExpedientes">
+                <ScalarProperty Name="Acceptado" ColumnName="Acceptado" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="LoteId" ColumnName="LoteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lotes">
+            <EntityTypeMapping TypeName="GPIModel.Lote">
+              <MappingFragment StoreEntitySet="Lotes">
+                <ScalarProperty Name="RecibeUsuarioId" ColumnName="RecibeUsuarioId" />
+                <ScalarProperty Name="EntregaUsuarioId" ColumnName="EntregaUsuarioId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mandatarios">
+            <EntityTypeMapping TypeName="GPIModel.Mandatarios">
+              <MappingFragment StoreEntitySet="Mandatarios">
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marcas">
+            <EntityTypeMapping TypeName="GPIModel.Marca">
+              <MappingFragment StoreEntitySet="Marcas">
+                <ScalarProperty Name="MotivoDeTraslado" ColumnName="MotivoDeTraslado" />
+                <ScalarProperty Name="FechaDeTraslado" ColumnName="FechaDeTraslado" />
+                <ScalarProperty Name="UbicacionAnterior" ColumnName="UbicacionAnterior" />
+                <ScalarProperty Name="UbicacionActual" ColumnName="UbicacionActual" />
+                <ScalarProperty Name="PaisConstituidaId" ColumnName="PaisConstituidaId" />
+                <ScalarProperty Name="ExtensionDeLaMarca" ColumnName="ExtensionDeLaMarca" />
+                <ScalarProperty Name="UltimaRenovacion" ColumnName="UltimaRenovacion" />
+                <ScalarProperty Name="DireccionComercializacion" ColumnName="DireccionComercializacion" />
+                <ScalarProperty Name="AutoridadApReglamento" ColumnName="AutoridadApReglamento" />
+                <ScalarProperty Name="EstandaresDeCalidad" ColumnName="EstandaresDeCalidad" />
+                <ScalarProperty Name="CaracteristicasCom" ColumnName="CaracteristicasCom" />
+                <ScalarProperty Name="OtrosDoctosAdjuntos" ColumnName="OtrosDoctosAdjuntos" />
+                <ScalarProperty Name="DoctosAdjuntos" ColumnName="DoctosAdjuntos" />
+                <ScalarProperty Name="DescripcionGrafica" ColumnName="DescripcionGrafica" />
+                <ScalarProperty Name="Reservas" ColumnName="Reservas" />
+                <ScalarProperty Name="Productos" ColumnName="Productos" />
+                <ScalarProperty Name="ClassificacionDeNizaId" ColumnName="ClassificacionDeNizaId" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="Tomo" ColumnName="Tomo" />
+                <ScalarProperty Name="Raya" ColumnName="Raya" />
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="Colectiva" ColumnName="Colectiva" />
+                <ScalarProperty Name="Certificacion" ColumnName="Certificacion" />
+                <ScalarProperty Name="Comercial" ColumnName="Comercial" />
+                <ScalarProperty Name="DeServicios" ColumnName="DeServicios" />
+                <ScalarProperty Name="Industrial" ColumnName="Industrial" />
+                <ScalarProperty Name="Traduccion" ColumnName="Traduccion" />
+                <ScalarProperty Name="Denominacion" ColumnName="Denominacion" />
+                <ScalarProperty Name="TipoDeMarca" ColumnName="TipoDeMarca" />
+                <ScalarProperty Name="Recibo" ColumnName="Recibo" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modulos">
+            <EntityTypeMapping TypeName="GPIModel.Modulo">
+              <MappingFragment StoreEntitySet="Modulos">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paises">
+            <EntityTypeMapping TypeName="GPIModel.Pais">
+              <MappingFragment StoreEntitySet="Paises">
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrioridadMarcas">
+            <EntityTypeMapping TypeName="GPIModel.PrioridadMarca">
+              <MappingFragment StoreEntitySet="PrioridadMarcas">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productividad">
+            <EntityTypeMapping TypeName="GPIModel.Productividad">
+              <MappingFragment StoreEntitySet="Productividad">
+                <ScalarProperty Name="Updateevery30secs" ColumnName="Updateevery30secs" />
+                <ScalarProperty Name="TrabajoRealizado" ColumnName="TrabajoRealizado" />
+                <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductosMarcas">
+            <EntityTypeMapping TypeName="GPIModel.ProductosMarca">
+              <MappingFragment StoreEntitySet="ProductosMarcas">
+                <ScalarProperty Name="Reservas" ColumnName="Reservas" />
+                <ScalarProperty Name="Productos" ColumnName="Productos" />
+                <ScalarProperty Name="ClasificacionDeNizaId" ColumnName="ClasificacionDeNizaId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposDeMarca">
+            <EntityTypeMapping TypeName="GPIModel.TiposDeMarca">
+              <MappingFragment StoreEntitySet="TiposDeMarca">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposDeRegistro">
+            <EntityTypeMapping TypeName="GPIModel.TiposDeRegistro">
+              <MappingFragment StoreEntitySet="TiposDeRegistro">
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ubicaciones">
+            <EntityTypeMapping TypeName="GPIModel.Ubicaciones">
+              <MappingFragment StoreEntitySet="Ubicaciones">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VienaMarcas">
+            <EntityTypeMapping TypeName="GPIModel.VienaMarcas">
+              <MappingFragment StoreEntitySet="VienaMarcas">
+                <ScalarProperty Name="ClassificacionDeVienaId" ColumnName="ClassificacionDeVienaId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AudiovisualAutores">
+            <EntityTypeMapping TypeName="GPIModel.AudiovisualAutor">
+              <MappingFragment StoreEntitySet="AudiovisualAutores">
+                <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComposicionAutores">
+            <EntityTypeMapping TypeName="GPIModel.ComposicionAutor">
+              <MappingFragment StoreEntitySet="ComposicionAutores">
+                <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DAResoluciones">
+            <EntityTypeMapping TypeName="GPIModel.DAResolucion">
+              <MappingFragment StoreEntitySet="DAResoluciones">
+                <ScalarProperty Name="Referente" ColumnName="Referente" />
+                <ScalarProperty Name="Omitio" ColumnName="Omitio" />
+                <ScalarProperty Name="Articulos" ColumnName="Articulos" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FonogramaArtistas">
+            <EntityTypeMapping TypeName="GPIModel.FonogramaArtista">
+              <MappingFragment StoreEntitySet="FonogramaArtistas">
+                <ScalarProperty Name="NombreArtista" ColumnName="NombreArtista" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Formularios">
+            <EntityTypeMapping TypeName="GPIModel.Formularios">
+              <MappingFragment StoreEntitySet="Formularios">
+                <ScalarProperty Name="Considerando" ColumnName="Considerando" />
+                <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuionAutores">
+            <EntityTypeMapping TypeName="GPIModel.GuionAutor">
+              <MappingFragment StoreEntitySet="GuionAutores">
+                <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Templates">
+            <EntityTypeMapping TypeName="GPIModel.Templates">
+              <MappingFragment StoreEntitySet="Templates">
+                <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Abandonos">
+            <EntityTypeMapping TypeName="GPIModel.Abandonos">
+              <MappingFragment StoreEntitySet="Abandonos">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Fecha4" ColumnName="Fecha4" />
+                <ScalarProperty Name="Fecha3" ColumnName="Fecha3" />
+                <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+                <ScalarProperty Name="Fecha1" ColumnName="Fecha1" />
+                <ScalarProperty Name="Opciones" ColumnName="Opciones" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="TipoResolucion" ColumnName="TipoResolucion" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agentes">
+            <EntityTypeMapping TypeName="GPIModel.Agente">
+              <MappingFragment StoreEntitySet="Agentes">
+                <ScalarProperty Name="tmpId" ColumnName="tmpId" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clasificaciones">
+            <EntityTypeMapping TypeName="GPIModel.Clasificacion">
+              <MappingFragment StoreEntitySet="Clasificaciones">
+                <ScalarProperty Name="tmpId" ColumnName="tmpId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventores">
+            <EntityTypeMapping TypeName="GPIModel.Inventor">
+              <MappingFragment StoreEntitySet="Inventores">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IPC">
+            <EntityTypeMapping TypeName="GPIModel.IPC">
+              <MappingFragment StoreEntitySet="IPC">
+                <ScalarProperty Name="Classificacion" ColumnName="Classificacion" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prioridades">
+            <EntityTypeMapping TypeName="GPIModel.Prioridad">
+              <MappingFragment StoreEntitySet="Prioridades">
+                <ScalarProperty Name="SolicitudP" ColumnName="SolicitudP" />
+                <ScalarProperty Name="Tipo_referencia" ColumnName="Tipo_referencia" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resoluciones">
+            <EntityTypeMapping TypeName="GPIModel.Resolucion">
+              <MappingFragment StoreEntitySet="Resoluciones">
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+                <ScalarProperty Name="FechaNotificacion" ColumnName="FechaNotificacion" />
+                <ScalarProperty Name="Otros" ColumnName="Otros" />
+                <ScalarProperty Name="Opciones" ColumnName="Opciones" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="TipoResolucion" ColumnName="TipoResolucion" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Titulos">
+            <EntityTypeMapping TypeName="GPIModel.Titulos">
+              <MappingFragment StoreEntitySet="Titulos">
+                <ScalarProperty Name="FechaAcuerdo" ColumnName="FechaAcuerdo" />
+                <ScalarProperty Name="Acuerdo" ColumnName="Acuerdo" />
+                <ScalarProperty Name="TipoDeAcuerdoId" ColumnName="TipoDeAcuerdoId" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+                <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+                <ScalarProperty Name="FechaConsecion" ColumnName="FechaConsecion" />
+                <ScalarProperty Name="FechaAnotaciones" ColumnName="FechaAnotaciones" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="TipoResolucion" ColumnName="TipoResolucion" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpcionesPorEventos">
+            <EntityTypeMapping TypeName="GPIModel.OpcionesPorEvento">
+              <MappingFragment StoreEntitySet="OpcionesPorEventos">
+                <ScalarProperty Name="EventoId" ColumnName="EventoId" />
+                <ScalarProperty Name="OpcionId" ColumnName="OpcionId" />
+                <ScalarProperty Name="EstatusActualId" ColumnName="EstatusActualId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="GPIModel.Areas">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anualidades">
+            <EntityTypeMapping TypeName="GPIModel.Anualidad">
+              <MappingFragment StoreEntitySet="Anualidades">
+                <ScalarProperty Name="FechaAnualidad" ColumnName="FechaAnualidad" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="FechaRecibo" ColumnName="FechaRecibo" />
+                <ScalarProperty Name="Recibo" ColumnName="Recibo" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="EsRenovacion" ColumnName="EsRenovacion" />
+                <ScalarProperty Name="NumeroAnualidad" ColumnName="NumeroAnualidad" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opciones">
+            <EntityTypeMapping TypeName="GPIModel.Opciones">
+              <MappingFragment StoreEntitySet="Opciones">
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="style" ColumnName="style" />
+                <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventos">
+            <EntityTypeMapping TypeName="GPIModel.Eventos">
+              <MappingFragment StoreEntitySet="Eventos">
+                <ScalarProperty Name="LeyId" ColumnName="LeyId" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="GPIModel.Rol">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Enum" ColumnName="Enum" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="GPIModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="SpkExpiration" ColumnName="SpkExpiration" />
+                <ScalarProperty Name="Spk" ColumnName="Spk" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuariosPublicos">
+            <EntityTypeMapping TypeName="GPIModel.UsuarioPublico">
+              <MappingFragment StoreEntitySet="UsuariosPublicos">
+                <ScalarProperty Name="SpkExpiration" ColumnName="SpkExpiration" />
+                <ScalarProperty Name="Spk" ColumnName="Spk" />
+                <ScalarProperty Name="Suscripcion" ColumnName="Suscripcion" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Telefonos" ColumnName="Telefonos" />
+                <ScalarProperty Name="EstadoProvincia" ColumnName="EstadoProvincia" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publicaciones">
+            <EntityTypeMapping TypeName="GPIModel.Publicacion">
+              <MappingFragment StoreEntitySet="Publicaciones">
+                <ScalarProperty Name="dir_comercial" ColumnName="dir_comercial" />
+                <ScalarProperty Name="tipo_edicto" ColumnName="tipo_edicto" />
+                <ScalarProperty Name="archivo" ColumnName="archivo" />
+                <ScalarProperty Name="logotipo" ColumnName="logotipo" />
+                <ScalarProperty Name="firmado_por" ColumnName="firmado_por" />
+                <ScalarProperty Name="productos" ColumnName="productos" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="calidad" ColumnName="calidad" />
+                <ScalarProperty Name="fecha_solicitud" ColumnName="fecha_solicitud" />
+                <ScalarProperty Name="mandatario" ColumnName="mandatario" />
+                <ScalarProperty Name="clase" ColumnName="clase" />
+                <ScalarProperty Name="titular" ColumnName="titular" />
+                <ScalarProperty Name="distintivo" ColumnName="distintivo" />
+                <ScalarProperty Name="fecha_publicacion" ColumnName="fecha_publicacion" />
+                <ScalarProperty Name="fecha_edicto" ColumnName="fecha_edicto" />
+                <ScalarProperty Name="expediente" ColumnName="expediente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Favoritos">
+            <EntityTypeMapping TypeName="GPIModel.Favorito">
+              <MappingFragment StoreEntitySet="Favoritos">
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrupoExpedientes">
+            <EntityTypeMapping TypeName="GPIModel.GrupoExpediente">
+              <MappingFragment StoreEntitySet="GrupoExpedientes">
+                <ScalarProperty Name="FavoritoId" ColumnName="FavoritoId" />
+                <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrupoMiembros">
+            <EntityTypeMapping TypeName="GPIModel.GrupoMiembro">
+              <MappingFragment StoreEntitySet="GrupoMiembros">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupos">
+            <EntityTypeMapping TypeName="GPIModel.Grupo">
+              <MappingFragment StoreEntitySet="Grupos">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Session">
+            <EntityTypeMapping TypeName="GPIModel.Session">
+              <MappingFragment StoreEntitySet="Session">
+                <ScalarProperty Name="FootMark" ColumnName="FootMark" />
+                <ScalarProperty Name="TokenExp" ColumnName="TokenExp" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sequence">
+            <EntityTypeMapping TypeName="GPIModel.Sequence">
+              <MappingFragment StoreEntitySet="Sequence">
+                <ScalarProperty Name="NextValue" ColumnName="NextValue" />
+                <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Auditoria">
+            <EntityTypeMapping TypeName="GPIModel.Auditoria">
+              <MappingFragment StoreEntitySet="Auditoria">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Historial" ColumnName="Historial" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expedientes">
+            <EntityTypeMapping TypeName="GPIModel.Expediente">
+              <MappingFragment StoreEntitySet="Expedientes">
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+                <ScalarProperty Name="FechaTraslado" ColumnName="FechaTraslado" />
+                <ScalarProperty Name="UbicacionUsuarioId" ColumnName="UbicacionUsuarioId" />
+                <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+                <ScalarProperty Name="LeyId" ColumnName="LeyId" />
+                <ScalarProperty Name="FechaDeEstatus" ColumnName="FechaDeEstatus" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="FechaDeSolicitud" ColumnName="FechaDeSolicitud" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AporteAudiovisual">
+            <EntityTypeMapping TypeName="GPIModel.AporteAudiovisual">
+              <MappingFragment StoreEntitySet="AporteAudiovisual">
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="Metraje" ColumnName="Metraje" />
+                <ScalarProperty Name="Clase" ColumnName="Clase" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="Director" ColumnName="Director" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DerechoDeAutor">
+            <EntityTypeMapping TypeName="GPIModel.DerechoDeAutor">
+              <MappingFragment StoreEntitySet="DerechoDeAutor">
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="Tomo" ColumnName="Tomo" />
+                <ScalarProperty Name="Libro" ColumnName="Libro" />
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="SoporteMaterial" ColumnName="SoporteMaterial" />
+                <ScalarProperty Name="OtraInfoQueIdentifique" ColumnName="OtraInfoQueIdentifique" />
+                <ScalarProperty Name="VersionesAutorizadas" ColumnName="VersionesAutorizadas" />
+                <ScalarProperty Name="OtraClasificacionAplicable" ColumnName="OtraClasificacionAplicable" />
+                <ScalarProperty Name="EsEnColaboracion" ColumnName="EsEnColaboracion" />
+                <ScalarProperty Name="EsColectiva" ColumnName="EsColectiva" />
+                <ScalarProperty Name="EsIndividual" ColumnName="EsIndividual" />
+                <ScalarProperty Name="EsDerivada" ColumnName="EsDerivada" />
+                <ScalarProperty Name="EsOriginaria" ColumnName="EsOriginaria" />
+                <ScalarProperty Name="EsPublicada" ColumnName="EsPublicada" />
+                <ScalarProperty Name="EsInedita" ColumnName="EsInedita" />
+                <ScalarProperty Name="PaisOrigenId" ColumnName="PaisOrigenId" />
+                <ScalarProperty Name="AnioCreacion" ColumnName="AnioCreacion" />
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+                <ScalarProperty Name="LugarEraPublicacion" ColumnName="LugarEraPublicacion" />
+                <ScalarProperty Name="FechaEdicion" ColumnName="FechaEdicion" />
+                <ScalarProperty Name="LugarEdicion" ColumnName="LugarEdicion" />
+                <ScalarProperty Name="Formato" ColumnName="Formato" />
+                <ScalarProperty Name="Paginas" ColumnName="Paginas" />
+                <ScalarProperty Name="Traduccion" ColumnName="Traduccion" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LiterariasyArtisticas">
+            <EntityTypeMapping TypeName="GPIModel.LiterariasyArtisticas">
+              <MappingFragment StoreEntitySet="LiterariasyArtisticas">
+                <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+                <ScalarProperty Name="Tamano" ColumnName="Tamano" />
+                <ScalarProperty Name="Edicion" ColumnName="Edicion" />
+                <ScalarProperty Name="DireccionImprenta" ColumnName="DireccionImprenta" />
+                <ScalarProperty Name="NombreImprenta" ColumnName="NombreImprenta" />
+                <ScalarProperty Name="DireccionEditor" ColumnName="DireccionEditor" />
+                <ScalarProperty Name="NombreDelEditor" ColumnName="NombreDelEditor" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ObrasMusicalesyEscenicas">
+            <EntityTypeMapping TypeName="GPIModel.ObrasMusicalesyEscenicas">
+              <MappingFragment StoreEntitySet="ObrasMusicalesyEscenicas">
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="ClaseGenero" ColumnName="ClaseGenero" />
+                <ScalarProperty Name="EsComercial" ColumnName="EsComercial" />
+                <ScalarProperty Name="EsMusica" ColumnName="EsMusica" />
+                <ScalarProperty Name="EsAutor" ColumnName="EsAutor" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="Letra" ColumnName="Letra" />
+                <ScalarProperty Name="Partitura" ColumnName="Partitura" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productores">
+            <EntityTypeMapping TypeName="GPIModel.Productor">
+              <MappingFragment StoreEntitySet="Productores">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitantes">
+            <EntityTypeMapping TypeName="GPIModel.Solicitante">
+              <MappingFragment StoreEntitySet="Solicitantes">
+                <ScalarProperty Name="AdquirioDerecho" ColumnName="AdquirioDerecho" />
+                <ScalarProperty Name="EnCalidad" ColumnName="EnCalidad" />
+                <ScalarProperty Name="ObjetoSolicitud" ColumnName="ObjetoSolicitud" />
+                <ScalarProperty Name="LugarConstitucion" ColumnName="LugarConstitucion" />
+                <ScalarProperty Name="EntidadSolicitante" ColumnName="EntidadSolicitante" />
+                <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="LugarNotificacion" ColumnName="LugarNotificacion" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Autores">
+            <EntityTypeMapping TypeName="GPIModel.Autor">
+              <MappingFragment StoreEntitySet="Autores">
+                <ScalarProperty Name="DatosBibliograficos" ColumnName="DatosBibliograficos" />
+                <ScalarProperty Name="FechaDef" ColumnName="FechaDef" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="LugarNotificacion" ColumnName="LugarNotificacion" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FonogramaTituloDeObras">
+            <EntityTypeMapping TypeName="GPIModel.FonogramaTituloDeObra">
+              <MappingFragment StoreEntitySet="FonogramaTituloDeObras">
+                <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+                <ScalarProperty Name="TituloObra" ColumnName="TituloObra" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisos">
+            <EntityTypeMapping TypeName="GPIModel.Permiso">
+              <MappingFragment StoreEntitySet="Permisos">
+                <ScalarProperty Name="OtorgadoPorUsuarioId" ColumnName="OtorgadoPorUsuarioId" />
+                <ScalarProperty Name="Acceso" ColumnName="Acceso" />
+                <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TitularesDeLaMarca">
+            <EntityTypeMapping TypeName="GPIModel.TitularesDeLaMarca">
+              <MappingFragment StoreEntitySet="TitularesDeLaMarca">
+                <ScalarProperty Name="EnCalidadDe" ColumnName="EnCalidadDe" />
+                <ScalarProperty Name="DireccionParaUbicacion" ColumnName="DireccionParaUbicacion" />
+                <ScalarProperty Name="DireccionParaNotificacion" ColumnName="DireccionParaNotificacion" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patentes">
+            <EntityTypeMapping TypeName="GPIModel.Patente">
+              <MappingFragment StoreEntitySet="Patentes">
+                <ScalarProperty Name="Citaciones" ColumnName="Citaciones" />
+                <ScalarProperty Name="Fecha_Pct" ColumnName="Fecha_Pct" />
+                <ScalarProperty Name="Pct" ColumnName="Pct" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="RecibidoPorUsuarioId" ColumnName="RecibidoPorUsuarioId" />
+                <ScalarProperty Name="ClasificacionId" ColumnName="ClasificacionId" />
+                <ScalarProperty Name="Resumen" ColumnName="Resumen" />
+                <ScalarProperty Name="Tomo" ColumnName="Tomo" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="anualidades" ColumnName="anualidades" />
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CronologiaDoctos">
+            <EntityTypeMapping TypeName="GPIModel.CronologiaDocto">
+              <MappingFragment StoreEntitySet="CronologiaDoctos">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="EsTitulo" ColumnName="EsTitulo" />
+                <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="HTMLDOC" ColumnName="HTMLDOC" />
+                <ScalarProperty Name="JSONDOC" ColumnName="JSONDOC" />
+                <ScalarProperty Name="Llave" ColumnName="Llave" />
+                <ScalarProperty Name="CronologiaId" ColumnName="CronologiaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MandatarioDeLaMarcas">
+            <EntityTypeMapping TypeName="GPIModel.MandatarioDeLaMarca">
+              <MappingFragment StoreEntitySet="MandatarioDeLaMarca">
+                <ScalarProperty Name="MandatarioId" ColumnName="MandatarioId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Renovaciones">
+            <EntityTypeMapping TypeName="GPIModel.Renovacion">
+              <MappingFragment StoreEntitySet="Renovaciones">
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Raya" ColumnName="Raya" />
+                <ScalarProperty Name="RenovacionRegistro" ColumnName="RenovacionRegistro" />
+                <ScalarProperty Name="RenovacionExpedienteId" ColumnName="RenovacionExpedienteId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anotaciones">
+            <EntityTypeMapping TypeName="GPIModel.Anotacion">
+              <MappingFragment StoreEntitySet="Anotaciones">
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="NuevoTitular" ColumnName="NuevoTitular" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TitularesDeLaPatente">
+            <EntityTypeMapping TypeName="GPIModel.TitularDeLaPatente">
+              <MappingFragment StoreEntitySet="TitularesDeLaPatente">
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TitularesEnPatentes">
+            <EntityTypeMapping TypeName="GPIModel.TitularEnPatentes">
+              <MappingFragment StoreEntitySet="TitularesEnPatentes">
+                <ScalarProperty Name="tmpId" ColumnName="tmpId" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnotacionEnExpedientes">
+            <EntityTypeMapping TypeName="GPIModel.AnotacionEnExpedientes">
+              <MappingFragment StoreEntitySet="AnotacionEnExpedientes">
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Raya" ColumnName="Raya" />
+                <ScalarProperty Name="EnRegistro" ColumnName="EnRegistro" />
+                <ScalarProperty Name="EnExpedienteId" ColumnName="EnExpedienteId" />
+                <ScalarProperty Name="TipoDeAnotacionId" ColumnName="TipoDeAnotacionId" />
+                <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

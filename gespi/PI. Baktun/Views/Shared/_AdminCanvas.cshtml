@@ -1,0 +1,74 @@
+﻿<!-- ADMIN LAYOUT -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="/eRegistro/" />
+        <meta charset="utf-8">
+        <title>@ViewBag.Title</title>
+
+        <!-- Set the viewport width to device width for mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" sizes="128x128" href="~/fonts/app.png">
+  
+        <!-- Bootstrap -->
+        <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="Bootstrap/custom.css" rel="stylesheet" />
+        <style>
+            .rowInCanvas {
+                width: 100%;
+            }
+            .divider {
+                width:100%;
+                height:5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        @{Html.RenderPartial("HeaderAdmin");}
+        <div class="divider"></div>
+
+        <div ng-app="yumKaaxApp">
+            <div class="row ">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                        @RenderBody()
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="Bootstrap/js/bootstrap.min.js"></script>
+        <script src="Scripts/jrzStorage.js"></script>
+
+        <script src="Spa/framework/angular.js"></script>
+        <script src="Spa/Framework/angular-animate.min.js"></script>
+        <script src="spa/framework/angular-route.js"></script>
+        <script src="Spa/Framework/bar/loading-bar.min.js"></script>
+        <script src="Spa/Framework/pgntn/dirPagination.js"></script>
+        <script src="Spa/Framework/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        @*<script src="~/Scripts/jrzStorage.js"></script>*@
+
+        <script src="Spa/Controllers/EstatusCtrlr.js"></script>
+        <script src="Spa/Controllers/EventosCtrlr.js"></script>
+        <script src="Spa/Controllers/OpsXEventoCtrlr.js"></script>
+        <script src="Spa/Controllers/PaisesCtrlr.js"></script>
+        <script src="Spa/Controllers/LeyesCtrlr.js"></script>
+        <script src="Spa/Controllers/NizaCtrlr.js"></script>
+        <script src="Spa/Controllers/ViennaCtrlr.js"></script>
+        <script src="Spa/Controllers/RolesCtrlr.js"></script>
+        <script src="Spa/Controllers/UsuariosCtrlr.js"></script>
+        <script src="Spa/Controllers/UsuariosExternosCtrlr.js"></script>
+
+        <script src="Spa/Factories/authFactory.js"></script>
+        <script src="Spa/Factories/UsersFactory.js"></script>
+        <script src="Spa/Factories/pageFactory.js"></script>
+        <script src="Spa/Directives/GrlDirectives.js"></script>
+
+        <script src="Spa/App/appAdmin.js"></script>
+</body>
+    
+</html>

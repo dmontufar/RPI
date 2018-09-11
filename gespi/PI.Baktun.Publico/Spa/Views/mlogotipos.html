@@ -1,0 +1,50 @@
+﻿
+<div class="panel panel-info" ng-controller="mlogotiposCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">e-Consulta - Busqueda de Logotipos</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div ng-include="'./Spa/Views/nizaSelection.html'"></div>
+        </div>
+
+        <div class="form-group">
+            <div class="bs-box bs-box-orange row">
+                <label>Clasificacion de Viena</label><br />
+                <div class="col-md-3">
+                    <input type="text" name="vienaSelected" required ng-model="vienaSelected" uib-typeahead="viena as viena.Dsc for viena in vienalst | filter:{Dsc:$viewValue} | limitTo:15" class="form-control">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-primary" ng-click="selectViena(vienaSelected)">Agregar»</button>
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Clasificacion de Viena Seleccionada</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="vi in vienalstSel">
+                                <td>{{ vi.Dsc }}</td>
+                                <td>Quitar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+        </div>    
+        <div class="form-group">
+            <div class="bs-box bs-box-green row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="searchLogos()"><span class="glyphicon glyphicon-search"> Hacer Busqueda</span></button>
+                </div>                
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

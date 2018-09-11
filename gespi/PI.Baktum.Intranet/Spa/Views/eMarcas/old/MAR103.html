@@ -1,0 +1,38 @@
+﻿<div ng-include="'./Spa/Views/eMarcas/MAR000.html'"></div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Norma contenida en el artículo</label>
+            <input type="text" name="NormaArticulo" ng-model="_resolucion.NormaArticulo" class="form-control" placeholder="Articulo" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Literal</label>
+            <input type="text" name="Literal" ng-model="_resolucion.Literal" class="form-control" placeholder="Literal" />
+        </div>
+        <div class="col-md-4">
+            <label>Articulo</label>
+            <input type="text" name="Articulo" ng-model="_resolucion.Articulo" class="form-control" placeholder="Articulo" />
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="_mar001SaveNPrint(_resolucion)">Grabar e Imprimir Resolucion</button>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+

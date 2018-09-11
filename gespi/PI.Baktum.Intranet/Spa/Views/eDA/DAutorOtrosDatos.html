@@ -1,0 +1,29 @@
+﻿<!-- //Fonogramas-->
+<div ng-if="model.Expediente.TipoDeRegistroId == 13">
+    <div ng-include="'./Spa/Views/eDA/DAutorFonogramas.html'"></div>
+</div>
+
+<!-- //literarias-->
+<div ng-if="model.Expediente.TipoDeRegistroId == 14">
+    <div ng-include="'./Spa/Views/eDA/DAutorLiterarias.html'"></div>
+</div>
+
+<!-- //Artisticas-->
+<div ng-if="model.Expediente.TipoDeRegistroId == 20">
+    <div ng-include="'./Spa/Views/eDA/DAutorLiterarias.html'"></div>
+</div>
+
+<!-- //Audiovisual-->
+<div ng-if="model.Expediente.TipoDeRegistroId == 15">
+    <div ng-include="'./Spa/Views/eDA/DAutorAudiovisual.html'"></div>
+</div>
+
+<!-- //Radio y television-->
+<div ng-if="model.Expediente.TipoDeRegistroId == 16">
+    <div ng-include="'./Spa/Views/eDA/DAutorAudiovisual.html'"></div>
+</div>
+
+<!-- //MusicalesyEscenicas-->
+<div ng-if="model.Expediente.TipoDeRegistroId == 18">
+    <div ng-include="'./Spa/Views/eDA/DAutorMusicales.html'"></div>
+</div>

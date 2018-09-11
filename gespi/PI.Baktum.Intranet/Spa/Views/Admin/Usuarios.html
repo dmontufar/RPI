@@ -1,0 +1,43 @@
+﻿<br><br><br><br>
+<div class="container">
+    <div ng-controller="UsuariosCtrlr">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cuenta</th>
+                            <th>SpkExpiration</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="usuario in usuarios">
+                                <td><a href="Admin#/Usuarios/{{usuario.Id}}" style="display:block;">{{ usuario.Nombre }}</a></td>
+                                <td>{{ usuario.Email }}</td>
+                                <td>{{ usuario.SpkExpiration }}</td>                            
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <a href="Admin#Usuarios/0" class=" btn btn-default">Agregar</a>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+                            class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"
+                            max-size="maxSize"
+                            first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

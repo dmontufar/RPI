@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<p>Expediente Número : @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p>
+<p>[ALLTRIM(DBREPORT.TITULOP)+" : "] @solicitud.Patente.Descripcion</p>
+<p>Solicitante: [DBREPORT.SOLICITANTE]</p>
+<p>Representante Legal : [DBREPORT.REPRESENTANTE]</p>
+<p>Fecha de Presentación : [DBREPORT.FECHA_SOLICITUD]</p><br>
+
+<p>I) De conformidad con lo establecido en el artículo 113 del Decreto 57 - 2000 del Congreso de la República, Ley de Propiedad Industrial, debe
+efectuarse un examen de forma de la solicitud para determinar si la misma cumple con lo dispuesto en los artículos 103, 105 y 215 de la citada
+ley, así como del artículo 61 BIS del Acuerdo Gubernativo 89 - 2002, Reglamento de la Ley de Propiedad Industrial, previo a admitir la
+solicitud a trámite; II) En caso de observarse alguna omisión o deficiencia, el Registro deberá requerir al solicitante que efectué las
+correcciones necesarias o presente los documentos omitidos. Si el solicitante no cumple con lo requerido dentro de un plazo de tres (3) meses
+contados a partir de la fecha de la notificación, la solicitud se tendrá por ABANDONADA; FUNDAMENTO LEGAL: Artículos citados y
+artículo 57 del Decreto 11 - 2006 del Congreso de la República, que reforma el artículo 113 del Decreto 57-2000, Ley de Propiedad Industrial; III)
+NOTIFIQUESE. ----------------------------------------------------------------------------------------</p><br>
+<pre>
+[op])  1. No se expresa con claridad que se solicita una patente de invención, modelo de
+          utilidad ó diseño industrial.(Arts. 106, 142 y 156).
+([op]) 2. Falta el nombre o título de la invención. ( Art. 103(c)).
+([op]) 3. Falta el nombre del inventor y su dirección. (Art. 103(c)).
+([op]) 4. Falta el nombre del solicitante y su dirección. (Art. 103(a)).
+([op]) 5. Siendo el solicitante persona jurídica, falta el lugar y direccion de su constitución.
+          (Art. 103 (b)).
+([op]) 6. Falta el nombre del representante legal y su dirección. (Art. 103(a)).
+([op]) 7. Falta acreditar la personería del representante legal. (Art. 103(a)).
+([op]) 8. Falta la dirección del lugar señalado para recibir notificaciones en el país.
+          (Art. 106(b)).
+([op]) 9. Falta la descripción de la invención por duplicado. (Art 105(b)).
+([op]) 10. Falta una o más reivindicaciones por duplicado. (Art. 105(c)).
+([op]) 11. Faltan dos juegos de los dibujos que correspondan. (Art. 105(d)).
+([op]) 12. Falta el resumen de la invención por duplicado. (Art. 105(e)).
+([op]) 13. Falta el comprobante de pago de la tasa establecida. (Art. 105(a)).
+([op]) 14. Si el solicitante no es el inventor, falta el título en virtud del cual se 
+           adquirió el derecho a obtener [la P o S] (Art. 105(f)).     
+([op]) 15. Otros.</pre><br>
+<p>
+[DBREPORT.OTROS]</p>
+<br>
+<p>Observaciones[DBREPORT.OBSERVACIONES]</p>
+
+

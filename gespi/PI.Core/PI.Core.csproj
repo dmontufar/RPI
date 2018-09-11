@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFA11872-38D3-48F5-BF5E-295E38D0DE8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PI.Core</RootNamespace>
+    <AssemblyName>PI.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IOpcionManager.cs" />
+    <Compile Include="Abstract\IEventoManager.cs" />
+    <Compile Include="Abstract\IMarcaManager.cs" />
+    <Compile Include="Abstract\IExpedienteManager.cs" />
+    <Compile Include="Abstract\INizaManager.cs" />
+    <Compile Include="Abstract\IVienaManager.cs" />
+    <Compile Include="Abstract\IReglaDataFormManager.cs" />
+    <Compile Include="Abstract\IReglaManager.cs" />
+    <Compile Include="Abstract\IEnumManager.cs" />
+    <Compile Include="Abstract\IManager.cs" />
+    <Compile Include="Abstract\IPaisManager.cs" />
+    <Compile Include="Abstract\IEstatusManager.cs" />
+    <Compile Include="Abstract\IActividadManager.cs" />
+    <Compile Include="EstadisticaManager.cs" />
+    <Compile Include="Managers.cs" />
+    <Compile Include="DerechoDeAutorManager.cs" />
+    <Compile Include="PatenteManager.cs" />
+    <Compile Include="OpcionesPorEventoManager.cs" />
+    <Compile Include="MarcaManager.cs" />
+    <Compile Include="ExpedienteManager.cs" />
+    <Compile Include="OpcionManager.cs" />
+    <Compile Include="EventoManager.cs" />
+    <Compile Include="NizaManager.cs" />
+    <Compile Include="VienaManager.cs" />
+    <Compile Include="ReglaDataFormManager.cs" />
+    <Compile Include="ReglaManager.cs" />
+    <Compile Include="CryptoManager.cs" />
+    <Compile Include="Abstract\ICryptoManager.cs" />
+    <Compile Include="Abstract\ISessionManager.cs" />
+    <Compile Include="Abstract\IUserManager.cs" />
+    <Compile Include="EnumManager.cs" />
+    <Compile Include="ActividadManager.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="SessionManager.cs" />
+    <Compile Include="PaisManager.cs" />
+    <Compile Include="EstatusManager.cs" />
+    <Compile Include="UserManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Web\Common.Web.csproj">
+      <Project>{bf2bac02-c4bc-4202-83ff-f2caa00648df}</Project>
+      <Name>Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\PI.DataAccess.csproj">
+      <Project>{1f072446-6a87-498c-a1ee-78afc755e164}</Project>
+      <Name>PI.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PI.Common\PI.Common.csproj">
+      <Project>{f4b3d9c6-9620-4a4e-bf69-0a015e162750}</Project>
+      <Name>PI.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PI.Models\PI.Models.csproj">
+      <Project>{d216af20-694a-411d-b2bf-14f3555a5b58}</Project>
+      <Name>PI.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

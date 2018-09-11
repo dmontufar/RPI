@@ -1,0 +1,41 @@
+﻿<link href="/Bootstrap/custom.css" rel="stylesheet" />
+
+<div ng-controller="HomeCtrl">
+    <!--<a ng-click="logout()" class="btn btn-link">Logout - {{userIdentity.userName}}</a>-->
+
+    <br /><br /><br /><br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <a class="panel-option tile-module1" style="height:150px;" href="#">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <h4>MARCAS</h4>
+                    <p>Marcas y demas Signos distintivos</p>
+                </a>
+                <br />
+                <a class="panel-option tile-module3" style="height:150px;" href="#">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <h4>DERECHO DE AUTOR</h4>
+                    <p>Derecho de autor y conexos</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="panel-option tile-module2" style="height:150px;" href="#">
+                    <span class="glyphicon glyphicon-folder-open"></span>
+                    <h4>PATENTES</h4>
+                    <p>Patentes de Invencion</p>
+                </a>
+                <br />
+                <a class="panel-option tile-module4" style="height:150px;" href="#">
+                    <span class="glyphicon glyphicon-barcode"></span>
+                    <h4>BOLETIN ELECTRONICO</h4>
+                    <p>Boletin electronico</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <div ng-include="'./Spa/Views/banner.html'"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

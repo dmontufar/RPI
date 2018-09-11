@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F072446-6A87-498C-A1EE-78AFC755E164}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PI.DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.38\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAbstracts.cs" />
+    <Compile Include="Abstract\IOpcionRepository.cs" />
+    <Compile Include="Abstract\IMarcaRepository.cs" />
+    <Compile Include="Abstract\IExpedienteRepository.cs" />
+    <Compile Include="Abstract\IReglaDataFormRepository.cs" />
+    <Compile Include="Abstract\IDatabaseFactory.cs" />
+    <Compile Include="Abstract\IEnumRepository.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ITransaction.cs" />
+    <Compile Include="Abstract\IActividadRepository.cs" />
+    <Compile Include="DerechoDeAutorRepository.cs" />
+    <Compile Include="PatenteRepository.cs" />
+    <Compile Include="OpcionesPorEventoRepository.cs" />
+    <Compile Include="MarcaRepository.cs" />
+    <Compile Include="OpcionRepository.cs" />
+    <Compile Include="EventoRepository.cs" />
+    <Compile Include="ExpedienteRepository.cs" />
+    <Compile Include="Repositories.cs" />
+    <Compile Include="EstadisticaRepository.cs" />
+    <Compile Include="AuditoriaRepository.cs" />
+    <Compile Include="Scripts\SqlAnotacion.cs" />
+    <Compile Include="Scripts\SqlMarca.cs" />
+    <Compile Include="VienaRepository.cs" />
+    <Compile Include="NizaRepository.cs" />
+    <Compile Include="ReglaDataFormRepository.cs" />
+    <Compile Include="ReglaRepository.cs" />
+    <Compile Include="DatabaseFactory.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="PaisRepository.cs" />
+    <Compile Include="EstatusRepository.cs" />
+    <Compile Include="EnumRepository.cs" />
+    <Compile Include="ActividadRepository.cs" />
+    <Compile Include="UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PI.Common\PI.Common.csproj">
+      <Project>{f4b3d9c6-9620-4a4e-bf69-0a015e162750}</Project>
+      <Name>PI.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PI.Models\PI.Models.csproj">
+      <Project>{d216af20-694a-411d-b2bf-14f3555a5b58}</Project>
+      <Name>PI.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

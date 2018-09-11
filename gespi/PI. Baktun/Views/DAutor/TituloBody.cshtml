@@ -1,0 +1,113 @@
+﻿
+@{
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+}
+
+<section>
+    <div class="col-left">
+        Titulo
+    </div>
+    <div class="col-right">
+        @solicitud.DerechoDeAutor.Titulo
+    </div>
+</section>
+
+<section>
+    <div class="col-left">
+        Autores
+    </div>
+    <div class="col-right">
+        @solicitud.AutoresCSVString()
+    </div>
+</section>
+
+<section>
+    <div class="col-left">
+        Titular del Derecho
+    </div>
+    <div class="col-right">
+        @if (string.IsNullOrEmpty(solicitud.Solicitante.EntidadSolicitante))
+        {
+            solicitud.AutoresCSVString();
+        }
+        else
+        {
+            @solicitud.Solicitante.EntidadSolicitante;
+        }
+    </div>
+</section>
+
+<section>
+    <div class="col-left">
+        Solicitada por
+    </div>
+    <div class="col-right">
+        @solicitud.Solicitante.Nombre
+    </div>
+</section><br />
+
+<section>
+    <div class="col-left">
+        En calidad de
+    </div>
+    <div class="col-right">
+        @solicitud.Solicitante.Calidad
+    </div>
+</section>
+
+<section>
+    <div class="col-left">
+        Inscrita con el No.
+    </div>
+    <div class="col-right">
+        @tramite.Registro.ToString("N0") Folio @tramite.Folio
+    </div>
+</section>
+
+<section>
+    <div class="col-left">
+        Tomo
+    </div>
+    <div class="col-right">
+        @tramite.Tomo @tramite.Libro
+    </div>
+</section>
+
+
+@{
+    var _fresol = "";
+    if (tramite.IsRepo)
+    {
+        _fresol = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeEstatus.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeEstatus.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeEstatus.Year - 2000);
+    }
+    else {
+        _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    }
+}
+
+<section>
+    <div class="col-left">
+
+    </div>
+    <div class="col-right">
+        Guatemala, @_fresol
+    </div>
+</section>
+
+@if (tramite.IsRepo)
+{
+    _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    <section>
+        Para los efectos de Ley, se extiende el presente certificado de REPOSICION en la Ciudad de Guatemala @_fresol
+    </section>
+}
+
+<section>
+    <div class="col-left">
+        "El registro de las obras y producciones protegidas por esta ley es declarativo y no constitutivo de derechos. Toda inscripción deja a salvo los derechos de terceros. Art. 105 Decretos 33-98 Ley de Derecho de Autor y Derechos Conexos"
+    </div>
+    <div class="col-right">
+        Firma:
+    </div>
+</section>

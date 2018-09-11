@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+	
+	p.centrar {
+		text-align: center;
+	}
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<strong><p class="centrar">EXP: @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p></strong><br>
+
+<h4 align="center">TRASPASO<br><br>
+El Registro de la Propiedad Intelectual, Certifica:</h4><br><br>
+<p>Que en la presente fecha, [dbreport.CFECHA]</p>
+<p>número [dbreport.REGISTRO] [dbreport.CREGISTRO]</p>
+<p>Folio [dbreport.FOLIO] [dbreport.CFOLIO]</p>
+<p>Tomo [dbreport.TOMO] [dbreport.CTOMO]</p><br><br>
+
+<p>quedo registrada a favor de [dbreport.A_FAVOR_DE]</p>
+<p>de nacionalidad [dbreport.NACIONALIDAD]</p>
+<p>con domicilio en [dbreport.DOMICILIO]</p>
+<p>en virtud de el TRASPASO que le hiciera [dbreport.TITULAR_ANT]</p>
+<p>de nacionalidad [dbreport.NACIONALIDAD_ANT]</p>
+<p>con domicilio en [dbreport.DOMICILIO_ANT]</p>
+<p>Dicha(o) [DBREPORT.TIPO]</p><br><br>
+<p>actualmente tiene una vigencia [DBREPORT.VIGENCIA]</p>
+<p>al [DBREPORT.AL]</p><br><br>
+<p>Para los efectos de Ley, se extiende el presente certificado en la Ciudad de Guatemala a</p>
+<p>DBREPORT.SE_EXTIENDE</p>
+
+
+se incribió el [DBREPORT.INSCRITA_EL]

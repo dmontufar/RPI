@@ -1,0 +1,17 @@
+﻿<div class="message-popup-box" style="right: 0px;" ng-show="appPopupMsg.length>0">
+    <div class="popup-header">
+        <span class="glyphicon glyphicon-exclamation-sign" font-size 20px;></span>  Mensaje(s) del Sistema
+        <span class="glyphicon glyphicon-remove close-popup-box" ng-click="closeAppPopup()"></span>
+    </div>
+    <div class="popup-body">
+        <table class="table table-striped">
+            <tbody>
+                <tr ng-repeat="m in appPopupMsg">
+                    <td>
+                        {{m}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

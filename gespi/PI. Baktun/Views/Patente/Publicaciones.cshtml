@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />    
+</p>
+<p>n/a</p>

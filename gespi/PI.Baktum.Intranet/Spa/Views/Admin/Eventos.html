@@ -1,0 +1,55 @@
+﻿<style>
+    #lstEventos:after {
+        content: "Eventos";
+    }
+</style>
+<div class="boxy" id="lstEventos">
+    <div ng-controller="EventosCtrlr">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Modulo:</label>
+                <select class="form-control" name="moduloSelected" ng-model="moduloSelected" ng-options="mod.Id as mod.name for mod in Modulos"></select><br />
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Items por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Modulo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="evento in Eventos">
+                            <td><a href="Admin#/Eventos/{{evento.Id}}" style="display:block;">{{ evento.Descripcion }}</a></td>
+                            <td>{{ evento.ModuloId }}</td>
+                            <td><a href="Admin#/Eventos/{{evento.Id}}" style="display:block;"><span class="glyphicon glyphicon-edit"></span></a></td>
+                            <td><a href="Admin#/OpsXEvento/{{evento.Id}}" style="display:block;">Opciones</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="Admin#Eventos/0" class=" btn btn-default">Agregar</a>
+
+        <div class="row">
+            <div class="col-md-12">
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+                            class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"
+                            max-size="maxSize"
+                            first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

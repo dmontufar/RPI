@@ -1,0 +1,6 @@
+﻿@{
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+}
+<section><p>@solicitud.Tipo.Nombre</p></section>
+<section><p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p></section>

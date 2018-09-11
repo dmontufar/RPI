@@ -1,0 +1,116 @@
+﻿<div class="left-canvas">
+    <div class="boxy">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Titular</label> {{titular.Id}}
+                <input type="text" name="Titular" ng-model="titular.Nombre" placeholder="Escriba el nombre del titular..."
+                       uib-typeahead="_titular as _titular.Nombre for _titular in searchTitulares($viewValue)" typeahead-on-select="onSelectTitular($item, $model, $label)"
+                       class="form-control">
+                <label>Direccion</label>
+                <input type="text" name="Direccion" ng-model="titular.Direccion" class="form-control" placeholder="Direccion" />
+                <label>Pais</label>
+                <select class="form-control" name="Pais" required ng-model="titular.PaisId" ng-options="_pais.Id as _pais.Nombre for _pais in paises"></select>
+                <br />
+                <button type="button" class="btn btn-info btn-xs" ng-click="saveTitulares(titular)"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdTitPatentes:after {
+                    content: "Titulares";
+                }
+            </style>
+
+            <div class="col-md-7">
+                <div class="boxy" id="grdTitPatentes">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Titular</th>
+                                <th>Direccion</th>
+                                <th>Pais</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="tit in model.Titulares">
+                                <td>{{tit.Nombre}}</td>
+                                <td>{{tit.Titular.Direccion}}</td>
+                                <td>{{tit.PaisCodigo}}</td>
+                                <td><a confirmed-click="deleteTitular(tit)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="boxy">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Agente</label> #{{model.Patente.AgenteId}}
+                <input type="text" name="agenteId" ng-model="model.Agente" placeholder="Escriba el nombre del Agente..."
+                       uib-typeahead="_agente.Id as _agente.Nombre for _agente in searchAgentes($viewValue)" typeahead-on-select="onSelectAgente($item, $model, $label)"
+                       class="form-control">
+                <div ng-if="model.AgenteId"><div class="glyphicon glyphicon-ok" style="float:left"></div></div>
+                <button type="button" class="btn btn-info btn-xs" style="float:right" ng-click="saveAgente(model.Patente.AgenteId, model.Expediente.Id)"><span class="glyphicon glyphicon-share-alt"></span>Grabar Agente</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="boxy">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Inventor</label>
+                <input type="text" name="Titular" ng-model="inventor.Nombre" class="form-control" placeholder="Inventor" />
+                <label>Direccion</label>
+                <input type="text" name="Direccion" ng-model="inventor.Direccion" class="form-control" placeholder="Direccion" />
+                <label>Ciudad</label>
+                <input type="text" name="Ciudad" ng-model="inventor.Ciudad" class="form-control" placeholder="Ciudad" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Pais</label>
+                        <select class="form-control" name="Pais" required ng-model="inventor.Pais" ng-options="_pais.Id as _pais.Nombre for _pais in paises"></select>
+                        <span class="label label-danger" ng-show="frmSubmitted && profform.TypeId.$error.required">Type is a required field.</span><br />
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Telefono(s)</label>
+                        <input type="text" name="Telefono" ng-model="inventor.Telefono" class="form-control" placeholder="Telefono" />
+                    </div>
+                </div>
+                <br />
+                <button type="button" class="btn btn-info btn-xs" style="float:right" ng-click="saveInventor(inventor)"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdInventores:after {
+                    content: "Inventores";
+                }
+            </style>
+            <div class="col-md-6">
+                <div class="boxy" id="grdInventores">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th>Inventor</th>
+                                <th>Direccion</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="inv in model.Inventores">
+                                <td>{{inv.Nombre}}</td>
+                                <td>{{inv.Direccion}}</td>
+                                <td><a confirmed-click="deleteInventor(inv)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DERECHOS DE AUTOR Y DERECHOS CONEXOS";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+    //var solicitud = @ViewData.Eval("Solicitud") as PI.Models.ExpedienteDAutor;
+    //var tramite = @ViewData.Eval("Tramite") as PI.Models.DAResolucion;
+    //var solicitud = Model.Solicitud as PI.Models.ExpedienteDAutor;
+    //var tramite = Model.Tramite as PI.Models.DAResolucion;
+}
+<style>
+     p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<p>@solicitud.DerechoDeAutor.Titulo</p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+@solicitud.Tipo.Nombre
+
+<p><h3>Resolución: Levantar Suspensión</h3></p>
+
+@{
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var _fmemorial = _fresol; //TODO: capturar fecha de memorial
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol
+    <br /><br />
+    I) Agréguense a sus antecedentes el memorial presentado con fecha @_fmemorial
+    <br />
+    por [NOMBRE]
+    y documentación adjunta. II) CONSIDERANDO:  Que de conformidad con el artículo 104 del Decreto 33-98 del Congreso de la República, Ley
+    de Derecho de Autor y Derechos Conexos:     El Registro de los derechos relativos a las obras y demás producciones protegidas por la ley,
+    estará a cargo del Registro de la Propiedad Intelectual; en dicho registro se inscribirá:  a) Las obras que así lo soliciten sus autores; b) Las
+    producciones fonográficas y las interpretaciones o ejecuciones artísticas y producciones para radio y televisión,  que  estén  fijadas en un
+    soporte material,  cuando así se solicite por sus titulares;  c)  Los convenios  o  contratos  que  en  cualquier  forma  confieran,  modifiquen,
+    transmitan o restrinjan derechos patrimoniales de autor o conexos y los que autoricen modificaciones en una obra,  cuando  así  lo soliciten 
+    las partes o lo disponga la ley; d) Las sociedades de gestión colectiva debidamente autorizadas; y e) El nombramiento de los representantes
+    y apoderados de las sociedades de gestión colectiva.  CONSIDERANDO: Que de conformidad con los artículos 15 y 24 del Decreto 33-98 del
+    del Congreso de la República:  Por  el  derecho  de  autor  queda  protegida  exclusivamente  la forma mediante la cual las ideas del autor son
+    descritas,  explicadas,  ilustradas  o  incorporadas  a  las  obras.  Se  consideran todas  las producciones en el campo literario,  científico  y 
+    artístico, cualquiera que sea el modo o forma de expresión. CONSIDERANDO: Que este Registro, al efectuar el estudio respectivo, estableció
+    que el solicitante cumplió con lo que se le requirió en resolución de fecha @_fresol
+    por lo que su solicitud a la fecha satisface todos los requisitos de ley.   POR TANTO:   Con base en lo considerado y en lo 
+    preceptúan los artículos: [ARTICULOS]
+    <br />
+    I) CON LUGAR la solicitud de registro de la obra titulada
+    <br />
+    II) Notifíquese y extiéndase el Título correspondiente.
+
+    @tramite.DOCUMENT.Resuelve
+</p>
+

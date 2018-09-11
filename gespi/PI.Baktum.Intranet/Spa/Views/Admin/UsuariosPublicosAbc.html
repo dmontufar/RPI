@@ -1,0 +1,41 @@
+﻿<br>
+<div class="container">
+    <div ng-controller="UsuariosPublicosCtrlr">
+
+        <form class="simple-form" name='form' novalidate>
+
+            <div class="alert alert-info" ng-show="showAlertInfo">{{alertInfo}}</div>
+            <input ng-hide="usuario.Id" ng-model="usuario.Id" />
+            Name:<input type="text" name="Nombre" ng-model="usuario.Nombre" class="form-control" required />
+            <span class="label label-danger" ng-show="form.Nombre.$error.required">Nombre de usuario es requerido<br /></span><br />
+
+            Cuenta:<input type="text" name="Cuenta" ng-model="usuario.Cuenta" class="form-control" required />
+            <span class="label label-danger" ng-show="form.Cuenta.$error.required">Cuenta de usuario es requerido<br /></span><br />
+
+            Empresa:<input type="text" name="Empresa" ng-model="usuario.Empresa" class="form-control" /><br />
+
+            Ciudad:<input type="text" name="Ciudad" ng-model="usuario.Ciudad" class="form-control" /><br />
+
+            EstadoProvincia:<input type="text" name="EstadoProvincia" ng-model="usuario.EstadoProvincia" class="form-control" /><br />
+
+            Pais:<select class="form-control" name="PaisId" ng-model="usuario.PaisId" ng-options="pais.Id as pais.Nombre for pais in paises"></select><br />
+
+            Telefonos:<input type="text" name="Telefonos" ng-model="usuario.Telefonos" class="form-control" /><br />
+
+            <div class="row ">
+                <div class="col-md-1">Suscripcion</div>
+                <div class="col-md-1">
+                    <input type="checkbox" name="Suscripcion" ng-model="usuario.Suscripcion" class="form-control" />
+                </div>
+            </div>
+            <!--here we have to use a path from eConsulta-->
+            <span class="label label-info"><a href="Admin#eConsulta/ResetPW/{{usuario.Spk}}/{{usuario.Id}}">Usuarios/ResetPW/{{usuario.Spk}}/{{usuario.Id}}</a></span>
+            <br />
+            <br />
+            <a href="#eConsulta" class=" btn btn-default">Cancelar</a>
+
+            <button type="button" class="btn btn-primary" ng-click="update(usuario)" ng-disabled="form.$invalid || isUnchanged(usuario)">Grabar</button>
+
+        </form>
+    </div>
+</div>

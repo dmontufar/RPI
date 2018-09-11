@@ -1,0 +1,23 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-4" ng-controller="authCtrl">
+            <form class="form-signin" role="form">
+                <h2 class="form-signin-heading">Iniciar sesión</h2>
+                <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="userName">
+                <input type="password" class="form-control" placeholder="Password" required="" ng-model="password">
+                <!--<label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>-->
+                <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Entrar</button>
+            </form>
+        </div>
+
+
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <div ng-include="'./Spa/Views/banner.html'"></div>
+        </div>
+    </div>
+</div>

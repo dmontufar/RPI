@@ -1,0 +1,81 @@
+﻿<!-- Nav tabs -->
+<!--<div ng-controller="PatenteCtrl" class="bs-boxer">
+    <div id="workarea" class="big2Container">
+        <div id="one" class="expediente-area">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Patente<button type="button" class="btn btn-primary  btn-s rightbtn" onclick="showLeftBox(); return false;"><span id="win1Ctrl" class="glyphicon glyphicon-indent-left"></span></button></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" ng-show="showAlertInfo">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="alert alert-info">{{alertInfo}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-include="'./Spa/Views/ePatentes/PatentesExpediente.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="three" class="resolucion-area">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <button type="button" class="btn btn-primary  btn-s leftbtn" onclick="showRightBox(); return false;"><span id="win2Ctrl" class="glyphicon glyphicon-indent-right"></span></button>
+                            Tramite: {{evento}}
+                        </h3>
+                    </div>
+                    <div id="activity" class="panel-body">
+                        <div class="dropdown">
+                            <span class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Actividad
+                                <span class="caret"></span>
+                            </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li ng-repeat="op in opciones" ng-class="isMnuEnabled(op)">
+                                    <a onclick="showRightBox(); return false;" ng-click="Resolucion(op)">{{op.opcion}}</a> 
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div ng-include="res"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    //put it in helperLib.js
+    function showLeftBox() {
+        if ($("#one").hasClass("rowInCanvasOff")) {
+            //mainBoxOn();
+            return;
+        }
+    }
+    function showRightBox() {
+        if (!$("#three").hasClass("rowOffCanvasIn")) {
+            //mainBoxOff();
+            return;
+        }
+    }
+    function mainBoxOn() {
+        $("#one").removeClass("rowInCanvasOff");
+        $("#two").removeClass("rowInCanvasMenuOff");
+        $("#three").removeClass("rowOffCanvasIn");
+    }
+    function mainBoxOff() {
+        $("#one").addClass("rowInCanvasOff");
+        $("#two").addClass("rowInCanvasMenuOff");
+        $("#three").addClass("rowOffCanvasIn");
+    }
+</script>-->

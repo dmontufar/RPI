@@ -1,0 +1,151 @@
+﻿<!-- Nav tabs -->
+<div class="bs-boxer">
+    <div id="workarea" class="big2Container">
+        <div id="one" class="expediente-area">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Marca/Signo distintivo<button type="button" class="btn btn-primary  btn-s rightbtn" onclick="showLeftBox(); return false;"><span id="win1Ctrl" class="glyphicon glyphicon-indent-left"></span></button></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" ng-show="showAlertInfo">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="alert alert-info">{{alertInfo}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">e-Consulta - Busqueda de Marcas</h3>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="form-group">
+                                    <div class="bs-box bs-box-blue row">
+                                        <label>Tipo de busqueda</label><br />
+                                        <div class="col-md-12">
+                                            <select class="form-control" name="tipoDeBusquedaSel" ng-model="tipoDeBusquedaSel" ng-options="t.Nombre for t in tipoDeBusqueda"></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="bs-box bs-box-orange row">
+                                        <label>Denominacion a buscar</label><br />
+                                        <div class="col-md-12">
+                                            <input type="text" name="textSearch" required ng-model="textSearch" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div ng-include="'./Spa/Views/nizaSelection.html'"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="bs-box bs-box-green row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="searchMarcas()"><span class="glyphicon glyphicon-search"> Hacer Busqueda</span></button>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <!--<div class="row">
+                                        <div class="col-xs-4">
+                                            <label for="search">Items por pagina:</label>
+                                            <input type="number" min="1" max="100" class="form-control" ng-model="pageSize" readonly>
+                                        </div>
+                                    </div>
+                                    <br>-->
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Expediente</th>
+                                                        <th>SignoDistintivo</th>
+                                                        <th>Tipo de Registro</th>
+                                                        <th>ClasificacionNiza</th>
+                                                        <th>Estatus</th>
+                                                        <th>Punteo</th>
+                                                        <th>Registro</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-hover">
+                                                    <tr ng-repeat="exp in dataset" ng-click="onSelect(exp)";>
+                                                        <td>{{ exp.Numero }}</a></td>
+                                                        <td>{{ exp.SignoDistintivo }}</td>
+                                                        <td>{{ exp.TipoDeRegistro }}</td>
+                                                        <td>{{ exp.ClasificacionNiza}}</td>
+                                                        <td>{{ exp.EstatusDsc }}</td>
+                                                        <td>{{ exp.Punteo}}</td>
+                                                        <td>{{ exp.Registro }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="three" class="resolucion-area">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <button type="button" class="btn btn-primary  btn-s leftbtn" onclick="showRightBox(); return false;"><span id="win2Ctrl" class="glyphicon glyphicon-indent-right"></span></button>
+                            <label>Criterios de búsqueda</label>
+                        </h3>
+                    </div>
+                    <div id="activity" class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Expediente</th>
+                                    <th>SignoDistintivo</th>
+                                    <th>Tipo de Registro</th>
+                                    <th>ClasificacionNiza</th>
+                                    <th>Estatus</th>
+                                    <th>Punteo</th>
+                                    <th>Registro</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-hover">
+                                <tr ng-repeat="exp in dataset2" ng-click="onSelect2(exp)" ;>
+                                    <td>{{ exp.Numero }}</a></td>
+                                    <td>{{ exp.SignoDistintivo }}</td>
+                                    <td>{{ exp.TipoDeRegistro }}</td>
+                                    <td>{{ exp.ClasificacionNiza}}</td>
+                                    <td>{{ exp.EstatusDsc }}</td>
+                                    <td>{{ exp.Punteo}}</td>
+                                    <td>{{ exp.Registro }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+

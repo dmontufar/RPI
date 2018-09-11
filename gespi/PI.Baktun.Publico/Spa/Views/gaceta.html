@@ -1,0 +1,85 @@
+﻿<style>
+    #stlGaceta:after {
+        content: "Boletin Electronico";
+    }
+</style>
+<div class="boxy" id="stlGaceta">
+    <div ng-controller="gacetaCtrl">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Items por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+            <div class ="col-xs-4">
+                <br />
+                <a href="#gacetasemanal" class="btn btn-default btn-lg btn-block">Boletín Semanal - Archivo</a>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th style="max-width:80px;">Fecha Edicto</th>
+                            <th style="max-width:80px;">Fecha de Publicacion</th>
+                            <th style="max-width:90px;">Expediente</th>
+                            <th style="max-width:250px;">Nombre &<br />Titular</th>
+                            <th>Clase</th>
+                            <th>Mandatario</th>
+                            <th>Edicto</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr dir-paginate="p in Publicaciones | filter:textSearch | itemsPerPage: pageSize" total-items="totalItems">
+                            <td>{{p.fecha_edicto | date:'MM/dd/yyyy'}}</td>
+                            <td>{{p.fecha_publicacion | date:'MM/dd/yyyy'}}</td>
+                            <td>{{p.expediente}}</td>
+                            <td>
+                                <span ng-if="p.format=='mp3'">
+                                    <audio controls="" style="width: 110px; height:50px">
+                                        <source src="{{p.logotipo}}" type="audio/mpeg">
+                                        ...Este browser no soporta archivos de audio
+                                    </audio>
+                                </span>
+                                <span ng-if="p.format==''">
+                                    {{p.distintivo}}
+                                </span><br />
+                                <span>{{p.titular}}</span>
+                            </td>                            
+                            <td>{{p.clase}}</td>
+                            <td>{{p.mandatario}}</td>
+                            <td>
+                                <a target="_blank" href="/gaceta/edicto/{{p.Id}}">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                            </td>
+                            <!--_self-->
+                            <td><a target="_blank" href="/gaceta/edictoaspdf/{{p.Id}}">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--<a href="#Leyes/0" class=" btn btn-default">Agregar</a>-->
+
+        <div class="row">
+            <style>
+                .pagination {
+                    display: block !important;
+                }
+            </style>
+            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)" template-url="Spa/Framework/pgntn/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>
+<style>
+    .container {
+        max-width:inherit;
+    }
+</style>

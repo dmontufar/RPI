@@ -1,0 +1,40 @@
+﻿<!-- Nav tabs -->
+<form name='frmSol' novalidate="">
+    <uib-tabset>
+        <uib-tab heading="Solicitud">
+            <div ng-include="'./Spa/Views/eDA/DAutorSolicitud.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Otros datos" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/eDA/DAutorOtrosDatos.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Solicitante" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/eDA/DAutorSolicitante.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Autor(es)" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/eDA/DAutorAutores.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Productor" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/eDA/DAutorProductor.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Logotipo" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/eDA/DAutorLogotipo.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Cronologia" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/shared/cronologia.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Ubicacion" disable="model.Expediente.Id==-1">
+            <div ng-include="'./Spa/Views/eDA/DAutorUbicacion.html'"></div>
+        </uib-tab>
+    </uib-tabset>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-info btn-block" ng-click="saveSolicitud(frmSol)" ng-disabled="frmSol.$invalid"><span class="glyphicon glyphicon-floppy-save"> Grabar</span></button>
+            </div>
+        </div>
+    </div>
+</form>
+
+    <!--<pre>{{frmSol|json}}</pre>-->

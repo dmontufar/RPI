@@ -1,0 +1,3 @@
+﻿@model IList<PI.Models.Modulo>
+
+@Html.DropDownList("moduloId", (from m in Model select new SelectListItem() { Text = m.Nombre, Value = m.Id.ToString() }), new { @class = "form-control" })

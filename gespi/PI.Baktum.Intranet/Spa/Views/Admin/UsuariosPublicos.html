@@ -1,0 +1,51 @@
+﻿<br><br><br><br>
+<div class="container">
+    <div ng-controller="UsuariosPublicosCtrlr">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Usuarios por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cuenta</th>
+                            <th>Empresa</th>
+                            <th>Ciudad</th>
+                            <th>Suscripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="usuario in usuarios">
+                            <td><a href="Admin#/eConsulta/{{usuario.Id}}" style="display:block;">{{ usuario.Nombre }}</a></td>
+                            <td>{{ usuario.Cuenta }}</td>
+                            <td>{{ usuario.Empresa }}</td>
+                            <td>{{ usuario.Ciudad }}</td>
+                            <td>{{ usuario.Suscripcion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <a href="Admin#eConsulta/0" class=" btn btn-default">Agregar</a>
+        <div class="row">
+            <div class="col-md-12">
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+                            class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"
+                            max-size="maxSize"
+                            first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

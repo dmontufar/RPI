@@ -1,0 +1,42 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Notificación</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="col-md-2">
+            <label>Hora</label>
+            <input type="text" name="Hora" ng-model="_resolucion.Hora" class="form-control" ui-mask="99:99" />
+        </div>
+
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-11">
+            <label>Notificador</label>
+            <input type="text" name="Notificador" ng-model="_resolucion.Notificador" class="form-control" placeholder="Notificador" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="_901NotificarSaveNPrint(_resolucion)">Grabar e Imprimir Notificacion</button>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+

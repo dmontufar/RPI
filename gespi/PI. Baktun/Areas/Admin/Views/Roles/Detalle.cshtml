@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_AdminCanvas.cshtml";
+}
+
+<style>
+    .ln-space {
+        height:4px;
+    }
+</style>
+
+<div class="form-group">
+    <div class="row">
+	    <div class="col-md-10">
+            @Html.Label("Role", new { @for="Actividad" })
+            @Html.TextBox("Role",string.Empty, new { @class="form-control", @placeholder="Role"})
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+	    <div class="col-md-10">
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+        </div>
+    </div>
+</div>

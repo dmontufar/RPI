@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DERECHOS DE AUTOR Y DERECHOS CONEXOS";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+    //var solicitud = @ViewData.Eval("Solicitud") as PI.Models.ExpedienteDAutor;
+    //var tramite = @ViewData.Eval("Tramite") as PI.Models.DAResolucion;
+    //var solicitud = Model.Solicitud as PI.Models.ExpedienteDAutor;
+    //var tramite = Model.Tramite as PI.Models.DAResolucion;
+}
+<style>
+     p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<p>@solicitud.DerechoDeAutor.Titulo</p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+@solicitud.Tipo.Nombre
+
+<p><h3>N O T I F I C A C I O N</h3></p>
+
+@{
+    var _fnoti = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+   
+    var _Resolucion = @solicitud.Cronologia.Where(c => c.EstatusId == (int)PI.Baktun.Controllers.DAExpedienteEstatus.Pendiente_de_Registrar).FirstOrDefault();
+    var _fresol = Common.Web.Util.getEnLetras(_Resolucion.Fecha.Day) + " DE " + Common.Web.Util.getMes(_Resolucion.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(_Resolucion.Fecha.Year - 2000);
+
+    var _horas = tramite.DOCUMENT.Hora.ToString().Substring(0, 2);
+    var _mins = tramite.DOCUMENT.Hora.ToString().Substring(2, 2);
+}
+
+
+<p>
+    En la ciudad de Guatemala, el @_fnoti<br /><br />
+    siendo las @_horas horas con @_mins minutos, en la sede del Registro de la Propiedad Intelectual. Notifique la resolución de fecha @_fresol
+    a @solicitud.Solicitante.Nombre <br />
+    Por medio de copia entregada a: @tramite.DOCUMENT.Notificador
+</p>
+

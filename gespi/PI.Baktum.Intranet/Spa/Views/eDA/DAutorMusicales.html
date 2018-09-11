@@ -1,0 +1,53 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Se adjunta Partitura</label>
+                <select class="form-control" name="Expediente__ObrasMusicalesyEscenicas__Partitura" ng-model="model.ObrasMusicalesyEscenicas.Partitura" ng-options="t.Id as t.Nombre for t in partituraLst"></select><br />
+            </div>
+            <div class="col-md-3">
+                <label>Letra</label>
+                <input type="text" name="Expediente__ObrasMusicalesyEscenicas__Letra" ng-model="model.ObrasMusicalesyEscenicas.Letra" class="form-control" placeholder="Letra..." />
+            </div>
+            <div class="col-md-3">
+                <label>Genero</label>
+                <input type="text" name="Expediente__ObrasMusicalesyEscenicas__Genero" ng-model="model.ObrasMusicalesyEscenicas.Genero" class="form-control" placeholder="Genero..." />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>
+                    <input type="checkbox" name="Expediente__ObrasMusicalesyEscenicas__EsAutor" ng-model="model.ObrasMusicalesyEscenicas.EsAutor" style="width:15px;">
+                    Autor de la Obra
+                </label>
+            </div>
+            <div class="col-md-3">
+                <label>
+                    <input type="checkbox" name="Expediente__ObrasMusicalesyEscenicas__EsMusica" ng-model="model.ObrasMusicalesyEscenicas.EsMusica" style="width:15px;">
+                    Musica
+                </label>
+            </div>
+            <div class="col-md-3">
+                <label>
+                    <input type="checkbox" name="Expediente__ObrasMusicalesyEscenicas__EsComercial" ng-model="model.ObrasMusicalesyEscenicas.EsComercial" style="width:15px;">
+                    Comercial
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Clase o Genero</label>
+                <input type="text" name="Expediente__ObrasMusicalesyEscenicas__ClaseGenero" ng-model="model.ObrasMusicalesyEscenicas.ClaseGenero" class="form-control" placeholder="Clase o Genero..." />
+            </div>
+            <div class="col-md-3">
+                <label>Duracion</label>
+                <input type="text" name="Expediente__ObrasMusicalesyEscenicas__Duracion" ng-model="model.ObrasMusicalesyEscenicas.Duracion" class="form-control" placeholder="Duracion..." />
+            </div>
+        </div>
+    </div>
+</div>

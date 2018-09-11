@@ -1,0 +1,46 @@
+﻿
+<div class="panel panel-info" ng-controller="dexpedienteCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">Derecho de Autor - Consulta por Registro</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Registro</label>
+                    <input type="text" name="Registro" ng-model="model.DerechoDeAutor.Registro" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="getExpedienteByRegistro(model.DerechoDeAutor.Registro)"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-1">
+                    <div ng-include="'./Spa/Views/selectFavorito.html'"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Solicitud (No. Expediente)</label>
+                    <div class="form-control">{{model.Expediente.Numero}}</div>
+                </div>
+                <div class="col-md-3">
+                    <label>Fecha</label>
+                    <div class="form-control">{{model.Expediente.FechaDeSolicitud}}</div>
+                </div>
+                <div class="col-md-3">
+                    <label>Hora</label>
+                    <div class="form-control">{{model.Expediente.Hora}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-include="'./Spa/Views/dbody.html'"></div>
+
+    </div>
+</div>
+

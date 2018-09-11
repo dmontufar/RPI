@@ -1,0 +1,69 @@
+﻿@model PI.Internal.Model.LoginModel
+<!--deprecated-->
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Model.RedirectToUrl = (string)ViewBag.redirectToUrl??string.Empty;
+}
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-signin", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m=>m.RedirectToUrl)
+
+    <h2 class="form-signin-heading">Iniciar sesión</h2>
+    @Html.TextBoxFor(m=>m.Account, new {type="email", @class="form-control", placeholder="Email", required="", autofocus=""})
+    @Html.ValidationMessageFor(m => m.Account)
+    @Html.TextBoxFor(m=>m.Password,new {type="password", @class="form-control", placeholder="Clave", required=""})
+    @Html.ValidationMessageFor(m => m.Password)
+    <label class="checkbox">
+        @Html.CheckBoxFor(m => m.RememberMe, new {type="checkbox"})
+        Seguir conectado 
+    </label>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Continuar</button>
+    if (Model.RedirectToUrl.Contains("Admin"))
+    {
+        <div class="row">
+            <h4 style="text-align:center">Admin site</h4>
+        </div>
+    }
+    else if (Model.RedirectToUrl.Contains("Base"))
+    {
+        <div class="row">
+            <h4 style="text-align:center">Gestor de Propiedad Intelectual</h4>
+        </div>
+    }
+    else if (Model.RedirectToUrl.Contains("Recepcion"))
+    {
+        <div class="row">
+            <h4 style="text-align:center">Recepcion y entrega de documentos</h4>
+        </div>
+    }
+    
+}
+
+
+<div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="~/Images/Patents.png">
+          <h2>Patentes</h2>
+          <p>Una patente es un derecho exclusivo concedido a una invención, es decir, un producto o procedimiento que aporta, en general, una nueva manera de hacer algo o una nueva solución técnica a un problema.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="~/Images/CopyRights.png">
+          <h2>Derecho de Autor</h2>
+          <p>El derecho de autor es un término jurídico que describe los derechos concedidos a los creadores por sus obras literarias y artísticas.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="~/Images/Trademarks.png">
+          <h2>Marcas</h2>
+          <p>Una marca ofrece protección al titular de la marca, garantizándole el derecho exclusivo a utilizarla para identificar bienes o servicios, o autorizar a un tercero a utilizarla a cambio de un pago.</p>
+@*          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>*@
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+</div>

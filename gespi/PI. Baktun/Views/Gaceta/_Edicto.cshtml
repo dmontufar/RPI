@@ -1,0 +1,163 @@
+﻿@model PI.Models.Publicacion
+
+@{
+    Layout = "~/Views/Shared/_Empty.cshtml";
+    bool esNuevaLey = false;
+    if ((Model.fecha_solicitud <= new DateTime(2003, 03, 24)) ||
+        (Model.fecha_solicitud > new DateTime(2003, 11, 26) && Model.fecha_solicitud < new DateTime(2005, 01, 30))
+        || (Model.fecha_solicitud >= new DateTime(2006, 05, 31)))
+    {
+        esNuevaLey = true;
+    }
+    else if ((Model.fecha_solicitud > new DateTime(2003, 03, 25) && Model.fecha_solicitud < new DateTime(2005, 11, 25)) ||
+        (Model.fecha_solicitud > new DateTime(2005, 01, 31) && Model.fecha_solicitud < new DateTime(2006, 05, 30)))
+    {
+        esNuevaLey = false;
+    }
+
+    string tipoDeMarca = String.Empty;
+
+    //tipoDeMarca = "Colectiva", "Certificación "
+
+    string color = string.Empty; //"a Color" this should be saved in the database at the time of printing the edicto
+
+    string prnEdicto = string.Empty;
+
+    // FECHA DE PUBLICACION
+    //prnEdicto += "El " + Model.fecha_publicacion.Value.ToLongDateString() + " ";
+    prnEdicto += "El " + Model.fecha_solicitud.Value.ToLongDateString() + " ";
+
+    // MANDATARIO(A)
+
+    prnEdicto += Model.mandatario.Trim() + " ";
+
+    // CALIDAD
+    // SI NO LLEVA MANDATARIO NO COLOCAR CALIDAD
+    if (Model.mandatario.Trim() != "")
+    {
+        prnEdicto += Model.calidad + " de: ";
+    }
+
+    // TITULAR
+    prnEdicto += Model.titular;
+
+    // PAIS
+    prnEdicto += " de: " + Model.pais.Trim() + " ";
+
+    // SOLICITA EL REGISTRO DE ....
+    var productos = string.Empty;
+    if (Model.tipo_edicto == (int)PI.Common.TiposDeEdicto.NombreComercial)
+    {
+        //    prnEdicto += "Solicita Registro del Nombre Comercial ";
+        productos = ", ampara y distingue: " + Model.productos;
+        prnEdicto += ", ubicada en: " + Model.dir_comercial.Trim() + " ";
+        prnEdicto += "Solicita Registro de Nombre Comercial";
+        //productos = esNuevaLey ? "," : ", Ampara:" + Model.productos;
+
+    }
+    else if (Model.tipo_edicto == (int)PI.Common.TiposDeEdicto.Propaganda)
+    {
+        // productos = string.Empty;
+        productos = ", Para Publicitar: " + Model.productos;
+        prnEdicto += "Solicita Registro de la Señal de Publicidad ";
+    }
+    else if (Model.tipo_edicto == (int)PI.Common.TiposDeEdicto.Sonora)
+    {
+        prnEdicto += "Solicita Registro de la Marca sonora";
+        productos = esNuevaLey ? "de conformidad con la reproducción magnética que puede ser consultada en el R.P.I. Ampara: " + Model.productos : ",";
+    }
+    else
+    {
+        prnEdicto += "Solicita Registro de la Marca";
+        productos = esNuevaLey ? ", Ampara:" + Model.productos : ",";
+    }
+
+    // DISTINTIVO
+    prnEdicto += tipoDeMarca.Trim() + ": " + Model.distintivo.Trim();
+
+    //prnEdicto += " " + color + " Clase:"+ Model.clase;
+
+    // CLASE
+    if (Model.tipo_edicto != (int)PI.Common.TiposDeEdicto.NombreComercial)
+    {
+        prnEdicto += " Clase: " + Model.clase;
+    }
+
+
+    // PRODUCTOS
+    prnEdicto += productos;
+
+    // CLASE IS ES NOMBRES COMERCIALE
+    if (Model.tipo_edicto == (int)PI.Common.TiposDeEdicto.NombreComercial)
+    {
+        prnEdicto += " Clase: " + Model.clase;
+    }
+
+
+    // EXPEDIENTE
+    // prnEdicto += " Expediente: " + Model.expediente;
+    prnEdicto += " Expediente: " + Model.expediente.Insert(4, "-");
+
+    // FECHA DE PUBLICACION
+    prnEdicto += ". REGISTRO DE LA PROPIEDAD INTELECTUAL. ";
+
+    //prnEdicto += "Guatemala," + Model.fecha_publicacion.Value.ToLongDateString();
+    prnEdicto += "Guatemala, " + Model.fecha_edicto.Value.ToLongDateString();
+}
+
+<style>
+    .logoEdicto {
+        width: 300px;
+        height: 300px;
+    }
+
+    .pagina {
+        page-break-after: always;
+        width: 100%;
+        height: auto;
+    }
+
+    .extra {
+        height: 200px;
+    }
+
+    @@media only screen and (max-width:768px) {
+        .logoEdicto {
+            width: 100%;
+            height: 100%;
+        }
+
+        .edicto {
+            margin: 5%;
+        }
+
+            .edicto .TMlogo {
+                width: 40%;
+            }
+    }
+</style>
+<div id="@Model.Id" @(ViewBag.Many ? "class=pagina" : "")>
+    <div class="edicto">
+        <div class="TMlogo">
+            <img style="width:inherit;" class="logovEdicto" src="@Model.logotipo" alt="tm" />
+        </div>
+        <p>
+            <h4>Fecha de Publicación: @Model.fecha_publicacion.Value.ToShortDateString()</h4>
+            <br />
+            @prnEdicto
+            @if (prnEdicto.Length < 2500) // aprox what it takes to draw till the logo
+            {
+                //@Html.Raw(String.Concat(Enumerable.Repeat("</br>", 15)));
+            }
+        </p>
+        <br />
+        <h4>@Model.firmado_por</h4>
+        @if (prnEdicto.Length < 2500) // aprox what it takes to draw till the logo
+        {
+            <br /><br />
+            @*@Html.Raw(String.Concat(Enumerable.Repeat("</br>", 15)));*@
+        }
+
+
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-9">
+                <label>Nombre</label>
+                <input type="text" name="Expediente__Solicitante__Nombre" ng-model="model.Solicitante.Nombre" class="form-control" placeholder="Nombre..." />
+            </div>
+            <div class="col-md-3">
+                <label>Estado Civil</label>
+                <select class="form-control" name="Expediente__Solicitante__EstadoCivil" ng-model="model.Solicitante.EstadoCivil" ng-options="t.Id as t.Nombre for t in estadoCivilLst"></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Edad</label>
+                <input type="text" name="Expediente__Solicitante__Edad" ng-model="model.Solicitante.Edad" class="form-control" placeholder="Edad..." />
+            </div>
+            <div class="col-md-6">
+                <label>Profesion u Officio</label>
+                <input type="text" name="Expediente__Solicitante__Profesion" ng-model="model.Solicitante.Profesion" class="form-control" placeholder="Profesion..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Domicilio</label>
+                <input type="text" name="Expediente__Solicitante__Domicilio" ng-model="model.Solicitante.Domicilio" class="form-control" placeholder="Domicilio..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Nacionalidad</label>
+                <input type="text" name="Expediente__Solicitante__Nacionalidad" ng-model="model.Solicitante.Nacionalidad" class="form-control" placeholder="Nacionalidad..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Lugar para Notificaciones</label>
+                <input type="text" name="Expediente__Solicitante__LugarNotificacion" ng-model="model.Solicitante.LugarNotificacion" class="form-control" placeholder="Lugar para Notificaciones..." />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Telefono</label>
+                <input type="text" name="Expediente__Solicitante__Telefono" ng-model="model.Solicitante.Telefono" class="form-control" placeholder="Telefono..." />
+            </div>
+            <div class="col-md-3">
+                <label>Fax</label>
+                <input type="text" name="Expediente__Solicitante__Fax" ng-model="model.Solicitante.Fax" class="form-control" placeholder="Fax..." />
+            </div>
+            <div class="col-md-3">
+                <label>Email</label>
+                <input type="text" name="Expediente__Solicitante__Email" ng-model="model.Solicitante.Email" class="form-control" placeholder="Email..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Calidad con que comparece</label>
+                <input type="text" name="Expediente__Solicitante__Calidad" ng-model="model.Solicitante.Calidad" class="form-control" placeholder="Calidad con que comparece..." />
+            </div>
+            <div class="col-md-6">
+                <label>Entidad solicitante</label>
+                <input type="text" name="Expediente__Solicitante__EntidadSolicitante" ng-model="model.Solicitante.EntidadSolicitante" class="form-control" placeholder="Entidad solicitante..." />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Lugar de Constitucion</label>
+                <input type="text" name="Expediente__Solicitante__LugarConstitucion" ng-model="model.Solicitante.LugarConstitucion" class="form-control" placeholder="Lugar de Constitucion..." />
+            </div>
+            <div class="col-md-6">
+                <label>Objeto de la Solicitud</label>
+                <input type="text" name="Expediente__Solicitante__ObjetoSolicitud" ng-model="model.Solicitante.ObjetoSolicitud" class="form-control" placeholder="Objeto de la Solicitud..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>En calidad de</label>
+                <select class="form-control" name="Expediente__Solicitante__EnCalidad" ng-model="model.Solicitante.EnCalidad" ng-options="t.Id as t.Nombre for t in enCalidadLst"></select><br />
+            </div>
+            <div class="col-md-9">
+                <label>Titulo mediante el cual adquirio el derecho</label>
+                <input type="text" name="Expediente__Solicitante__AdquirioDerecho" ng-model="model.Solicitante.AdquirioDerecho" class="form-control" placeholder="Titulo mediante el cual adquirio el derecho..." />
+            </div>
+        </div>
+    </div>
+</div>
+

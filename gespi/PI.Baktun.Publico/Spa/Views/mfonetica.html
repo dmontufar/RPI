@@ -1,0 +1,92 @@
+﻿
+<div class="panel panel-info" ng-controller="mfoneticaCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">e-Consulta - Busqueda de Marcas</h3>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="form-group">
+            <div class="bs-box bs-box-blue row">
+                <label>Tipo de busqueda</label><br />
+                <div class="col-md-12">
+                    <select class="form-control" name="tipoDeBusquedaSel" ng-model="tipoDeBusquedaSel" ng-options="t.Nombre for t in tipoDeBusqueda"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="bs-box bs-box-orange row">
+                <label>Denominacion a buscar</label><br />
+                <div class="col-md-12">
+                    <input type="text" name="textSearch" required ng-model="textSearch" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div ng-include="'./Spa/Views/nizaSelection.html'"></div>
+        </div>
+
+        <div class="form-group">
+            <div class="bs-box bs-box-green row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="searchMarcas()"><span class="glyphicon glyphicon-search"> Hacer Busqueda</span></button>
+                </div>                
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+
+            <!--<div class="row">
+                <div class="col-xs-4">
+                    <label for="search">Items por pagina:</label>
+                    <input type="number" min="1" max="100" class="form-control" ng-model="pageSize" readonly>
+                </div>
+            </div>
+            <br>-->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Expediente</th>
+                                <th>SignoDistintivo</th>
+                                <th>Tipo de Registro</th>
+                                <th>ClasificacionNiza</th>
+                                <th>Estatus</th>
+                                <th>Punteo</th>
+                                <th>Registro</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <!--<tr dir-paginate="e in dataset | itemsPerPage: pageSize" total-items="totalItems">-->
+                            <tr dir-paginate="e in dataset | itemsPerPage: 100" total-items="totalItems">
+                                <td><a ng-href="#/{{getExpedienteUrl(e)}}" style="display:block;">{{ e.Numero }}</a></td>
+                                <td>{{ e.SignoDistintivo }}</td>
+                                <td>{{ e.TipoDeRegistro }}</td>
+                                <td>{{ e.ClasificacionNiza}}</td>
+                                <td>{{ e.EstatusDsc }}</td>
+                                <td>{{ e.Punteo}}</td>
+                                <td>{{ e.Registro }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <style>
+                    .pagination {
+                        display: block !important;
+                    }
+                </style>
+                <dir-pagination-controls on-page-change="pageChanged(newPageNumber)" template-url="Spa/Framework/pgntn/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+        </div>
+
+        </div>
+</div>
+

@@ -1,0 +1,57 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Nombre</label>
+                <input type="text" name="Expediente__Productor__Nombre" ng-model="model.Productor.Nombre" class="form-control" placeholder="Nombre..." />
+            </div>
+            <div class="col-md-3">
+                <label>Edad</label>
+                <input type="text" name="Expediente__Productor__Edad" ng-model="model.Productor.Edad" class="form-control" placeholder="Edad..." />
+            </div>
+            <div class="col-md-3">
+                <label>Estado Civil</label>
+                <select class="form-control" name="Expediente__Productor__EstadoCivil" ng-model="model.Productor.EstadoCivil" ng-options="t.Id as t.Nombre for t in estadoCivilLst"></select><br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Profesion u Officio</label>
+                <input type="text" name="Expediente__Productor__Profesion" ng-model="model.Productor.Profesion" class="form-control" placeholder="Profesion..." />
+            </div>
+            <div class="col-md-8">
+                <label>Domicilio</label>
+                <input type="text" name="Expediente__Productor__Domicilio" ng-model="model.Productor.Domicilio" class="form-control" placeholder="Domicilio..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Nacionalidad</label>
+                <input type="text" name="Expediente__Productor__Nacionalidad" ng-model="model.Productor.Nacionalidad" class="form-control" placeholder="Nacionalidad..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Telefono</label>
+                <input type="text" name="Expediente__Productor__Telefono" ng-model="model.Productor.Telefono" class="form-control" placeholder="Telefono..." />
+            </div>
+            <div class="col-md-4">
+                <label>Fax</label>
+                <input type="text" name="Expediente__Productor__Fax" ng-model="model.Productor.Fax" class="form-control" placeholder="Fax..." />
+            </div>
+            <div class="col-md-4">
+                <label>Email</label>
+                <input type="text" name="Expediente__Productor__Email" ng-model="model.Productor.Email" class="form-control" placeholder="Email..." />
+            </div>
+        </div>
+    </div>
+</div>

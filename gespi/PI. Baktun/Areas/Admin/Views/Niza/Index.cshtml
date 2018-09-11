@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminCanvas.cshtml";
+}
+
+<div class="form-group">
+    <div id="abc-Niza" class="row" style="display:none">
+    </div>
+</div>
+
+<div id="grid">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div id="searchNiza"></div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <style>
+                #grdNiza:after {
+                    content: "Niza";
+                }
+            </style>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="boxy" id="grdNiza">
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <input type="button" onclick="addNiza()" class="btn btn-default" title="Agregar" value="Agregar" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function addNiza()
+    {
+        return fetchPartial('#abc-Niza', '/Admin/Niza/Detalle?id=', 'GET', '', '#grid')
+    }
+
+
+    function getData(pageSize, page, searchText) { //if searching for a term set page=1
+        var pagedData = null;
+
+        $.ajax({
+            type: 'GET',
+            url: "/Admin/Niza/GetPage",
+            dataType: "json",
+            cache: false,
+            data: { pageNumber: page, pageSize: pageSize, filter: searchText },
+            async: false,
+            success: function (data) {
+                pagedData = data;
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(JSON.stringify(textStatus));
+            },
+            statusCode: {
+                403: function () {
+                    window.location = '@Url.Action("Index", "Home")';
+                }
+            }
+        });
+
+        var data = { dataset: pagedData.Result.DataSet, datasetLenght: pagedData.Result.TotalItems };
+        return data;
+    }
+
+    var columns = [
+                {
+                    ColumnName: 'Codigo',
+                    HeaderName: 'Codigo',
+                    IgnoreHeader: false
+                },
+                {
+                    ColumnName: 'Descripcion',
+                    HeaderName: 'Descripcion',
+                },
+                {
+                    ColumnName: 'Edit',
+                    HeaderName: '',
+                    CelToHtmlDelegate: function (jsonRow) { return '<a onclick=\'fetchPartial("#abc-Niza", "/Admin/Niza/Detalle?id=' + jsonRow.Id + '", "GET", "", "#grid")\'><span class="glyphicon glyphicon-edit"></span></a>'; },
+                },
+                {
+                    ColumnName: 'Delete',
+                    HeaderName: '',
+                    CelToHtmlDelegate: function (jsonRow) { return '<a href="@Url.Action("Detalle","Usuarios")"><span class="glyphicon glyphicon-trash"></span></a>'; },
+                }
+    ];
+
+    var gridSetUp =
+        {
+            gridId: "grid" + Date.now().toString(),
+            gridAttributes: "class='table table-hover'"
+        };
+    var grdNiza = new AdaptiveGrid();
+
+    grdNiza.searchBox = {
+        txtSearchDiv: '<div class="col-md-5">',
+        searchClass: "btn btn-default",
+        pageLeftClass: "btn btn-default",
+        pageRightClass: "btn btn-default"
+    };
+
+    grdNiza.gridContainer = "grdNiza";
+    grdNiza.searchBarContainer = "searchNiza";
+    grdNiza.gridSetUp = gridSetUp;
+    grdNiza.columns = columns;
+    grdNiza.dataSource = function (pageSize, page, searchText) { return getData(pageSize, page, searchText); }
+    grdNiza.pageSize = 10;
+    grdNiza.fetchAndFill(1, '');
+</script>

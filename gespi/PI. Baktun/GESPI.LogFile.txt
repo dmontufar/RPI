@@ -1,0 +1,652 @@
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : The controller for path '/admin/GetClassificacionPat' was not found or does not implement IController.
+iisexpress.exe Error: 0 : The controller for path '/areas/admin/GetClassificacionPat' was not found or does not implement IController.
+token:
+iisexpress.exe Error: 0 : An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : Autofac Setup...
+token:
+iisexpress.exe Error: 0 : Autofac Setup...
+token:
+iisexpress.exe Error: 0 : An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+token:
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : Autofac Setup...
+token:
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Value cannot be null.
+Parameter name: entity
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Value cannot be null.
+Parameter name: entity
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:
+token:
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Old Date date: 12/30/1899 00:00:00
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Old date: 12/30/1899 00:00:00
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Value cannot be null.
+Parameter name: entity
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Invalid column name 'AnotacionEnRegistro'.
+Invalid column name 'AnotacionEnRegistro'.
+Invalid column name 'AnotacionEnExpedienteId'.
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Invalid column name 'AnotacionEnRegistro'.
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Invalid column name 'AnotacionEnRegistro'.
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+iisexpress.exe Error: 0 : An error occurred while updating the entries. See the inner exception for details.
+iisexpress.exe Error: 0 : 2017-03-2710:25 PM - error: Object reference not set to an instance of an object.
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+iisexpress.exe Error: 0 : An error occurred while updating the entries. See the inner exception for details.
+iisexpress.exe Error: 0 : 2017-03-2710:30 PM - error: Object reference not set to an instance of an object.
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+iisexpress.exe Error: 0 : An error occurred while updating the entries. See the inner exception for details.
+iisexpress.exe Error: 0 : 2017-03-2710:34 PM - error: Object reference not set to an instance of an object.
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+iisexpress.exe Error: 0 : 2017-03-2710:36 PM - error: Value cannot be null.
+Parameter name: entity
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:DA995,DA994
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : Autofac Setup...
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+token:
+token:
+token:
+token:
+token:
+token:
+token:
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:
+token:
+token:
+token:
+token:
+token:
+token:
+token:
+token:
+token:BTYT-TBZA-I
+token:
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA-I
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+token:BTYT-TBZA
+iisexpress.exe Error: 0 : Autofac Setup...
+iisexpress.exe Error: 0 : Autofac Setup...
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+item:n/a
+iisexpress.exe Error: 0 : Autofac Setup...
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EstatusController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Controllers.DAutorController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : 09/08/201810:58 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EstatusController'. Make sure that the controller has a parameterless public constructor.
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : 09/08/201810:59 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EstatusController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : 09/08/201810:59 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Controllers.DAutorController'. Make sure that the controller has a parameterless public constructor.
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : 09/08/201810:59 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Controllers.DAutorController'. Make sure that the controller has a parameterless public constructor.
+token:
+iisexpress.exe Error: 0 : 09/08/201810:59 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EntitiesController'. Make sure that the controller has a parameterless public constructor.
+token:
+iisexpress.exe Error: 0 : 09/08/201810:59 a. m. - error: An error occurred when trying to create a controller of type 'PI.Baktun.Areas.Admin.Controllers.EstatusController'. Make sure that the controller has a parameterless public constructor.
+iisexpress.exe Error: 0 : Autofac Setup...
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+item:n/a
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+iisexpress.exe Error: 0 : Autofac Setup...
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I
+token:CKRL-SPHO-I

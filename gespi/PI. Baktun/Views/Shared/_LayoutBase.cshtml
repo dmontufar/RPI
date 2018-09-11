@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>@ViewBag.Title</title>
+        <base href="/eRegistro/" />
+                
+        <!-- Set the viewport width to device width for mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" sizes="128x128" href="~/fonts/app.png">
+  
+        <!-- Bootstrap -->
+        <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="Bootstrap/css/LogIn.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="row" style="background-color:#02214A; color:#FFFFFF;">
+            <div class="col-md-1">
+                <img class="img-circle" data-src="holder.js/100x100" alt="100x100" style="width: 100px; height: 100px;" src="Images/RPILogo.jpg">
+             </div>
+            <div class="col-md-9">
+                <h4>Registro de la Propiedad Intelectual</h4>
+                <h5>Sistema de Gestion de Propiedad Intelectual</h5>
+            </div>
+        </div>
+
+        <div ng-app="yumKaaxApp">
+            <div class="row ">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    @RenderBody()
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+
+        <script src="Scripts/jquery-1.10.2.min.js"></script>        
+        <script src="Bootstrap/js/bootstrap.min.js"></script>
+        <script src="Scripts/jrzStorage.js"></script>
+
+        <script src="Spa/framework/angular.js"></script>
+        <script src="Spa/Framework/angular-animate.min.js"></script>
+        <script src="spa/framework/angular-route.js"></script>
+        <script src="Spa/Framework/bar/loading-bar.min.js"></script>
+        <script src="Spa/Framework/pgntn/dirPagination.js"></script>
+        <script src="Spa/Framework/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        <script src="Spa/Factories/authFactory.js"></script>
+
+        <script src="Spa/Controllers/HomeCtrl.js"></script>
+        <script src="Spa/Controllers/authController.js"></script>
+
+        <script src="Spa/Factories/UsersFactory.js"></script>
+        <script src="Spa/Factories/pageFactory.js"></script>
+        <script src="Spa/Directives/GrlDirectives.js"></script>
+        
+        <script src="Spa/App/appBase.js"></script>
+    </body>
+    
+</html>

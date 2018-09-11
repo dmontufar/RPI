@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Admisión a tramite";	
+	ViewBag.Departamento = "DEPARTAMENTO DE PATENTES Y DISEÑOS INDUSTRIALES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+@{
+    
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+
+<h3>ADMISION A TRAMITE</h3><br />
+<p>Expediente Número @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p>
+<p>@res.tituloP @solicitud.Patente.Descripcion</p>
+<p>Solicitante: @res.solicitante</p>
+@if (!res.esEnNombrePropio)
+{
+    <p>Representante Legal: @solicitud.Agente.Nombre</p>
+}
+<p>Fecha de Presentación @_fsolicitud</p><br />
+<p>I) Se admite para su trámite la solicitud identificada en el acápite; II) Se toma nota del lugar señalado para recibir
+notificaciones; III) Se tiene por presentada la documentación adjunta a la solicitud en referencia; IV) Por acreditada la
+representación legal con la que actúa en base a los documentos adjuntos; V) Estudiada la solicitud en referencia, se
+conceptúa que la misma cumple con los requisitos técnicos de forma, razón por la cual emítase el edicto
+correspondiente, el cual deberá notificarse y publicarse dentro del plazo que establece el artículo 114 del Decreto 57-
+2000 del Congreso de la República, Ley de Propiedad Industrial; VI) El edicto deberá publicarse en el Diario Oficial por una
+sola vez, a costa del interesado, dentro del plazo de seis (6) meses contados a partir del día siguiente al de su notificación,
+bajo apercibimiento que si dentro de los seis meses antes indicados, la publicación del edicto no se efectúa o bien, si el
+solicitante no presenta al Registro el ejemplar del Diario Oficial dentro de los dos meses siguientes a la fecha de la misma, la
+solicitud se tendrá por ABANDONADA; VII) NOTIFIQUESE.------------------------------</p><br />
+<p>
+FUNDAMENTO LEGAL: Artículos 4,9,12,91,92,93,99,103,105,106,113,114 y 115 del Decreto Número 57 - 2000 del
+Congreso de la República, Ley de Propiedad Industrial; Artículos 1, 7 y 14 del Acuerdo Gubernativo 89 - 2002,
+Reglamento de la Ley de Propiedad Industrial y Artículo 3 del Acuerdo Gubernativo 862 - 2000, Arancel del Registro de la
+Propiedad Intelectual en materia de Propiedad Industrial.
+</p>
+

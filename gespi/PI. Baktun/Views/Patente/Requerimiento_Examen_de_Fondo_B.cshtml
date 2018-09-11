@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+	
+	p.centrar {
+		text-align: center;
+	}
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<p>Expediente Número : @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p>
+<p>Nombre de la solicitud: @solicitud.Patente.Descripcion</p>
+<p>Nombre del Mandatario:: [DBREPORT.REPRESENTANTE]</p>
+<p>Fecha de presentación al Registro: [DBREPORT.FECHA_SOLICITUD]</p>
+<p>Fecha de presentación Internacional: [mainpat.pct_fecha]</p>
+<p>(Artículo 11.3 del PCT)</p><br>
+<p>I) Si del examen de fondo resultare que previo al otorgamiento de la patente es necesario completar la documentación
+presentada, corregir, modificar o dividir la solicitud, el Registro lo notificará al solicitante para que dentro de los tres (3)
+meses siguientes, cumpla con lo requerido o presente los comentarios o documentos que convinieran en sustento de la
+solicitud; II) A solicitud del interesado se concederá una prórroga por tres (3) meses adicionales. Vencido el plazo o su
+prórroga, habiendo o no respondido el solicitante, el Registro resolverá sobre la solicitud de patente conforme a lo
+establecido en esta ley; FUNDAMENTO LEGAL: Artículo 118 del Decreto 57-2000, Ley de Propiedad Industrial, modificado
+por el artículo 27 del Decreto 03-2013, Reformas al Decreto 57-2000, Ley de Propiedad Industrial. III) NOTIFIQUESE -----------</p>
+
+<p>
+[DBREPORT.REQUERIMIENTO]
+</p><br><br>
+
+<p class="centrar">[(SELLOS("req_resultante1", "1" ) )] </p>

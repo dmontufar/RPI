@@ -1,0 +1,133 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Director</label>
+                <input type="text" name="Expediente__AporteAudiovisual__Director" ng-model="model.AporteAudiovisual.Director" class="form-control" placeholder="Director" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Genero</label>
+                <input type="text" name="Expediente__AporteAudiovisual__Genero" ng-model="model.AporteAudiovisual.Genero" class="form-control" placeholder="Genero" />
+            </div>
+            <div class="col-md-3">
+                <label>Clase</label>
+                <input type="text" name="Expediente__AporteAudiovisual__Clase" ng-model="model.AporteAudiovisual.Clase" class="form-control" placeholder="Clase" />
+            </div>
+            <div class="col-md-3">
+                <label>Metraje</label>
+                <input type="text" name="Expediente__AporteAudiovisual__Metraje" ng-model="model.AporteAudiovisual.Metraje" class="form-control" placeholder="Metraje" />
+            </div>
+            <div class="col-md-3">
+                <label>Duracion</label>
+                <input type="text" name="Expediente__AporteAudiovisual__Duracion" ng-model="model.AporteAudiovisual.Duracion" class="form-control" placeholder="Duracion" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Nombre del Autor(es) del guion/argumento</label>
+                <input type="text" name="i_ga_NombreAutor" ng-model="ga.NombreAutor" class="form-control" placeholder="Autor(es) del guion/argumento" />
+                <button type="button" class="btn btn-info btn-xs" ng-click="saveGuionAutor(ga)" style="float:right"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+            <div class="col-md-7">
+                <style>
+                    #grdAutoresGuion:after {
+                        content: "Autor(es) del Guion/Argumento";
+                    }
+                </style>
+                <div class="boxy" id="grdAutoresGuion">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="ga in model.GuionAutores">
+                                <td>{{ga.NombreAutor}}</td>
+                                <td><a confirmed-click="deleteGuionAutor(ga)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Nombre del Autor(es) de la obra</label>
+                <input type="text" name="i_ava_NombreAutor" ng-model="ava.NombreAutor" class="form-control" placeholder="Autor de la obra" />
+                <button type="button" class="btn btn-info btn-xs" ng-click="saveAudiovisualAutor(ava)" style="float:right"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdAutoresObra:after {
+                    content: "Autor(es) Audiovisuales de la Obra";
+                }
+            </style>
+            <div class="col-md-7">
+                <div class="boxy" id="grdAutoresObra">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="ava in model.AudiovisualAutores">
+                                <td>{{ava.NombreAutor}}</td>
+                                <td><a confirmed-click="deleteAudiovisualAutor(ava)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Autor de las composiciones</label>
+                <input type="text" name="i_ca_NombreAutor" ng-model="ca.NombreAutor" class="form-control" placeholder="Autor de las composiciones" />
+                <button type="button" class="btn btn-info btn-xs" ng-click="saveComposicionAutor(ca)" style="float:right"><span class="glyphicon glyphicon-share-alt"></span>Agregar</button>
+            </div>
+
+            <style>
+                #grdAutoresObra:after {
+                    content: "Autor(es) de las composiciones musicales incorporadas en el audiovisual";
+                }
+            </style>
+            <div class="col-md-7">
+                <div class="boxy" id="grdAutoresObra">
+                    <table class="table table-hover">
+                        <thead>
+                            <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr ng-repeat="ca in model.ComposicionAutores">
+                                <td>{{ca.NombreAutor}}</td>
+                                <td><a confirmed-click="deleteComposicionAutor(ca)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

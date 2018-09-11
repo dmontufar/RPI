@@ -1,0 +1,32 @@
+﻿<!-- REMOVE !! NOT IN USE-->
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-5">
+            Fecha Resolucion
+            <input type="text" name="fechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="evento.fechaResolucion" is-open="fresol.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event, 'fresol')"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-12">
+            Observaciones<textarea rows="4" cols="10" name="Observaciones" ng-model="evento.Observaciones" class="form-control" required placeholder="Observaciones..." />
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-block">Grabar</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-success btn-block">Imprimir</button>
+        </div>
+    </div>
+</div>

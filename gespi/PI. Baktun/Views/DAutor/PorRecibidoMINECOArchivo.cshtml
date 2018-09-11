@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DERECHOS DE AUTOR Y DERECHOS CONEXOS";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+    //var solicitud = @ViewData.Eval("Solicitud") as PI.Models.ExpedienteDAutor;
+    //var tramite = @ViewData.Eval("Tramite") as PI.Models.DAResolucion;
+    //var solicitud = Model.Solicitud as PI.Models.ExpedienteDAutor;
+    //var tramite = Model.Tramite as PI.Models.DAResolucion;
+}
+<style>
+     p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<p>@solicitud.DerechoDeAutor.Titulo</p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+@solicitud.Tipo.Nombre
+
+<p><h3>Resolución: Por Recibido del MINECO para Archivo</h3></p>
+
+@{
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol
+    <br /><br />
+
+    I)  Por recibido el presente expediente  proveniente del Ministerio de Economía.  
+    II) En virtud de haberse declarado sinlugar el Recurso de
+    Revocatoria planteado, se procede al archivo de la obra titulada: [TITULODELAOBRA]
+    del (de la) autor (a): [AUTOR(es)]
+</p>
+
+<br /><br />
+Notifíquese.  

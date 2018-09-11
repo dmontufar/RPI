@@ -1,0 +1,51 @@
+﻿<style>
+    #lstAbc:after {
+        content: "Estatus";
+    }
+</style>
+<div class="boxy" id="lstAbc">
+    <div ng-controller="AgentesCtrlr">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Items por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="a in Agentes">
+                            <td><a href="Admin#/Agentes/{{a.Id}}" style="display:block;">{{ a.Nombre }}</a></td>
+                            <td>{{ a.Domicilio }}</td>
+                            <td>{{ a.Telefono }}</td>
+                            <td>{{ a.Fax }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="Admin#Agentes/0" class=" btn btn-default">Agregar</a>
+
+        <div class="row">
+            <div class="col-md-12">
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+                            class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"
+                            max-size="maxSize"
+                            first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

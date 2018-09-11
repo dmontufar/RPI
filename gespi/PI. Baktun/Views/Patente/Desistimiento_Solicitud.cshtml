@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;    
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+
+<p>Expediente Número @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p><br>
+<p>[DBREPORT.NOMBRE] [DBREPORT.DESCRIPCION]</p><br>
+<p>Solicitante @solicitud.Patente.Descripcion</p><br>
+<p>Representante Legal [DBREPORT.REPRESENTANTE]</p><br>
+<p>Fecha de Presentación [DBREPORT.FECHA_SOLICITUD]</p><br>
+<p>CONSIDERANDO: Que de conformidad con el artículo 15 del Decreto Número 57-2000 Ley de Propiedad Industrial; el
+solicitante podrá desistir de su solicitud en cualquier momento, mediante petición escrita con firma legalizada por notario,
+presentada al Registro de la Propiedad Intelectual. [TITULO] de la solicitud de [DBREPORT.LINEA2] En virtud de que el
+desistimiento llena las formalidades que exige la disposición legal citada, procede emitir la resolución correspondiente.
+POR TANTO: Este Registro con fundamento en lo considerado, ley citada y lo que para el efecto establecen los
+artículos 581, 585 y 586 del Decreto Ley 107, Código Procesal Civil y Mercantil, RESUELVE: Aprueba el
+DESISTIMIENTO de la</p><br>
+[DBREPORT.LINEA3]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DBREPORT.DESCRIPCION]<br>
+presentada por [DBREPORT.REPRESENTANTE]
+Notifíquese y oportunamente archívese definitivamente el expediente
+Fecha de Memorial [DBREPORT.FECHAMEMORIAL]

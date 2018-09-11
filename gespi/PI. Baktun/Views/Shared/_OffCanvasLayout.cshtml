@@ -1,0 +1,101 @@
+﻿<!-- MAIN MODULES LAYOUT -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>@ViewBag.Title</title>
+
+        <!-- Set the viewport width to device width for mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" sizes="128x128" href="~/fonts/app.png">
+
+        <!-- Bootstrap -->
+        <link href="~/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="/Bootstrap/custom.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        @* 
+            Menu 
+        *@
+        <div class="bigContainer">
+            <div class="panel-primary">
+                <div class="panel-heading">
+                    <div class="navbar navbar-default">
+                        <div class="container" ng-controller="MenueRPICtrl">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="/">E-Registro</a>
+                            </div>
+                            <div class="navbar-collapse collapse" style="height: 1px;">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#Marcas">Marcas</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Auxiliares<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#Oposiciones">Oposiciones</a></li>
+                                            <li><a href="#Renovaciones">Renovaciones</a></li>
+                                            <li><a href="#Anotaciones">Anotaciones</a></li>
+                                            <li><a href="#Traspasos">Traspasos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#Patentes">Patentes</a></li>
+                                    <li><a href="#DA">Derecho de Autor</a></li>
+                                </ul>
+                            </div><!--/.nav-collapse -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-app="yumKaaxApp">
+            <div class="row ">
+                @RenderBody()
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="/Bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/Scripts/jrzStorage.js"></script>
+
+        <script src="~/Spa/framework/angular.js"></script>
+        <script src="~/Spa/Framework/angular-animate.min.js"></script>
+        <script src="~/spa/framework/angular-route.js"></script>
+        <script src="~/Spa/Framework/bar/loading-bar.min.js"></script>
+        <script src="~/Spa/Framework/pgntn/dirPagination.js"></script>
+        <script src="~/Spa/Framework/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        <script src="~/Spa/Factories/authFactory.js"></script>
+
+        <script src="~/Spa/Controllers/MenueRPICtrl.js"></script>
+        <script src="~/Spa/Controllers/eRPICtrl.js"></script>
+        <script src="~/Spa/Controllers/MarcasCtrl.js"></script>
+        <script src="~/Spa/Controllers/DACtrl.js"></script>
+        <script src="~/Spa/Controllers/PatenteCtrl.js"></script>
+        
+        <script src="~/Spa/Factories/UsersFactory.js"></script>
+        <script src="~/Spa/Factories/pageFactory.js"></script>
+        <script src="~/Spa/Directives/GrlDirectives.js"></script>
+
+        <script src="~/Spa/App/appeRPI.js"></script>
+        
+    </body>
+</html>
+
+
+
+@*ingreso > 01 Aplicacion ingresada /localizacion: xxx
+modificaciones a la aplicacion principal >> keep status
+cambio manual de estatus >> log usuario and previous data saved
+modificaciones al contenido del evento actual >> log previous info and usuario
+
+*@

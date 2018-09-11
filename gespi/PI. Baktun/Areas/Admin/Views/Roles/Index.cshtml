@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminCanvas.cshtml";
+}
+
+<div class="form-group">
+    <div class="row">
+
+        <style>#grdRoles:after { content: "Roles";}</style>
+	    <div class="col-md-10">
+            <div class="boxy" id="grdRoles">
+            <table class="table table-hover">
+                    <thead><!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                    <tr>
+                        <th>Role</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Administradores</td>
+                        <td><a href="@Url.Action("Detalle","Roles")"><span class="glyphicon glyphicon-edit"></span></a></td>
+                        <td><a href="#" onclick="alert('...');"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Novedad</td>
+                        <td><a href="@Url.Action("Detalle","Roles")"><span class="glyphicon glyphicon-edit"></span></a></td>
+                        <td><a href="#" onclick="alert('...');"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Recepcion</td>
+                        <td><a href="@Url.Action("Detalle","Roles")"><span class="glyphicon glyphicon-edit"></span></a></td>
+                        <td><a href="#" onclick="alert('...');"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Informatica</td>
+                        <td><a href="@Url.Action("Detalle","Roles")"><span class="glyphicon glyphicon-edit"></span></a></td>
+                        <td><a href="#" onclick="alert('...');"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

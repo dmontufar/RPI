@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+	
+	
+	p.centrar {
+		text-align: center;
+	}
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<p>Expediente Número : @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p>
+<p>Nombre de la solicitud: @solicitud.Patente.Descripcion</p>
+<p>Nombre del Mandatario:: [DBREPORT.REPRESENTANTE]</p>
+<p>Fecha de presentación al Registro: [DBREPORT.FECHA_SOLICITUD]</p>
+<p>Fecha de presentación Internacional: [mainpat.pct_fecha]</p>
+<p>(Artículo 11.3 del PCT)</p><br>
+<p>I) El Registro podrá requerir al solicitante que presente, dentro de un plazo de tres (3) meses contados a partir de la
+notificación respectiva, prorrogable a un (1) mes más en casos calificados por el Registro, la documentación que considere
+conveniente para soportar la patentabilidad de la solicitud en mención y por medio de una copia sin legalización y con
+traducción simple de cualquier material contenido en un expediente administrativo o judicial del extranjero relacionado con
+la solicitud en trámite; II) FUNDAMENTO LEGAL: Artículo 118 del Decreto 57-2000, Ley de Propiedad Industrial, modificado
+por el artículo 59 del Decreto 11-2006, Reformas legales para la Implementación del Tratado de Libre Comercio, República
+Dominicana-Centroamérica-Estados Unidos de América; III) NOTIFIQUESE -------------------------------------------------</p><br>
+<p>
+[DBREPORT.REQUERIMIENTO]
+</p><br><br>
+
+<p class="centrar">[(SELLOS("req_resultante1", "1" ) )] </p>
+
+
+

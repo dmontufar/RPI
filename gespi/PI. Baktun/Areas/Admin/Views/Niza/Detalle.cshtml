@@ -1,0 +1,50 @@
+﻿@model PI.Models.ClassificacionDeNiza
+
+<div class="col-md-1"></div>
+<form id="frm-Niza" class="col-md-10">
+    @{
+        @Html.AntiForgeryToken()
+        if (!string.IsNullOrEmpty(ViewBag.Errors))
+        {
+            <div class="row">
+                @Html.Raw(ViewBag.Errors)
+            </div>
+            //something
+        }
+
+        <div class="boxy form-horizontal" id="grdNiza">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Codigo, new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Codigo)
+                    @Html.ValidationMessageFor(model => model.Codigo)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Descripcion, new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Descripcion)
+                    @Html.ValidationMessageFor(model => model.Descripcion)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-2">
+                    <input type="button" value="Save" class="btn btn-default" onclick="sendRequest('#abc-Niza', '@Url.Action("Detalle", "Niza")', 'POST', '#frm-Niza', false )">
+                </div>
+                <div class="col-md-offset-2 col-md-2">
+                    <input class="btn btn-default" onclick="cancelPartial('#abc-Niza', '#grid'); grdNiza.fetchAndFill(1, '');" value="Cerrar" />
+                </div>
+            </div>
+        </div>
+    }
+</form>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

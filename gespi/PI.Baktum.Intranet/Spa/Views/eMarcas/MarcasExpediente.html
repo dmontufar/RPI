@@ -1,0 +1,37 @@
+﻿<!-- Nav tabs -->
+<uib-tabset>
+    <uib-tab heading="Solicitud">
+        <div ng-include="'./Spa/Views/eMarcas/MarcaSolicitud.html'"></div>
+    </uib-tab>
+    <uib-tab heading="productos" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/eMarcas/MarcaProductos.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Titular(es)" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/eMarcas/MarcaTitulares.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Registro" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/eMarcas/MarcaRegistro.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Cronologia" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/shared/cronologia.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Digital" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/eMarcas/MarcaDigital.html'"></div>
+    </uib-tab>
+    <uib-tab heading="e-doctos" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/eMarcas/MarcaeDoctos.html'"></div>
+    </uib-tab>
+</uib-tabset>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-info btn-block" name="_action" value="Save"><span class="glyphicon glyphicon-floppy-save"> Grabar</span></button>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-info btn-block" name="_action" value="Cerrar"><span class="glyphicon glyphicon-folder-close"> Cerrar</span></button>
+            </div>
+        </div>
+    </div>

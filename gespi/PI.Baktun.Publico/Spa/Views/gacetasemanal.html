@@ -1,0 +1,29 @@
+﻿<style>
+    #stlGaceta:after {
+        content: "Boletin Electronico";
+    }
+</style>
+<div class="boxy" id="stlGaceta">
+    <div ng-controller="gacetaSemanalCtrl">
+        <div class="row">
+            <div class="col-xs-4">                
+                <label for="search">Semana</label>
+                <input type="text" name="fechaSelected" class="form-control" uib-datepicker-popup="{{format}}" ng-model="fechaSelected" is-open="fs.open" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fs')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </div>
+            <div class="col-xs-4">
+                <br />
+                <a target="_blank" href="/gaceta/semanal?fecha={{fechaSelected | date:'dd/MM/yyyy'}}" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-folder-open">Abrir en Explorador</span></a>                
+            </div>
+            <div class="col-xs-4">
+                <br />
+                <a target="_blank" href="/gaceta/semanal?fecha={{fechaSelected | date:'dd/MM/yyyy' }}&format=pdf" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-folder-open">Abrir en PDF</span></a>
+            </div>
+        </div>
+        <br>
+        <!--<a href="#Leyes/0" class=" btn btn-default">Agregar</a>-->
+
+    </div>
+</div>

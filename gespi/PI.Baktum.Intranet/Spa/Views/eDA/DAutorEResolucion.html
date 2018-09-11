@@ -1,0 +1,33 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-5">
+            <label>Fecha</label>
+            <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="evento.FechaResolucion" is-open="fres.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event, 'fres')"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-12">
+            Resuelve<textarea rows="4" cols="10" name="Resuelve" ng-model="evento.Resuelve" class="form-control" placeholder="Resuelve..." />
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info" ng-click="SaveResolution()">Grabar Resolucion</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-success">Imprimir Resolucion</button> <!--solo si esta grabada-->
+        </div>
+    </div>
+</div>
+
+

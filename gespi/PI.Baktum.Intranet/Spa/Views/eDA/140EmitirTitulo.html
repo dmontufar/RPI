@@ -1,0 +1,54 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Resolucion</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="col-md-3">
+            <label>Registro</label>
+            <input type="text" name="Registro" ng-model="_resolucion.Registro" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Si no asigna un numero de Registro, el sistema asignara el correlativo siguiente al ultimo asignado</label>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Libro</label>
+            <input type="text" name="Libro" ng-model="_resolucion.Libro" class="form-control" placeholder="###" />
+        </div>
+        <div class="col-md-3">
+            <label>Tomo</label>
+            <input type="text" name="Tomo" ng-model="_resolucion.Tomo" class="form-control" placeholder="###" />
+        </div>
+        <div class="col-md-3">
+            <label>Folio</label>
+            <input type="text" name="Folio" ng-model="_resolucion.Folio" class="form-control" placeholder="##" />
+        </div>
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" ng-click="_140EmitirTituloSaveNPrint(_resolucion)">Imprimir Titulo</button>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info btn-lg" confirm-action msg="Esta segur@ de Proceder?" continue-with="rollbackResolution()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+

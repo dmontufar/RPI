@@ -1,0 +1,10 @@
+﻿<div class="btn-group" ng-controller="favoritosCtrl">
+    <button type="button" ng-class="esFavoritoBtn()" data-toggle="dropdown" aria-expanded="false">
+        <span ng-class="esFavoritoIcon()"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li ng-repeat="g in grupos">
+            <a ng-click="addFavorito(model.Expediente.Id, g.Id)">{{g.Nombre}}</a>
+        </li>
+    </ul>
+</div>

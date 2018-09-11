@@ -1,0 +1,51 @@
+﻿<div ng-include="'./Spa/Views/eMarcas/MAR000.html'"></div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Registro</label>
+            <input type="text" name="RegistroTitulo" ng-model="titulo.RegistroTitulo" class="form-control" placeholder="#####" />
+        </div>
+        <div class="col-md-2">
+            <label>Letra</label>
+            <input type="text" name="Letra" ng-model="titulo.Letra" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-3">
+            <label>Folio</label>
+            <input type="text" name="FolioTitulo" ng-model="titulo.FolioTitulo" class="form-control" placeholder="..." />
+        </div>
+        <div class="col-md-3">
+            <label>Tomo</label>
+            <input type="text" name="TomoTitulo" ng-model="titulo.TomoTitulo" class="form-control" placeholder="..." />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Vencimiento</label>
+            <p class="input-group">
+                <input type="text" name="FechaDeVencimiento" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaDeVencimiento" is-open="fv.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fv')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info">Asignar Registro</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-success">Imprimir Titulo</button>
+        </div>
+    </div>
+</div>
+
+

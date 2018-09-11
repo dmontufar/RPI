@@ -1,0 +1,136 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <style>
+            #grdTitulares:after {
+                content: "Titulares";
+            }
+        </style>
+        <div class="col-md-12">
+            <div class="boxy" id="grdTitulares">
+                <table class="table table-hover">
+                    <thead>
+                        <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                        <tr>
+                            <th>Titular</th>
+                            <th>Direccion para Notificacion</th>
+                            <th>Pais</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="tm in model.Titulares" ng-click="selectTitular(tm)"> 
+                            <td>{{tm.Nombre}}</td>
+                            <td>{{tm.DireccionParaNotificacion}}</td>
+                            <td>{{getPaisCode(tm.PaisId)}}</td>
+                            <td><a confirmed-click="deleteTitularDeLaMarca(tm.Id)" ng-confirm-click="Esta segur@ de Proceder?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Titular</label> {{titular.Id}}
+                <input type="text" name="Titular" ng-model="titular.Nombre" placeholder="Escriba el nombre del titular..."
+                       uib-typeahead="_titular as _titular.Nombre for _titular in searchTitulares($viewValue)" typeahead-on-select="onSelectTitular($item, $model, $label)"
+                       class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Direccion para Notificacion</label>
+                <input type="text" name="DireccionParaNotificacion" ng-model="titular.DireccionParaNotificacion" class="form-control" required placeholder="Direccion" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Direccion para Ubicacion</label>
+                <input type="text" name="DireccionParaUbicacion" ng-model="titular.DireccionParaUbicacion" class="form-control" required placeholder="Ubicacion" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Pais de Origen</label>
+                <select class="form-control" name="Titular_PaisId" required ng-model="titular.PaisId" ng-options="_pais.Id as _pais.Nombre for _pais in paises"></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="titular.AdminUnico" style="width:15px;">
+                        Administrador Unico
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="titular.MandatarioEspecial" style="width:15px;">
+                        Mandatario Especial
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="titular.Apoderado" style="width:15px;">
+                        Apoderado
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="titular.Representante" style="width:15px;">
+                        Representante Legal
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="titular.GerenteGeneral" style="width:15px;">
+                        Gerente General
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="titular.Otro" style="width:15px;">
+                        Otro
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-share-alt"></span>Agregar Titular</button>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Mandatario</label>
+                    <input type="text" name="Titular_Mandatario" ng-model="Titular_Mandatario" class="form-control" required placeholder="Mandatario" />
+                </div>
+            </div>
+            <button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-share-alt"></span>Actualizar Mandatario</button>
+        </div>
+
+    </div>
+</div>
+
+

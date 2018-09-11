@@ -1,0 +1,34 @@
+﻿<br>
+<div class="container">
+    Nombre:<input type="text" name="Nombre" ng-model="usuario.Nombre" class="form-control" disabled /><br />
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Permiso</th>
+                        <th>Acceso</th>
+                    </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr ng-repeat="p in perms">
+                        <td>
+                            {{ p.opcion }}
+                        </td>
+                        <td>
+                            <input type="checkbox" name="Acceso" ng-model="p.Acceso" value="2" style="width:15px;">
+                        </td>
+                        <td ng-if="p._id == 'MAR101'" colspan="2">Marcas</td>
+                        <td ng-if="p._id == 'DA001'" colspan="2">Derecho de Autor</td>
+                        <td ng-if="p._id == 'PAT001'" colspan="2">Patentes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="Admin#Usuarios" class=" btn btn-default">Cancelar</a>
+
+            <button type="button" class="btn btn-primary" ng-click="savePerms()">Grabar Permisos</button>
+        </div>
+    </div>
+</div>
+

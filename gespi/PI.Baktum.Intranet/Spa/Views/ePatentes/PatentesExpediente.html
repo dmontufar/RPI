@@ -1,0 +1,24 @@
+﻿<!-- Nav tabs -->
+<uib-tabset>
+    <uib-tab heading="Solicitud">
+        <div ng-include="'./Spa/Views/ePatentes/PatenteSolicitud.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Titular/Inventor" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/ePatentes/PatenteTitulares.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Ref/Resumen" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/ePatentes/PatenteResumen.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Cronologia" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/shared/cronologia.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Dibujo" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/ePatentes/PatenteDibujo.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Anualidades" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/ePatentes/PatenteAnualidades.html'"></div>
+    </uib-tab>
+    <uib-tab heading="Ubicacion Exp" disable="model.Expediente.Id==-1">
+        <div ng-include="'./Spa/Views/ePatentes/PatenteUbicacion.html'"></div>
+    </uib-tab>
+</uib-tabset>

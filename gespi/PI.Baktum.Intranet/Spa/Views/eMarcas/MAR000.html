@@ -1,0 +1,25 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Fecha de Resolucion</label>
+            <p class="input-group">
+                <input type="text" name="FechaResolucion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="_resolucion.FechaResolucion" is-open="fresolucion.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event, 'fresolucion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="col-md-3">
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="_resolucion.Distintivo" value="E" style="width:15px;">Etiqueta
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="_resolucion.Distintivo" value="D" style="width:15px;">Diseño
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

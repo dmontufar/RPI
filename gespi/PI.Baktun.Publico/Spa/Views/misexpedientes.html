@@ -1,0 +1,77 @@
+﻿<style>
+    .container {
+        max-width: inherit;
+    }
+</style>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Mis Expedientes</h3>
+    </div>
+    
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="nav bs-docs-sidenav">
+                        <li ng-repeat="g in grupos">
+                            <a ng-click="getExpedientes(g.Id)">{{g.Nombre}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
+
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label for="search">Busqueda:</label>
+                            <input ng-model="textSearch" id="search" class="form-control" placeholder="Filter text">
+                        </div>
+                        <div class="col-xs-4">
+                            <label for="search">Items por pagina:</label>
+                            <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Expediente</th>
+                                        <th>Notas</th>
+                                        <th>Tipo de Registro</th>
+                                        <th>Fecha Solicitud</th>
+                                        <th>Estatus</th>
+                                        <th>Fecha Estatus</th>
+                                        <th>Titulo</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-hover">
+                                    <tr dir-paginate="e in misExpedientes | filter:textSearch | itemsPerPage: pageSize" total-items="totalItems">
+                                        <td><a ng-href="#/{{getExpedienteUrl(e)}}" style="display:block;">{{ e.Numero }}</a></td>
+                                        <td>{{ e.Notas }}</td>
+                                        <td>{{ e.TipoDeRegistro }}</td>
+                                        <td>{{ e.FechaDeSolicitud  | date:'MM/dd/yyyy'}}</td>
+                                        <td>{{ e.EstatusDsc }}</td>
+                                        <td>{{ e.FechaDeEstatus  | date:'MM/dd/yyyy'}}</td>
+                                        <td>{{ e.Titulo }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <style>
+                            .pagination {
+                                display: block !important;
+                            }
+                        </style>
+                        <dir-pagination-controls on-page-change="pageChanged(newPageNumber)" template-url="Spa/Framework/pgntn/dirPagination.tpl.html"></dir-pagination-controls>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

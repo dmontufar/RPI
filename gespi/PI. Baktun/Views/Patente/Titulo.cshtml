@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;        
+
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<h4 align="center"><strong>EXPEDIENTE: @solicitud.Expediente.Numero.Insert(4, "-") <br>
+REGISTRO: [DBREPORT.REGISTRO] <br>
+El Registro de la Propiedad Intelectual<br>		
+[DBREPORT.IDTITULO]</strong></h4><br>				<img align="right" width=200px" height="200px"></img>
+<p>Que al número [LETRAS(DBREPORT.REGISTRO)]</p>	
+<p>Folio [LETRAS(DBREPORT.FOLIO)]</p>
+<p>Tomo [LETRAS(DBREPORT.TOMO)]</p>
+<p>del Registro Correspondiente quedó anotada</p>
+<p>[DBREPORT.ANOTACION]</p>
+<p>[fechaenletras(DBREPORT.FECHAANOTACION)]</p>
+<p>con número de expediente [DBREPORT.KIND +" - "+DBREPORT.IDSOLICITUD]</p>
+<p>con fecha de solicitud [fechaenletras(DBREPORT.FECHA_SOLICITUD)]</p>
+<p>concedida mediante resolución de fecha</p>
+<p>[fechaenletras(DBREPORT.FECHA_CONCESION)]</p>
+<p>emitido por el señor [DBREPORT.EMITIDAPOR]</p>
+<p>por el plazo de [DBREPORT.PLAZO_LETRAS] ([DBREPORT.PLAZO]), Años, el que principiará a contarse a partir del</p>
+<p>[fechaenletras(DBREPORT.FECHA_SOLICITUD)]</p>
+<p>a favor de [DBREPORT.SOLICITANTE]</p>
+<p>[DBREPORT.TIPO] [DBREPORT.NAC_TITULAR]</p>
+<p>dirección(es) [_dir ]</p>
+<p>[DBREPORT.RELATIVA_A]</p>
+<p>@solicitud.Patente.Descripcion</p>
+<p>CLASIFICACIÓN INTERNACIONAL: [DBREPORT.CLAS_INT1] [DBREPORT.CLAS_INT2] [DBREPORT.CLAS_INT3] [DBREPORT.CLAS_INT4]</p>
+<p>[DBREPORT.DECONFORIDAD]</p>
+<p>[DBREPORT.INVENTOR]</p>
+<p>[ALLTRIM("Resumen :"+DBREPORT.RESUMEN1)]</p>
+<pre>Prioridad		País [pais1]  Fecha  [fecha1]  Nro [nr1]
+Extranjera                   [pais2]         [fecha2]      [nr2]
+                             [pais3]         [fecha3]      [nr3]
+                             [pais4]         [fecha4]      [nr4]</pre><br>
+<p>La presente inscripción se hace a la solicitud de:</p>
+<p>[DBREPORT.REPRESENTANTE]</p>
+<p>Publicación Diario Oficial: [fechaenletras(DBREPORT.FECHA_PUBLICACION)]</p>
+<p>[DBREPORT.SE_OTORGA]</p>
+<p>Ciudad de Guatemala [DBREPORT.FECHA_TITULO]</p>

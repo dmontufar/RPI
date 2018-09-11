@@ -1,0 +1,67 @@
+﻿<br>
+<style>
+    #lstEventos:after {
+        content: "Opciones disponibles por Evento";
+    }
+</style>
+<div class="boxy" id="lstEventos">
+    <div ng-controller="OxECtrlr">
+
+        <form class="simple-form" name='form' novalidate>
+            <div class="alert alert-info" ng-show="showAlertInfo">{{alertInfo}}</div>
+            <input ng-hide="eventoId" ng-model="eventoId" />
+            <input type="text" name="eventoName" ng-model="eventoName" class="form-control" disabled /><br />
+
+            <div class="row">
+                <div class="col-md-5">
+                    Estatus Actual:
+                    <input type="text" name="estatusActualId" required ng-model="opcion.estatusActualId" uib-typeahead="estatus as estatus.Descripcion for estatus in Estatuses | filter:{Descripcion:$viewValue} | limitTo:15" class="form-control">
+                    <span class="label label-danger" ng-show="form.estatusActualId.$error.required">Estatus es requerido</span><br />
+                </div>
+                <div class="col-md-5">
+                    Pasa a (Opcion):
+                    <input type="text" name="opcionId" required ng-model="opcion.opcionId" uib-typeahead="opcion as opcion.Descripcion for opcion in Opciones | filter:{Descripcion:$viewValue} | limitTo:15" class="form-control">
+                    <span class="label label-danger" ng-show="form.opcionId.$error.required">Opcion es requerido</span>
+                </div>
+                <div class="col-md-2">
+                    </br>
+                    <button type="button" class="btn btn-primary" ng-click="update(opcion)">Agregar</button>
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Estatus</th>
+                    <th>Siguiente Paso (Opcion)</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover">
+                <tr dir-paginate="ops in OpsXEventos | itemsPerPage: pageSize" total-items="totalItems">
+                    <!--<td><a href="#/OpsXEvento/{{ops.Id}}" style="display:block;">{{ ops.Descripcion }}</a></td>-->
+                    <td>{{ ops.Estatus }}</td>
+                    <td>{{ ops.Opcion }}</td>
+                    <!--<td><a href="#/OpsXEvento/{{ops.Id}}" style="display:block;"><span class="glyphicon glyphicon-edit"></span></a></td>-->
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <style>
+                .pagination {
+                    display: block !important;
+                }
+            </style>
+            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)" template-url="/Spa/Framework/pgntn/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+
+
+
+        <a href="Admin#/Eventos/" class=" btn btn-default">Cancelar</a>
+
+        <!--<button type="button" class="btn btn-primary" ng-click="update(ops)" ng-disabled="form.$invalid || isUnchanged(ops)">Grabar</button>-->
+
+    </div>
+</div>
+

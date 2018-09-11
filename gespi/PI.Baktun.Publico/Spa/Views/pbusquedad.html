@@ -1,0 +1,76 @@
+﻿
+<div class="panel panel-info" ng-controller="pbusquedadCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">Patentes - Busqueda</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Tipo</label>
+                    <select class="form-control" name="tipoDeRegistroId" ng-model="tipoDeRegistroId" ng-options="t.Nombre for t in tipoDePatentes"></select>
+                </div>
+                <div class="col-md-9">
+                    <label>Texto</label>
+                    <input type="text" name="textSearch" required ng-model="textSearch" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="bs-box bs-box-green row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="searchPatentes()"><span class="glyphicon glyphicon-search"> Hacer Busqueda</span></button>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+
+        <!--<div class="row">
+            <div class="col-xs-4">
+                <label for="search">Items por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize" readonly>
+            </div>
+        </div>
+        <br>-->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Expediente</th>
+                            <th>Descripcion</th>
+                            <th>Tipo de Registro</th>
+                            <th>Registro</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <!--<tr dir-paginate="e in dataset | itemsPerPage: pageSize" total-items="totalItems">-->
+                        <tr dir-paginate="e in dataset | itemsPerPage: 200" total-items="totalItems">
+                            <td><a ng-href="#/{{getExpedienteUrl(e)}}" style="display:block;">{{ e.Numero }}</a></td>
+                            <td>{{ e.Descripcion }}</td>
+                            <td>{{ e.TipoDeRegistro }}</td>
+                            <td>{{ e.Registro }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <style>
+                .pagination {
+                    display: block !important;
+                }
+            </style>
+            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)" template-url="Spa/Framework/pgntn/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+
+</div>
+

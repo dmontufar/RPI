@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="/Publico/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="128x128" href="~/fonts/app.png">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/custom.css" rel="stylesheet" />
+    <style>
+        .navbar-toggle .icon-bar {
+            background-color: #FFF000;
+        }
+
+        @@media (max-width:760px) {
+            .nav > li > a:hover, .nav > li > a:focus {
+                background-color: rgb(106,90,205);
+            }
+
+            .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+                background-color: rgb(106,90,205);
+            }
+        }
+    </style>
+</head>
+<body ng-app="yumKaaxApp">
+    <div class="row" style="background-color:rgb(0, 71, 127); color:#FFFFFF; height:10px"></div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-md-1">
+            <img class="img-circle" data-src="holder.js/100x100" alt="100x100" style="width: 100px; height: 100px;" src="Images/RPILogo.jpg">
+        </div>
+        <div class="col-md-3">
+            <h4>Registro de la Propiedad Intelectual</h4>
+            <h5>Sistema de Gestion de Propiedad Intelectual</h5>
+        </div>
+        <div class="col-md-8">
+            <div ng-include="'./Spa/Views/Menu.html'"></div>
+        </div>
+    </div>
+    <div class="row" style="background-color:rgb(0, 71, 127); color:#FFFFFF; height:2px"></div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div ng-view></div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="Spa/framework/angular.js"></script>
+    <script src="Spa/Framework/angular-animate.min.js"></script>
+    <script src="spa/framework/angular-route.js"></script>
+    <script src="Spa/Framework/bar/loading-bar.min.js"></script>
+    <script src="Spa/Framework/pgntn/dirPagination.js"></script>
+    <script src="Spa/Framework/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+    <script src="Scripts/ui-utils.js"></script>
+    <!--http://angular-ui.github.io/ui-utils/-->
+    <script src="Scripts/jrzStorage.js"></script>
+
+    <!--<script src="~/Spa/Controllers/EstatusCtrlr.js"></script>
+    <script src="~/Spa/Controllers/EventosCtrlr.js"></script>
+    <script src="~/Spa/Controllers/OpsXEventoCtrlr.js"></script>
+    <script src="~/Spa/Controllers/PaisesCtrlr.js"></script>
+    <script src="~/Spa/Controllers/LeyesCtrlr.js"></script>
+    <script src="~/Spa/Controllers/NizaCtrlr.js"></script>
+    <script src="~/Spa/Controllers/ViennaCtrlr.js"></script>
+    <script src="~/Spa/Controllers/RolesCtrlr.js"></script>
+    <script src="~/Spa/Controllers/UsuariosCtrlr.js"></script>
+    <script src="~/Spa/Controllers/UsuariosExternosCtrlr.js"></script>-->
+    <!--<script src="~/Spa/Factories/UsersFactory.js"></script>
+    <script src="~/Spa/Factories/pageFactory.js"></script>
+    <script src="~/Spa/Directives/GrlDirectives.js"></script>-->
+    <script src="/Publico/Spa/Controllers/HomeCtrl.js"></script>
+    <script src="/Publico/Spa/Controllers/authController.js"></script>
+    <script src="/Publico/Spa/Controllers/econsultaControllers.js"></script>
+    <script src="/Publico/Spa/Factories/authFactory.js"></script>
+
+    <script src="/Publico/Spa/App/register.js"></script>
+
+
+</body>
+</html>

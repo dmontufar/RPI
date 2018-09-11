@@ -1,0 +1,30 @@
+﻿@model List<PI.Models.Publicacion>
+
+@{
+    ViewBag.Title = "Gaceta";
+
+    Layout = "~/Views/Shared/_EdictoLayout.cshtml";
+}
+<style>
+    .portada-break {
+        height: 100mm;
+        display: block;
+    }
+
+    .portada-titulo {
+        text-align: center;
+    }
+</style>
+
+<div class="pagina">
+    <div class="portada-break"></div>
+    <h2 class="portada-titulo">Boletín Oficial del Registro de la Propiedad Intelectual - BORPI</h2>
+    <h3 class="portada-titulo">Edicion Semanal</h3>
+    <div class="portada-break"></div>
+    <h4 class="portada-titulo">@ViewBag.Week</h4>
+</div>
+
+@foreach (var e in Model)
+{
+    @Html.Partial("_Edicto", e);
+}

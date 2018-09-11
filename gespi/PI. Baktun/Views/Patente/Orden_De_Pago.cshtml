@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<p>EXPEDIENTE No. @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p><br>
+<p>REGISTRO DE LA PROPIEDAD INTELECTUAL; Guatemala, [lower(fechaenletras(DBREPORT.FECHA))]. Se tiene a la vista el
+expediente arriba identificado; y, CONSIDERANDO: Que la Ley estipula que transcurridos tres meses después de la fecha
+de publicación del edicto, o de notificadas al solicitante de la patente las observaciones presentadas, si fuese el caso, el
+Registro procederá a fijar la tasa correspondiente para cubrir el examen de fondo, la cual deberá hacerse efectiva dentro
+del mes siguiente a la fecha de la notificación al solicitante de la orden de pago respectiva, pues de lo contrario la
+solicitud se tendrá por abandonada. CONSIDERANDO: Que en el presente expediente Promovido por
+[DBREPORT.SOLICITANTE] [ALLTRIM(DBREPORT.LINEA)+" "+DBREPORT.REPRESENTANTE] referente a la solicitud de
+[DBREPORT.LINEA1] presentada con fecha [lower(fechaenletras(DBREPORT.FECHA_SOLICITUD))]. Se cumplen los
+presupuestos administrativos exigidos por la ley de la materia, procede efectuar el examen de fondo de la solicitud, previa
+presentación por el solicitante del comprobante de pago de la tasa fijada, de conformidad con lo que para el efecto
+establece el artículo 2, literal b) numeral 7 del Acuerdo Gubernativo 862-2000. CITA DE LEY: Artículos 114, 116, 117, 142,
+147 y 209 de la Ley de Propiedad Industrial, Decreto 57-2000 del Congreso de la República. POR TANTO: Este Registro,
+con base en lo considerado y Ley citada, al resolver DECLARA: I. Previo pago de la tasa correspondiente para cubrir el
+examen de fondo de la presente solicitud y acreditado éste dentro del mes siguiente a la fecha de notificación al
+solicitante, efectúese dicho examen. II. En caso no se acredite la tasa fiscal dentro del plazo señalado, esta solicitud se
+tendrá por abandonada. III. Notifíquese.</p>

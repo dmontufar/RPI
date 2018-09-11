@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Edicto";
+    ViewBag.Departamento = "DEPARTAMENTO DE MARCAS";
+    Layout = "~/Views/Shared/_EdictoLayout.cshtml";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDeMarca;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+}
+
+@{
+    Layout = "~/Views/Shared/_Empty.cshtml";
+    bool esNuevaLey = false;
+    if ((solicitud.Expediente.FechaDeSolicitud <= new DateTime(2003, 03, 24)) ||
+        (solicitud.Expediente.FechaDeSolicitud > new DateTime(2003, 11, 26) && solicitud.Expediente.FechaDeSolicitud < new DateTime(2005, 01, 30))
+        || (solicitud.Expediente.FechaDeSolicitud >= new DateTime(2006, 05, 31)))
+    {
+        esNuevaLey = true;
+    }
+    else if ((solicitud.Expediente.FechaDeSolicitud > new DateTime(2003, 03, 25) && solicitud.Expediente.FechaDeSolicitud < new DateTime(2005, 11, 25)) ||
+        (solicitud.Expediente.FechaDeSolicitud > new DateTime(2005, 01, 31) && solicitud.Expediente.FechaDeSolicitud < new DateTime(2006, 05, 30)))
+    {
+        esNuevaLey = false;
+    }
+
+    string tipoDeMarca = String.Empty;
+
+    //tipoDeMarca = "Colectiva", "Certificación "
+
+    string color = string.Empty; //"a Color" this should be saved in the database at the time of printing the edicto
+
+    string prnEdicto = string.Empty;
+
+    // FECHA DE PUBLICACION
+    //prnEdicto += "El " + Model.fecha_publicacion.Value.ToLongDateString() + " ";
+    prnEdicto += "El " + solicitud.Expediente.FechaDeSolicitud.ToLongDateString() + " ";
+
+    // MANDATARIO(A)
+
+    prnEdicto += tramite.DOCUMENT.Mandatario.ToString() + " ";
+
+    // CALIDAD
+    // SI NO LLEVA MANDATARIO NO COLOCAR CALIDAD
+    if (tramite.DOCUMENT.Mandatario.Equals(""))
+    {
+        prnEdicto += tramite.DOCUMENT.Lugar.ToString() + " de: ";
+    }
+
+    // TITULAR
+    if (solicitud.Titulares.Count() > 0) {
+        prnEdicto += solicitud.Titulares.First().Nombre;
+    }    
+
+    // PAIS
+    prnEdicto += " de: " + tramite.DOCUMENT.Lugar.ToString() + " "; //Pais
+
+    // SOLICITA EL REGISTRO DE ....
+    var productos = string.Empty;
+    if (solicitud.Expediente.TipoDeRegistroId == (int)PI.Common.TiposDeEdicto.NombreComercial)
+    {
+        //    prnEdicto += "Solicita Registro del Nombre Comercial ";
+        productos = ", ampara y distingue: " + (solicitud.Productos == null ? "" : solicitud.Productos.Productos);
+        prnEdicto += ", ubicada en: " + tramite.DOCUMENT.DireccionEntidad.ToString() + " ";
+        prnEdicto += "Solicita Registro de Nombre Comercial";
+        //productos = esNuevaLey ? "," : ", Ampara:" + Model.productos;
+
+    }
+    else if (solicitud.Expediente.TipoDeRegistroId == (int)PI.Common.TiposDeEdicto.Propaganda)
+    {
+        // productos = string.Empty;
+        productos = ", Para Publicitar: " + (solicitud.Productos==null? "" : solicitud.Productos.Productos);
+        prnEdicto += "Solicita Registro de la Señal de Publicidad ";
+    }
+    else if (solicitud.Expediente.TipoDeRegistroId == (int)PI.Common.TiposDeEdicto.Sonora)
+    {
+        prnEdicto += "Solicita Registro de la Marca sonora";
+        productos = esNuevaLey ? "de conformidad con la reproducción magnética que puede ser consultada en el R.P.I. Ampara: " + (solicitud.Productos == null ? "" : solicitud.Productos.Productos) : ",";
+    }
+    else
+    {
+        prnEdicto += "Solicita Registro de la Marca";
+        productos = esNuevaLey ? ", Ampara:" + (solicitud.Productos == null ? "" : solicitud.Productos.Productos) : ",";
+    }
+
+    // DISTINTIVO
+    prnEdicto += tipoDeMarca.Trim() + ": " + solicitud.Marca.Denominacion.ToString();
+
+    //prnEdicto += " " + color + " Clase:"+ Model.clase;
+
+    // CLASE
+    if (solicitud.Expediente.TipoDeRegistroId != (int)PI.Common.TiposDeEdicto.NombreComercial)
+    {
+        prnEdicto += " Clase: " + solicitud.ClassificacionDeNiza.Codigo;
+    }
+
+
+    // PRODUCTOS
+    prnEdicto += productos;
+
+    // CLASE IS ES NOMBRES COMERCIALE
+    if (solicitud.Expediente.TipoDeRegistroId == (int)PI.Common.TiposDeEdicto.NombreComercial)
+    {
+        prnEdicto += " Clase: " + solicitud.ClassificacionDeNiza.Codigo;
+    }
+
+
+    // EXPEDIENTE
+    // prnEdicto += " Expediente: " + Model.expediente;
+    prnEdicto += " Expediente: " + solicitud.Expediente.Numero.Insert(4, "-");
+
+    // FECHA DE PUBLICACION
+    prnEdicto += ". REGISTRO DE LA PROPIEDAD INTELECTUAL. ";
+
+    //prnEdicto += "Guatemala," + Model.fecha_publicacion.Value.ToLongDateString();
+    prnEdicto += "Guatemala, " + tramite.DOCUMENT.FechaResolucion.Value.ToLongDateString();
+}
+
+<style>
+    .logoEdicto {
+        width: 300px;
+        height: 300px;
+    }
+
+    .pagina {
+        page-break-after: always;
+        width: 100%;
+        height: auto;
+    }
+
+    .extra {
+        height: 200px;
+    }
+
+    @@media only screen and (max-width:768px) {
+        .logoEdicto {
+            width: 100%;
+            height: 100%;
+        }
+
+        .edicto {
+            margin: 5%;
+        }
+
+            .edicto .TMlogo {
+                width: 40%;
+            }
+    }
+</style>
+<div id="@solicitud.Expediente.Id">
+    <div class="edicto">
+        <div class="TMlogo">
+            @*<img style="width:inherit;" class="logovEdicto" src="@Model.logotipo" alt="tm" /> TODO: REVISAR!!*@
+        </div>
+        <p>
+            <h4>Fecha de Emisión: @tramite.DOCUMENT.FechaResolucion.Value.ToShortDateString()</h4>
+            <br />
+            @prnEdicto
+            @if (prnEdicto.Length < 2500) // aprox what it takes to draw till the logo
+            {
+                //@Html.Raw(String.Concat(Enumerable.Repeat("</br>", 15)));
+            }
+        </p>
+        <br />
+        <h4>Firmado por ....</h4>
+        @if (prnEdicto.Length < 2500) // aprox what it takes to draw till the logo
+        {
+            <br /><br />
+            @*@Html.Raw(String.Concat(Enumerable.Repeat("</br>", 15)));*@
+        }
+
+
+    </div>
+</div>

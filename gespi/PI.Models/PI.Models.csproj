@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D216AF20-694A-411D-B2BF-14F3555A5B58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PI.Models</RootNamespace>
+    <AssemblyName>PI.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abandonos.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agente.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Anotacion.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnotacionEnExpedientes.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Anualidad.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AporteAudiovisual.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AudiovisualAutor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auditoria.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Autor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Clasificacion.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClasificacionDeViena.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassificacionDeNiza.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComposicionAutor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Composite\BusquedaExpedienteDA.cs" />
+    <Compile Include="Composite\BusquedaExpedientePatente.cs" />
+    <Compile Include="Composite\BusquedaExpedienteMarca.cs" />
+    <Compile Include="Composite\ModelAnotacionEnExpedientes.cs" />
+    <Compile Include="Composite\ExpedienteDeAnotaciones.cs" />
+    <Compile Include="Composite\GenericEntity.cs" />
+    <Compile Include="Composite\ModelTitularMarca.cs" />
+    <Compile Include="Composite\ResolucionCustomizada.cs" />
+    <Compile Include="Composite\Estadisticas.cs" />
+    <Compile Include="Composite\ModelViena.cs" />
+    <Compile Include="Composite\ModelTitular.cs" />
+    <Compile Include="Composite\OpsXEvento.cs" />
+    <Compile Include="Composite\OpcionesSiguientes.cs" />
+    <Compile Include="Composite\ModelCronologia.cs" />
+    <Compile Include="Composite\ExpedienteDAutor.cs" />
+    <Compile Include="Composite\ExpedienteDePatentes.cs" />
+    <Compile Include="Composite\ExpedienteDeMarca.cs" />
+    <Compile Include="Composite\Favorito.cs" />
+    <Compile Include="Composite\UserSettings.cs" />
+    <Compile Include="Correlativos.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cronologia.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CronologiaDocto.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAResolucion.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DerechoDeAutor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainObject.cs" />
+    <Compile Include="Enums\Modulos.cs" />
+    <Compile Include="Enums\DAExpedienteEstatus.cs" />
+    <Compile Include="Enums\MarcaEstatus.cs" />
+    <Compile Include="Enums\PatenteEstatus.cs" />
+    <Compile Include="Estatus.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Favorito.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FonogramaArtista.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FonogramaTituloDeObra.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gaceta.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GespiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GespiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GespiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GespiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GespiModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Grupo.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoExpediente.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoMiembro.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuionAutor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPC.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Leyes.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiterariasyArtisticas.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogosMarcas.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lote.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoteExpedientes.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MandatarioDeLaMarca.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mandatarios.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Marca.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObrasMusicalesyEscenicas.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Opciones.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpcionesPorEvento.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pais.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patente.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permiso.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prioridad.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrioridadMarca.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Productividad.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Productor.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosMarca.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publicacion.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Renovacion.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resolucion.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rol.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sequence.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Session.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposDeMarca.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposDeRegistro.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Titular.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitularDeLaPatente.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitularEnPatentes.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitularesDeLaMarca.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Titulos.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicaciones.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioPublico.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VienaMarcas.cs">
+      <DependentUpon>GespiModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="GespiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GespiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GespiModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GespiModel.edmx</DependentUpon>
+      <LastGenOutput>GespiModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="GespiModel.edmx.diagram">
+      <DependentUpon>GespiModel.edmx</DependentUpon>
+    </None>
+    <None Include="GespiModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GespiModel.edmx</DependentUpon>
+      <LastGenOutput>GespiModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MetaData\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,217 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <label>Numero</label>
+                <input type="text" name="Numero" ng-model="model.Expediente.Numero" class="form-control" ui-mask="9999-99999" required />
+                <span class="label label-danger" ng-show="frmSol.Numero.$error.required">Ingrese Numero de Expediente.<br /></span>
+            </div>
+            <div class="col-md-2">
+                <h3>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="getExpediente(model.Expediente.Numero)"><span class="glyphicon glyphicon-folder-open"></span></button>
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="getNew()"><span class="glyphicon glyphicon-file"></span></button>
+                    </div>
+                </h3>
+            </div>
+
+            <div class="col-md-3">
+                <label>Tipo de Registro</label>
+                <select class="form-control" name="Expediente__Expediente__TipoDeRegistroId" ng-model="model.Expediente.TipoDeRegistroId" ng-options="t.Id as t.Nombre for t in tipoDeObras"></select><br />
+                <span class="label label-danger" ng-show="model.Expediente.TipoDeRegistroId==0">Ingrese Tipo de Registro.<br /></span>
+            </div>
+            <div class="col-md-3">
+                <label>Fecha</label>
+                <p class="input-group">
+                    <input type="text" name="FechaDeSolicitud" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="model.Expediente.FechaDeSolicitud" is-open="fds.open" min-date="dateHelper.minDate" max-date="dateHelper.maxDate" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" required />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'fds')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <span class="label label-danger" ng-show="frmSol.FechaDeSolicitud.$error.required">Ingrese Fecha de Solicitud.<br /></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <style>
+                    #situacion:after {
+                        content: "Situacion Administrativa";
+                    }
+                </style>
+                <div class="boxy" id="situacion">
+                    <div class="row">
+                        <div class="col-md-8"><div class="form-control">{{model.SituacionAdmin}}</div></div>
+                        <div class="col-md-4"><div class="form-control">{{model.Expediente.FechaDeEstatus | date:'MM/dd/yyyy'}}</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-10">
+                <label>Titulo</label>
+                <input type="text" name="Expediente__DerechoDeAutor__Titulo" ng-model="model.DerechoDeAutor.Titulo" class="form-control" placeholder="Titulo" required />
+                <span class="label label-danger" ng-show="frmSol.Expediente__DerechoDeAutor__Titulo.$error.required">Ingrese Titulo.<br /></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-10">
+                <label>Traduccion</label>
+                <input type="text" name="Expediente__DerechoDeAutor__Traduccion" ng-model="model.DerechoDeAutor.Traduccion" class="form-control" placeholder="Traduccion..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label>No de paginas</label>
+                <input type="text" name="Expediente__DerechoDeAutor__Paginas" ng-model="model.DerechoDeAutor.Paginas" class="form-control" placeholder="Paginas" />
+            </div>
+            <div class="col-md-3">
+                <label>Formato</label>
+                <input type="text" name="Expediente__DerechoDeAutor__Formato" ng-model="model.DerechoDeAutor.Formato" class="form-control" placeholder="Formato" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Lugar de Edicion</label>
+                <input type="text" name="Expediente__DerechoDeAutor__LugarEdicion" ng-model="model.DerechoDeAutor.LugarEdicion" class="form-control" placeholder="Lugar de Edicion..." />
+            </div>
+            <div class="col-md-2">
+                <label>Fecha</label>
+                <p class="input-group">
+                    <input type="text" name="Expediente__DerechoDeAutor__FechaEdicion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="model.DerechoDeAutor.FechaEdicion" is-open="fde.open" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'fde')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <label>Lugar de 1ra Publicacion</label>
+                <input type="text" name="Expediente__DerechoDeAutor__LugarEraPublicacion" ng-model="model.DerechoDeAutor.LugarEraPublicacion" class="form-control" placeholder="Lugar de 1ra Publicacion..." />
+            </div>
+            <div class="col-md-2">
+                <label>Fecha</label>
+                <p class="input-group">
+                    <input type="text" name="Expediente__DerechoDeAutor__FechaPublicacion" class="form-control" uib-datepicker-popup="{{dateHelper.format}}" ng-model="model.DerechoDeAutor.FechaPublicacion" is-open="fpub.open" datepicker-options="dateHelper.dateOptions" date-disabled="dateHelper.disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, 'fpub')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Editor</label>
+                <input type="text" name="Expediente__DerechoDeAutor__Editor" ng-model="model.DerechoDeAutor.Editor" class="form-control" placeholder="Editor..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Anio de Creacion</label>
+                <input type="text" name="Expediente__DerechoDeAutor__AnioCreacion" ng-model="model.DerechoDeAutor.AnioCreacion" class="form-control" placeholder="Anio de Creacion..." />
+            </div>
+            <div class="col-md-2">
+                <label>Pais de Origen</label>
+                <select class="form-control" name="Expediente__DerechoDeAutor__PaisOrigenId" ng-model="model.DerechoDeAutor.PaisOrigenId" ng-options="_pais.Id as _pais.Nombre for _pais in paises"></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>La obra es</label>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__esinedita" ng-model="model.DerechoDeAutor.EsInedita" style="width:15px;">Inedita
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__EsPublicada" ng-model="model.DerechoDeAutor.EsPublicada" style="width:15px;">Publicada
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__EsOriginaria" ng-model="model.DerechoDeAutor.EsOriginaria" style="width:15px;">Originaria
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__EsDerivada" ng-model="model.DerechoDeAutor.EsDerivada" style="width:15px;">Deribada
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__EsIndividual" ng-model="model.DerechoDeAutor.EsIndividual" style="width:15px;">Individual
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__EsColectiva" ng-model="model.DerechoDeAutor.EsColectiva" style="width:15px;">Colectiva
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" name="Expediente__DerechoDeAutor__EsEnColaboracion" ng-model="model.DerechoDeAutor.EsEnColaboracion" style="width:15px;">En Colaboracion
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Otra clasificacion applicable</label>
+                <input type="text" name="Expediente__DerechoDeAutor__OtraClasificacionAplicable" ng-model="model.DerechoDeAutor.OtraClasificacionAplicable" class="form-control" placeholder="..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-9">
+                <label>Versiones autorizadas</label>
+                <input type="text" name="Expediente__DerechoDeAutor__VersionesAutorizadas" ng-model="model.DerechoDeAutor.VersionesAutorizadas" class="form-control" placeholder="..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Otra Informacion que identifique a la forma</label>
+                <input type="text" name="Expediente__DerechoDeAutor__OtraInfoQueIdentifique" ng-model="model.DerechoDeAutor.OtraInfoQueIdentifique" class="form-control" placeholder="..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Tipo de Soporte</label>
+                <input type="text" name="Expediente__DerechoDeAutor__SoporteMaterial" ng-model="model.DerechoDeAutor.SoporteMaterial" class="form-control" placeholder="..." />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+﻿<div class="left-canvas">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                Clase<input type="text" name="Codigo" ng-model="model.ClassificacionDeNiza.Codigo" class="form-control" required placeholder="Clase de niza" />
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                Descripcion<textarea rows="4" cols="10" name="Codigo" ng-model="model.Marca.Productos" class="form-control" required placeholder="Productos" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                Reservas<textarea rows="4" cols="10" name="Codigo" ng-model="model.Marca.Reservas" class="form-control" required placeholder="Reservas" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                Descripcion Grafica<textarea rows="4" cols="10" name="Codigo" ng-model="model.Marca.DescripcionGrafica" class="form-control" required placeholder="Descripcion Grafica" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[0]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">4 Facsimiles
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[2]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">Nombramiento
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[4]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">Poder
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[6]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">Patente de Comercio
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[8]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">2 Ejemplares del Reglamento
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[10]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">Comprobante de pago
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[12]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">Copia Legalizada
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="model.Marca.DoctosAdjuntos[14]" ng-true-value="'1'" ng-false-value="'0'" style="width:15px;">Otros
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                Otros<input type="text" name="OtrosDoctosAdjuntos" ng-model="model.Marca.OtrosDoctosAdjuntos" class="form-control" required placeholder="Otros Doctos Adjuntos" />
+            </div>
+        </div>
+    </div>
+</div>

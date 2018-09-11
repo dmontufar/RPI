@@ -1,0 +1,136 @@
+﻿<!-- Nav tabs -->
+<div class="bs-boxer">
+    <div id="workarea" class="big2Container">
+        <div id="one" class="expediente-area">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Anotaciones ****/****<button type="button" class="btn btn-primary  btn-s rightbtn" onclick="showLeftBox(); return false;"><span id="win1Ctrl" class="glyphicon glyphicon-indent-left"></span></button></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" ng-show="showAlertInfo">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="alert alert-info">{{alertInfo}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-include="'./Spa/Views/eAnota/AnotaExpediente.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="three" class="resolucion-area">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <button type="button" class="btn btn-primary  btn-s leftbtn" onclick="showRightBox(); return false;"><span id="win2Ctrl" class="glyphicon glyphicon-indent-right"></span></button>
+                            Tramite: {{evento}}
+                        </h3>
+                    </div>
+                    <div id="activity" class="panel-body">
+                        <div class="dropdown">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                Actividad
+                                <span class="caret"></span>
+                            </span>
+                            <ul class="dropdown-menu">
+                                <li ng-class="(op.menu)?'dropdown-submenu':isMnuEnabled(op)" ng-repeat="op in opciones">
+                                    <a onclick="showRightBox(); return false;" ng-click="Resolucion(op)">{{op.opcion}}</a>
+                                    <ul ng-if="(op.menu)" class="dropdown-menu">
+                                        <li ng-repeat=" sub in op.menu" ng-class="isMnuEnabled(sub)">
+                                            <a onclick="showRightBox(); return false;" ng-click="Resolucion(sub)">{{sub.opcion}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div ng-include="res"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    //put it in helperLib.js
+    function showLeftBox() {
+        if ($("#one").hasClass("rowInCanvasOff")) {
+            //mainBoxOn();
+            return;
+        }
+    }
+    function showRightBox() {
+        if (!$("#three").hasClass("rowOffCanvasIn")) {
+            //mainBoxOff();
+            return;
+        }
+    }
+    function mainBoxOn() {
+        $("#one").removeClass("rowInCanvasOff");
+        $("#two").removeClass("rowInCanvasMenuOff");
+        $("#three").removeClass("rowOffCanvasIn");
+    }
+    function mainBoxOff() {
+        $("#one").addClass("rowInCanvasOff");
+        $("#two").addClass("rowInCanvasMenuOff");
+        $("#three").addClass("rowOffCanvasIn");
+    }
+</script>
+
+
+<style>
+    .dropdown-submenu {
+        position: relative;
+    }
+
+        .dropdown-submenu > .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -6px;
+            margin-left: -1px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px 6px;
+            border-radius: 0 6px 6px 6px;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu > a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #cccccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }
+
+        .dropdown-submenu:hover > a:after {
+            border-left-color: #ffffff;
+        }
+
+        .dropdown-submenu.pull-left {
+            float: none;
+        }
+
+            .dropdown-submenu.pull-left > .dropdown-menu {
+                left: -100%;
+                margin-left: 10px;
+                -webkit-border-radius: 6px 0 6px 6px;
+                -moz-border-radius: 6px 0 6px 6px;
+                border-radius: 6px 0 6px 6px;
+            }
+</style>

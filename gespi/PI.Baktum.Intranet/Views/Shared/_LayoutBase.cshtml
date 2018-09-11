@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>@ViewBag.Title</title>
+        <base href="/IntranetRPI/" />
+                
+        <!-- Set the viewport width to device width for mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" sizes="128x128" href="~/fonts/app.png">
+  
+        <!-- Bootstrap -->
+        <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="Bootstrap/css/LogIn.css" rel="stylesheet" />
+        <link href="Bootstrap/custom.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="row" style="background-color:#02214A; color:#FFFFFF;">
+            <div class="col-md-1">
+                <img class="img-circle" data-src="holder.js/100x100" alt="100x100" style="width: 100px; height: 100px;" src="Images/RPILogo.jpg">
+             </div>
+            <div class="col-md-9">
+                <h4>Registro de la Propiedad Intelectual</h4>
+                <h5>Sistema de Gestion de Propiedad Intelectual</h5>
+            </div>
+        </div>
+
+        <div ng-app="yumKaaxApp">
+            <div class="row ">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    @RenderBody()
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="Scripts/jrzStorage.js"></script>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.2.9/ui-grid.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.2.9/ui-grid.css" />
+
+        <script src="Spa/Factories/authFactory.js"></script>
+        <script src="Spa/Controllers/HomeCtrl.js"></script>
+        <script src="Spa/Controllers/authController.js"></script>
+
+        <script src="Spa/Factories/UsersFactory.js"></script>
+        <script src="Spa/Factories/pageFactory.js"></script>
+        <script src="Spa/Directives/GrlDirectives.js"></script>
+        
+        <script src="Spa/App/appBase.js"></script>
+    </body>
+    
+</html>

@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DERECHOS DE AUTOR Y DERECHOS CONEXOS";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDAutor;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+    //var solicitud = @ViewData.Eval("Solicitud") as PI.Models.ExpedienteDAutor;
+    //var tramite = @ViewData.Eval("Tramite") as PI.Models.DAResolucion;
+    //var solicitud = Model.Solicitud as PI.Models.ExpedienteDAutor;
+    //var tramite = Model.Tramite as PI.Models.DAResolucion;
+}
+<style>
+     p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<p>@solicitud.DerechoDeAutor.Titulo</p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+@solicitud.Tipo.Nombre
+
+<p><h3>Resolución: Elevando Recurso de Revocatoria al MINECO</h3></p>
+
+@{
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol
+    <br /><br />
+    I) Incórporese a sus antecedentes el memorial presentado por el(la) señor (a):
+    [NOMBRE]
+    II) Se remite al Ministerio de Economía, para su trámite, el RECURSO DE REVOCATORIA interpuesto contra la resolución de fecha: @_fresol
+    proferida por Registro.   III)  Se adjunta el informe respectivo.  Artículos 7 y 8 de la Ley de lo Contencioso Administrativo Decreto 119-96 del
+    Congreso de la República.
+    <br /><br />
+    SEÑOR MINISTRO DE ECONOMIA
+    <br />
+    SU DESPACHO:
+    <br />
+    Respetuosamente, remito a usted el expediente identificado al margen, en el que el(la) señor(a):
+    [NOMBRE]
+    solicitó la inscripción de: [TITULO]
+    El envío se debe a que con fecha:@_fresol
+    este Registro rechazó de plano la solicitud de registro de conformidad con los artículos 15, 16,  24,  25  y  104 de la Ley de Derecho de 
+    Autor y Derechos Conexos; y contra la misma, el interesado interpuso RECURSO DE REVOCATORIA.
+</p>
+<br />
+<br />
+Guatemala, @_fresol
+
+

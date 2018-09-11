@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Resolucion";
+    ViewBag.Departamento = "DEPARTAMENTO DE PATENTES";
+    var solicitud = ViewBag.Solicitud as PI.Models.ExpedienteDePatente;
+    var tramite = ViewBag.Tramite as PI.Models.Composite.ResolucionCustomizada;
+    ViewBag.sello = solicitud.getSello(tramite.Llave.ToString());
+    var _fresol = Common.Web.Util.getEnLetras(tramite.Fecha.Day) + " DE " + Common.Web.Util.getMes(tramite.Fecha.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(tramite.Fecha.Year - 2000);
+    ViewBag._fresol = _fresol;            
+    Layout = "~/Views/Shared/_MembretadaLayout.cshtml";
+}
+
+<style>
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+</style>
+<p><h2>@tramite.Titulo</h2></p><br />
+
+<p>Expediente @solicitud.Expediente.Numero.Insert(4, "-")</p>
+
+
+@{
+    var _fsolicitud = Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Day) + " DE " + Common.Web.Util.getMes(solicitud.Expediente.FechaDeSolicitud.Month) + " DEL DOS MIL " + Common.Web.Util.getEnLetras(solicitud.Expediente.FechaDeSolicitud.Year - 2000);
+    var res = solicitud.getFORMATEDDATA();    
+}
+
+
+<p>
+    REGISTRO DE LA PROPIEDAD INTELECTUAL,  Guatemala, @_fresol<br /><br />
+</p>
+<p>Expediente Número @res.kind @solicitud.Expediente.Numero.Insert(4, "-")</p>
+<p>Solicitante [DBREPORT.SOLICITANTE]</p>
+<p>Representante Legal [DBREPORT.REPRESENTANTE</p>
+<p>Fecha de Presentación [DBREPORT.FECHA_SOLICITUD]</p><br>
+<p>De acuerdo con el Decreto Número 57 - 2000 del Congreso de la República, ley de Propiedad Industrial, las
+solicitudes de [ALLTRIM(DBREPORT.LINEA2)] podrán caer en abandono en cualquiera de los siguientes casos:"</p><br>
+&emsp;
+<p>([op1] )&emsp;&emsp;1.&emsp;&emsp; <p>Si el solicitante no cumple con lo requerido de lo que se estableció en el examen de forma, dentro de un
+plazo dos meses contados a partir de la fecha de la notificación, se tendrá por abandonada la solicitud.
+(Art. 113). Fecha de Notificación [DBREPORT.FECHA1]</p><br>
+
+<p>([op2] )&emsp;&emsp;2.&emsp;&emsp; Si la publicación del edicto no se efectúa dentro de los 6 meses siguientes a su entrega, o bien, si el
+solicitante no presenta al Registro el ejemplar del diario oficial dentro de los dos meses siguientes a la
+fecha de la misma, la solicitud se tendrá por abandonada, (Art. 114).</p><br>
+
+<p>([op3] )&emsp;&emsp;3.&emsp;&emsp;El Registro procederá a fijar la tasa correspondiente para cubrir el examen de fondo, la cual deberá hacerse.
+efectiva dentro del mes siguiente a la fecha de la notificación al solicitante de la orden de pago respectiva,
+pues de lo contrario la solicitud se tendrá por abandonada. (Art. 117).
+Fecha de Notificación [DBREPORT.FECHA1]</p><br>
+
+<p>([op4] )&emsp;&emsp;4.&emsp;&emsp; Salvo aquellos casos en los que se establezca un plazo específico, las solicitudes que se presenten de
+conformidad con esta ley se tendrán por abandonadas y caducarán de pleno derecho cuando el interesado
+no cumpla con lo que le sea requerido por el Registro, dentro de un plazo de seis meses, contados a partir
+desde la última notificación que se le hubiere hecho. El abandono causará la pérdida de la prelación y de
+oficio el archivo de la solicitud, sin necesidad de declaración alguna. (Art. 12).
+Fecha de Notificación [DBREPORT.FECHA1]</p><br>
+
+<p>POR TANTO: Este Registro con base a lo considerado y ley citada; RESUELVE: I) Declarar el abandono de la
+solicitud de [DBREPORT.LINEA2] denominado [DBREPORT.DESCRIPCION] II) En consecuencia, la caducidad del derecho
+sobre la solicitud, dejando sin efecto los derechos derivados a la presentación de la misma; Fundamento Legal: Artículos
+citados y artículo 14 del Acuerdo Gubernativo 89-2002, Reglamento de la Ley de Propiedad Industrial.
+Fecha de Notificación [DBREPORT.FECHA1]</p><br>
+
+<p>III. ARCHIVESE</p>_______________________________________________________
